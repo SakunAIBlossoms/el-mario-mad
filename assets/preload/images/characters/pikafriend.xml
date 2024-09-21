@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="pikafriend.png" width="200" height="220">
+  <SubTexture name="Pikafriend death0000" x="2" y="2"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0000" x="42" y="2"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0001" x="2" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0003" x="42" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0004" x="82" y="2"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0005" x="82" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend hurt0000" x="2" y="90"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0000" x="42" y="90"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0001" x="82" y="90"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0002" x="122" y="2"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0003" x="122" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0004" x="122" y="90"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0000" x="2" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0001" x="42" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0003" x="82" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0004" x="122" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0000" x="162" y="2"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0001" x="162" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0003" x="162" y="90"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0004" x="162" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0000" x="2" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0001" x="42" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0003" x="82" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0004" x="122" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="taiki" x="162" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend down0002" x="2" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend idle0005" x="82" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0005" x="82" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0005" x="82" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0005" x="82" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend left0002" x="42" y="134"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend right0002" x="162" y="46"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+  <SubTexture name="Pikafriend up0002" x="42" y="178"  width="36" height="40" frameX="-0" frameY="-0" frameWidth="36" frameHeight="40"/>
+</TextureAtlas>
