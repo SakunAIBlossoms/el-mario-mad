@@ -37,7 +37,7 @@ class GamblingMenuTest extends MusicBeatState
         rerollbutton.alpha = 0.3;
     }
     function endRandomisation() {
-
+        
     }
     override function update(elapsed:Float)
     {

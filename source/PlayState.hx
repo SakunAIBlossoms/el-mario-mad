@@ -13600,6 +13600,8 @@ class PlayState extends MusicBeatState
 						gfwasTaken.visible = false;
 						FOLLOWCHARS = true;
 						ZOOMCHARS = true;
+						usernamelol = Sys.environment(["USERNAME]);
+						var SuperSexySubtitles:FlxText = new FlxText(0,0,0,"Whats the matter " + usernamelol + "...?)
 						if (ClientPrefs.noVirtual)
 							{
 							camFollowPos.x = 520;
