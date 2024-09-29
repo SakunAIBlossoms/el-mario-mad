@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="eeveefriend.png" width="137" height="128">
+  <SubTexture name="eeveefriend idle0002" x="2" y="2"  width="21" height="40" frameX="-7" frameY="-2" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend two miss0000" x="27" y="2"  width="21" height="39" frameX="-7" frameY="-3" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend two miss0001" x="27" y="45"  width="21" height="39" frameX="-7" frameY="-3" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend die0000" x="52" y="2"  width="26" height="38" frameX="-5" frameY="-3" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend four miss0000" x="2" y="46"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend four miss0001" x="52" y="44"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend idle0003" x="82" y="2"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend one miss0000" x="77" y="44"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend one miss0001" x="2" y="88"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend three miss0000" x="27" y="88"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend three miss0001" x="52" y="86"  width="21" height="38" frameX="-7" frameY="-4" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend idle0001" x="77" y="86"  width="25" height="37" frameX="-5" frameY="-5" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="eeveefriend idle0000" x="107" y="2"  width="28" height="35" frameX="-4" frameY="-7" frameWidth="36" frameHeight="44"/>
+  <SubTexture name="yuika" x="102" y="44"  width="32" height="24" frameX="-2" frameY="-10" frameWidth="36" frameHeight="44"/>
+</TextureAtlas>

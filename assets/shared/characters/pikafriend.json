@@ -1,0 +1,102 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "idle",
+			"fps": 12,
+			"name": "Pikafriend idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "Pikafriend left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "Pikafriend right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "singDOWN",
+			"fps": 12,
+			"name": "Pikafriend down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "singUP",
+			"fps": 12,
+			"name": "Pikafriend up",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				13,
+				37
+			],
+			"anim": "hit",
+			"fps": 3,
+			"name": "Pikafriend hurt",
+			"indices": []
+		},
+		{
+			"offsets": [
+				13,
+				37
+			],
+			"loop": true,
+			"fps": 12,
+			"anim": "death",
+			"indices": [],
+			"name": "Pikafriend death"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/pikafriend",
+	"position": [
+		4,
+		390
+	],
+	"healthicon": "pika",
+	"flip_x": true,
+	"healthbar_colors": [
+		70,
+		70,
+		70
+	],
+	"camera_position": [
+		-170,
+		-230
+	],
+	"sing_duration": 4,
+	"scale": 4,
+	"_editor_isPlayer": false
+}

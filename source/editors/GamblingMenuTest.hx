@@ -10,6 +10,8 @@ import flixel.FlxSprite;
 import flixel.text.FlxText;
 import MusicBeatSubstate;
 import openfl.Lib;
+import PlayState;
+import LoadingState;
 var randomNum = 0;
 var youaregambling = false;
 var rerollbutton:FlxSprite;
@@ -32,9 +34,16 @@ class GamblingMenuTest extends MusicBeatState
         //beginRandomisation();
     }
     function beginRandomisation() {
-        randomNum = FlxG.random.int(1, 100);
+        //randomNum = FlxG.random.int(1, 100);
+        randomNum = 40;
         trace("your number is " + randomNum + " yo");
         rerollbutton.alpha = 0.3;
+        if (randomNum == 40)
+        {
+            PlayState.SONG = Song.loadFromJson('unbeatable', 'unbeatable');
+            LoadingState.loadAndSwitchState(new PlayState());
+
+        }
     }
     function endRandomisation() {
         
