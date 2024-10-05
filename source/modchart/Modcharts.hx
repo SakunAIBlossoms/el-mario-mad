@@ -445,7 +445,7 @@ class Modcharts {
                 modManager.queueEase(1228, 1234, "opponentSwap", 0, 'backInOut', 0);
 
                 modManager.queueEase(1312, 1316, "alpha", 1, 'quadInOut', 0);
-            case 'unbeatable':
+            case 'unyappable':
                 //hardstyle
                 modManager.queueEase(1344, 1352, "alpha", 1, 'quadInOut', 1);
                 modManager.queueEase(1360, 1376, "opponentSwap", 0.5, 'cubeInOut', 0);

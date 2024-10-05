@@ -541,43 +541,43 @@ class WarpData
 				case 1:
 					elcausa = [		
 						['Start', 							'X', '1', 'X', 'x', 0],
-						['So Cool',							'0', 'X', 'X', '2', 0],
-						['Nourishing Blood', 				'3', 'X', '1', 'X', 1],
-						['MARIO SING AND GAME RYTHM 9', 	'X', '2', 'X', 'X', 2]
+						['Not Great',							'0', 'X', 'X', '2', 0],
+						['Retro Mayhem', 				'3', 'X', '1', 'X', 1],
+						['ZSEVEN FUN AND EXCITING MANIA 7', 	'X', '2', 'X', 'X', 2]
 						];
 
 				case 2:
 					elcausa = [
 						['Start', 			'X', 'X', 'X', '1', 0],
-						['Alone', 			'2', '4', '0', 'X', 0],
-						['Oh God No', 		'3', '4', '1', 'X', 1],
-						['I Hate You', 		'X', '2', 'X', 'X', 2],
-						['Thalassophobia', 	'2', '5', '1', 'X', 1],
-						['Apparition', 		'X', 'X', '4', '6', 4],
-						['Last Course', 	'7', '5', 'X', 'X', 5],
-						['Dark Forest', 	'X', '6', 'X', 'X', 6]
+						['Suicide', 			'2', '4', '0', 'X', 0],
+						['Oh Fuck No', 		'3', '4', '1', 'X', 1],
+						['Fuck You', 		'X', '2', 'X', 'X', 2],
+						['Claustrophobia', 	'2', '5', '1', 'X', 1],
+						['Decapitation', 		'X', 'X', '4', '6', 4],
+						['Final Whip', 	'7', '5', 'X', 'X', 5],
+						['Wicked Woods', 	'X', '6', 'X', 'X', 6]
 						];
 
 				case 3:
 					elcausa = [
 						['Start', 			'X', 'X', '1', 'X', 0],
-						['Bad Day', 		'0', 'X', 'X', '2', 0],
-						['Day Out', 		'3', 'X', '1', 'X', 1],
-						['Dictator', 		'X', '2', '4', 'X', 2],
-						['RaceTraitors', 	'X', 'X', '5', '3', 3],
-						['No Hope', 		'X', 'X', 'X', '4', 4]
+						['Awful Noon', 		'0', 'X', 'X', '2', 0],
+						['Gang In', 		'3', 'X', '1', 'X', 1],
+						['Troller', 		'X', '2', '4', 'X', 2],
+						['Ratio Battle', 	'X', 'X', '5', '3', 3],
+						['Bloodlust', 		'X', 'X', 'X', '4', 4]
 						];
 
 				case 4:
 					elcausa = [		
 						['Start', 			'2', 'X', 'X', 'X', 0],
-						['Unbeatable',	 	'2', '0', 'X', 'X', 0],
-						['Golden Land', 	'6', '0', '3', '5', 1],
-						['Paranoia',	 	'X', '2', '4', 'X', 2],
-						['Overdue', 		'X', '3', 'X', 'X', 3],
-						['No Party', 		'X', '2', 'X', 'X', 2],
-						['Powerdown', 		'7', '2', 'X', 'X', 4],
-						['Demise',	 		'X', '6', 'X', 'X', 5]
+						['Unyappable',	 	'2', '0', 'X', 'X', 0],
+						['Desolate World', 	'6', '0', '3', '5', 1],
+						['Intrusive Thoughts',	 	'X', '2', '4', 'X', 2],
+						['Overdose', 		'X', '3', 'X', 'X', 3],
+						['No Focus', 		'X', '2', 'X', 'X', 2],
+						['Chokehold', 		'7', '2', 'X', 'X', 4],
+						['Suffering',	 		'X', '6', 'X', 'X', 5]
 						];
 					if(ClientPrefs.storySave[7]){ //cambia este valor con el guardado q indique que terminaste all stars
 						elcausa[0][1] = '1';
@@ -589,9 +589,9 @@ class WarpData
 				case 5:
 					elcausa = [		
 						['Start', 			'1', 'X', 'X', 'X', 0],
-						['Promotion', 		'2', '0', 'X', 'X', 0],
-						['Abandoned', 		'3', '1', 'X', 'X', 1],
-						['The End', 		'X', '2', 'X', 'X', 2]
+						['Eradication', 		'2', '0', 'X', 'X', 0],
+						['Forgotten', 		'3', '1', 'X', 'X', 1],
+						['The Dream', 		'X', '2', 'X', 'X', 2]
 						];
 					
 			}

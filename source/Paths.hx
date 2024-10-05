@@ -365,7 +365,7 @@ class Paths
 			localTrackedAssets.push(path);
 			return currentTrackedAssets.get(path);
 		}
-		trace('oh no ( ${path} ) returning null NOOOO');
+		trace('( ${path} ) returning null check the files are in the correct positions');
 		return null;
 	}
 

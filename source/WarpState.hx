@@ -623,7 +623,7 @@ class WarpState extends MusicBeatState
 
 	public function caminar(direction:String):Void
 	{
-		trace(direction);
+		//trace(direction);
 		if(direction != 'X'){
 		var dir:Int = Std.parseInt(direction);
 		quieto = false;

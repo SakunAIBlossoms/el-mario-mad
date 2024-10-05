@@ -30,12 +30,12 @@
 	<SubTexture name="Island0003" x="753" y="797" width="235" height="388"/>
 	<SubTexture name="Island0004" x="998" y="797" width="235" height="388"/>
 	<SubTexture name="Island0005" x="998" y="797" width="235" height="388"/>
-	<SubTexture name="Legacy0000" x="1243" y="797" width="521" height="254" pivotX="25" pivotY="25"/>
-	<SubTexture name="Legacy0001" x="1243" y="797" width="521" height="254"/>
-	<SubTexture name="Legacy0002" x="0" y="1196" width="521" height="254"/>
-	<SubTexture name="Legacy0003" x="0" y="1196" width="521" height="254"/>
-	<SubTexture name="Legacy0004" x="531" y="1196" width="521" height="254"/>
-	<SubTexture name="Legacy0005" x="531" y="1196" width="521" height="254"/>
+	<SubTexture name="Oneshots0000" x="1243" y="797" width="521" height="254" pivotX="25" pivotY="25"/>
+	<SubTexture name="Oneshots0001" x="1243" y="797" width="521" height="254"/>
+	<SubTexture name="Oneshots0002" x="0" y="1196" width="521" height="254"/>
+	<SubTexture name="Oneshots0003" x="0" y="1196" width="521" height="254"/>
+	<SubTexture name="Oneshots0004" x="531" y="1196" width="521" height="254"/>
+	<SubTexture name="Oneshots0005" x="531" y="1196" width="521" height="254"/>
 	<SubTexture name="Mainweek0000" x="1062" y="1196" width="265" height="596" pivotX="25" pivotY="25"/>
 	<SubTexture name="Mainweek0001" x="1062" y="1196" width="265" height="596"/>
 	<SubTexture name="Mainweek0002" x="1337" y="1196" width="265" height="596"/>
