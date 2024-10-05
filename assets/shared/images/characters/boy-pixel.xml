@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="boy-pixel.png">
+<SubTexture name="Down0000" x="0" y="0" width="53" height="56" frameX="0" frameY="0" frameWidth="53" frameHeight="56" />
+<SubTexture name="Down0001" x="53" y="0" width="53" height="56" frameX="0" frameY="0" frameWidth="53" frameHeight="56" />
+<SubTexture name="Idle0000" x="106" y="0" width="53" height="54" frameX="0" frameY="0" frameWidth="53" frameHeight="54" />
+<SubTexture name="Idle0001" x="159" y="0" width="53" height="55" frameX="0" frameY="0" frameWidth="53" frameHeight="55" />
+<SubTexture name="Idle0002" x="0" y="56" width="53" height="56" frameX="0" frameY="0" frameWidth="53" frameHeight="56" />
+<SubTexture name="Left0000" x="53" y="56" width="57" height="56" frameX="0" frameY="0" frameWidth="57" frameHeight="56" />
+<SubTexture name="Left0001" x="110" y="56" width="57" height="56" frameX="0" frameY="0" frameWidth="57" frameHeight="56" />
+<SubTexture name="MissDown0000" x="167" y="56" width="53" height="56" frameX="0" frameY="0" frameWidth="53" frameHeight="56" />
+<SubTexture name="MissDown0001" x="0" y="112" width="53" height="56" frameX="0" frameY="0" frameWidth="53" frameHeight="56" />
+<SubTexture name="MissLeft0000" x="53" y="112" width="57" height="56" frameX="0" frameY="0" frameWidth="57" frameHeight="56" />
+<SubTexture name="MissLeft0001" x="110" y="112" width="57" height="56" frameX="0" frameY="0" frameWidth="57" frameHeight="56" />
+<SubTexture name="MissRight0000" x="167" y="112" width="58" height="56" frameX="0" frameY="0" frameWidth="58" frameHeight="56" />
+<SubTexture name="MissRight0001" x="0" y="168" width="58" height="56" frameX="0" frameY="0" frameWidth="58" frameHeight="56" />
+<SubTexture name="MissUp0000" x="58" y="168" width="53" height="64" frameX="0" frameY="0" frameWidth="53" frameHeight="64" />
+<SubTexture name="MissUp0001" x="111" y="168" width="53" height="64" frameX="0" frameY="0" frameWidth="53" frameHeight="64" />
+<SubTexture name="Right0000" x="164" y="168" width="58" height="56" frameX="0" frameY="0" frameWidth="58" frameHeight="56" />
+<SubTexture name="Right0001" x="0" y="232" width="58" height="56" frameX="0" frameY="0" frameWidth="58" frameHeight="56" />
+<SubTexture name="Up0000" x="58" y="232" width="53" height="64" frameX="0" frameY="0" frameWidth="53" frameHeight="64" />
+<SubTexture name="Up0001" x="111" y="232" width="53" height="64" frameX="0" frameY="0" frameWidth="53" frameHeight="64" />
+</TextureAtlas>

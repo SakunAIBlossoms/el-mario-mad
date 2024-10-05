@@ -293,7 +293,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 			case 'Oneshots':
 				canciones = [
 					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
-					['A stupid video', 'Petscop-2-remix', '0'],
+					['A stupid video', 'A-stupid-video', '0'],
 					['Starry Night', 'Headache-remix', '0'],
 					['name pending', 'disassembler-remix', '0'],
 					['The Titans Contract', 'devils-gambit-remix', '0'],

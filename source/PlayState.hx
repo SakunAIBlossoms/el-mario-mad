@@ -954,7 +954,50 @@ class PlayState extends MusicBeatState
 				FlxG.camera.y = -260;
 			}
 		}
-
+		if (curStage == 'youtube')
+			{
+				Lib.application.window.fullscreen = false;
+				Lib.application.window.resizable = false;
+	
+				if (Lib.application.window.maximized == false)
+				{
+					if (Lib.application.window.width == 1280 && Lib.application.window.height == 720)
+					{
+						Lib.application.window.move(winx + 240, winy + 60);
+					}
+				}
+				else
+				{
+					Lib.application.window.maximized = false;
+					Lib.application.window.move(560, 240);
+				}
+				Lib.application.window.resize(800, 600);
+	
+				stream = 1;
+				Lib.application.window.resizable = false;
+	
+				//Lib.current.x = 0;
+				//Lib.current.y = 0;
+				Lib.current.scaleX = 1.3;
+				Lib.current.scaleY = 1.3;
+				var camarasTODAS:Array<FlxCamera> = [camGame, camHUD, camEst, camOther];
+				
+				for (camera in camarasTODAS)
+				{
+					camera.x = -140;
+					FlxG.camera.x = -140;
+	
+					camera.y = -110;
+					FlxG.camera.y = -110;
+				}
+	
+				if (hasDownScroll)
+				{
+					camera.y = -160;
+					FlxG.camera.y = -160;
+				}
+				
+			}
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if (stageData == null)
 		{ // Stage couldn't be found, create a dummy stage for preventing a crash
@@ -1033,6 +1076,23 @@ class PlayState extends MusicBeatState
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 		switch (curStage)
 		{
+			case 'youtube':
+				var bg:BGSprite = new BGSprite('mario/youtube/youtube', 0, 0, 1, 1);
+				add(bg);
+				var blackbars = new FlxSprite().loadGraphic(Paths.image('mario/youtube/blackbars'));
+				blackbars.cameras = [camHUD];
+				blackbars.screenCenter();
+				blackbars.scale.x = 1.3;
+				blackbars.scale.y = 1.3;
+				//blackbars.scale = 1.3;
+				add(blackbars);
+				Main.fpsVar.visible = false;
+				DAD_CAM_X = 730;
+				DAD_CAM_Y = 400;
+				BF_CAM_X = 730;
+				BF_CAM_Y = 300;
+				DAD_ZOOM = 0.7;
+				BF_ZOOM = 0.7;
 			case 'stage': // Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -5343,6 +5403,8 @@ class PlayState extends MusicBeatState
 				autor = 'Razky vs Rosebloom';
 
 			// Extra songs
+			case 'A stupid video':
+				autor = 'Hazel vs somebody idfk';
 			case 'Ratio Battle':
 				autor = 'Zseven vs Rosebloom';
 			case 'Wicked Woods':
