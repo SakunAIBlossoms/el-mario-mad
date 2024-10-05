@@ -25,7 +25,7 @@ function onBeatHit()
             triggerEvent('Screen Shake','0.35, 0.002','0.35, 0.002')
         end
     end
-    
+
     if curBeat == 245 then
         setProperty("defaultCamZoom", "0.6")
         triggerEvent('Camera Follow Pos', '1470','60')

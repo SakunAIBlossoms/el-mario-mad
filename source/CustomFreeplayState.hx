@@ -25,7 +25,7 @@ using StringTools;
 
 class CustomFreeplayState extends MusicBeatSubstate
 {
-	var options:Array<String> = ['Mainweek', 'Island', 'Woodland', 'Cosmos', 'Heights', 'Classified', 'Legacy', 'Extra'];
+	var options:Array<String> = ['Mainweek', 'Island', 'Woodland', 'Cosmos', 'Heights', 'Classified', 'Oneshots', 'Extra'];
 	public static var canciones:Array<Dynamic> = [];
 	var opValid:Array<Bool> = [ClientPrefs.storySave[0], ClientPrefs.storySave[1], ClientPrefs.storySave[2], ClientPrefs.storySave[3], ClientPrefs.storySave[4], ClientPrefs.storySave[5], ClientPrefs.storySave[9], ClientPrefs.storySave[8]];
 	
@@ -77,7 +77,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 
 		freeplaytext.alpha = 0; freeplaytext.scale.set(0,0);
 		FlxTween.tween(freeplaytext, {'scale.x': 1, 'scale.y': 1, alpha: 1}, .35, {ease: FlxEase.circInOut, startDelay: .2});
-		trace(opValid);
+		//trace(opValid);
 		var imagePortrait:FlxSprite;
 		for (i in 0...options.length)
 		{
@@ -111,7 +111,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 				case 'Extra':
 					imagePortrait.setPosition(736.35, 472.35);
 
-				case 'Legacy':
+				case 'Oneshots':
 					imagePortrait.setPosition(268.70, 472.35);
 
 			}
@@ -132,7 +132,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 		MainMenuState.instance.camZoomMulti = 0.94;
 
 		//FlxTween.cancelTweensOf(MainMenuState.instance.estatica);
-		trace(MainMenuState.instance.estatica.alpha);
+		//trace(MainMenuState.instance.estatica.alpha);
 		//FlxTween.color(MainMenuState.instance.estatica, .8, MainMenuState.instance.estatica.color, 0xFF5E1515);
 
 		FlxG.state.persistentDraw = true;
@@ -290,22 +290,23 @@ class CustomFreeplayState extends MusicBeatSubstate
 					['The Dream', 'the-end', 		'33']
 				];
 			
-			case 'Legacy':
+			case 'Oneshots':
 				canciones = [
-					["It's a me (Original)", 'its-a-me-old', 		'1'],
-					['Golden Land (Original)', 'golden-land-old', 	'2'],
-					['I Hate You (Original)', 'i-hate-you-old', 	'3'],
-					['Powerdown (Original)', 'powerdown-old', 		'4'],
-					['Apparition (Original)', 'apparition-old', 	'5'],
-					['Forbidden Star', 'forbidden-star', 			'39'],
-					['Alone (Original)', 'alone-old', 				'6'],
-					['Race-traitors (Original)', 'racetraitors-old', '7']
+					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
+					['A stupid video', 'Petscop-2-remix', '26'],
+					['Starry Night', 'Headache-remix', '26'],
+					['name pending', 'disassembler-remix', '26'],
+					['The Titans Contract', 'devils-gambit-remix', '26'],
+					['Alcourt Case', 'turnabout-remix', '26'],
+					['Sliced', 'Defeat-remix', '26'],
+					['This GC Theory', 'just-a-theory-remix', '26'],
+					['name pending', 'koopa-karnage-remix', '26'],
+					['name pending', 'silly-billy-remix', '26']			
 				];
-
+			
 			case 'Extra':
 				canciones = [
 					['Unyappable', 'unbeatable', '14'],
-					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
 					['Troller (Original)', 		'dictator-old', 	'42'],
 					['No Focus (Original)', 'no-party-old', '36'],
 					['Overdose (Original)', 'overdue-old', '37'],

@@ -410,7 +410,7 @@ class PauseSubState extends MusicBeatSubstate
 				}
 
 			if(accepted){
-				trace(descArrow.x, descArrow.y);
+				//trace(descArrow.x, descArrow.y);
 			}
 		}
 

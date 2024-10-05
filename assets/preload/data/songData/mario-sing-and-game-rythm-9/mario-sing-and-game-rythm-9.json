@@ -4157,6 +4157,20 @@
 						"Triggers Universal",
 						"1",
 						"full"
+					],
+					[
+						115256.41025641,
+						-1,
+						"Add Subtitle",
+						"Let's have a little break.",
+						"0xFF681CB2"
+					],
+					[
+						116666.666666667,
+						-1,
+						"Add Subtitle",
+						"Seems like you need one.",
+						"0xFF681CB2"
 					]
 				],
 				"lengthInSteps": 16,
@@ -4166,7 +4180,22 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						118205.128205128,
+						-1,
+						"Add Subtitle",
+						"You look like",
+						"0xFF681CB2"
+					],
+					[
+						118717.948717949,
+						-1,
+						"Add Subtitle",
+						"having a rough day!",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4174,7 +4203,22 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						120198.717948718,
+						-1,
+						"Add Subtitle",
+						"Y'know,",
+						"0xFF681CB2"
+					],
+					[
+						120897.435897436,
+						-1,
+						"Add Subtitle",
+						"sometimes in life",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4182,7 +4226,22 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						121589.743589744,
+						-1,
+						"Add Subtitle",
+						"you just need a little break",
+						"0xFF681CB2"
+					],
+					[
+						122435.897435897,
+						-1,
+						"Add Subtitle",
+						"to continue.",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4190,7 +4249,29 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						123237.179487179,
+						-1,
+						"Add Subtitle",
+						"",
+						""
+					],
+					[
+						124102.564102564,
+						-1,
+						"Add Subtitle",
+						"Well,",
+						"0xFF681CB2"
+					],
+					[
+						124871.794871795,
+						-1,
+						"Add Subtitle",
+						"our little break is over!",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4198,7 +4279,22 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						126153.846153846,
+						-1,
+						"Add Subtitle",
+						"Let's get back to",
+						"0xFF681CB2"
+					],
+					[
+						126794.871794872,
+						-1,
+						"Add Subtitle",
+						"The Exciting Mania!",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4206,7 +4302,22 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						128076.923076923,
+						-1,
+						"Add Subtitle",
+						"",
+						""
+					],
+					[
+						128461.538461538,
+						-1,
+						"Add Subtitle",
+						"Can't keep yourself waiting!",
+						"0xFF681CB2"
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -4214,7 +4325,15 @@
 			},
 			{
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						129743.58974359,
+						-1,
+						"Add Subtitle",
+						"",
+						""
+					]
+				],
 				"lengthInSteps": 16,
 				"bpm": 125,
 				"changeBPM": false,
@@ -5694,7 +5813,7 @@
 				],
 				"typeOfSection": 0,
 				"lengthInSteps": 16,
-				"altAnim": false,
+				"altAnim": true,
 				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 120
@@ -5849,7 +5968,7 @@
 				],
 				"typeOfSection": 0,
 				"lengthInSteps": 16,
-				"altAnim": false,
+				"altAnim": true,
 				"mustHitSection": false,
 				"changeBPM": false,
 				"bpm": 120
@@ -5930,7 +6049,7 @@
 				],
 				"typeOfSection": 0,
 				"lengthInSteps": 16,
-				"altAnim": false,
+				"altAnim": true,
 				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 120
@@ -6095,7 +6214,7 @@
 				],
 				"typeOfSection": 0,
 				"lengthInSteps": 16,
-				"altAnim": false,
+				"altAnim": true,
 				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 120
@@ -6709,7 +6828,29 @@
 			{
 				"lengthInSteps": 16,
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						195384.615384616,
+						-1,
+						"Add Subtitle",
+						"Well,",
+						"0xFF681CB2"
+					],
+					[
+						195897.435897436,
+						-1,
+						"Add Subtitle",
+						"looks like",
+						"0xFF681CB2"
+					],
+					[
+						196262.820512821,
+						-1,
+						"Add Subtitle",
+						"our playtime is over.",
+						"0xFF681CB2"
+					]
+				],
 				"altAnim": false,
 				"bpm": 120,
 				"changeBPM": false,
@@ -6725,6 +6866,34 @@
 						"Triggers Universal",
 						"1",
 						"full"
+					],
+					[
+						197243.58974359,
+						-1,
+						"Add Subtitle",
+						"",
+						""
+					],
+					[
+						197948.717948718,
+						-1,
+						"Add Subtitle",
+						"Better luck next time!",
+						"0xFF681CB2"
+					],
+					[
+						198717.948717949,
+						-1,
+						"Add Subtitle",
+						"Better luck next time!..",
+						"0xFF681CB2"
+					],
+					[
+						198333.333333334,
+						-1,
+						"Add Subtitle",
+						"Better luck next time!.",
+						"0xFF681CB2"
 					]
 				],
 				"altAnim": false,
@@ -7606,12 +7775,30 @@
 			},
 			{
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
 				"bpm": 117,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 117,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 117
 			},
 			{
 				"lengthInSteps": 16,

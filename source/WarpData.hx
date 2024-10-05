@@ -541,7 +541,7 @@ class WarpData
 				case 1:
 					elcausa = [		
 						['Start', 							'X', '1', 'X', 'x', 0],
-						['So Cool',							'0', 'X', 'X', '2', 0],
+						['Not Great',							'0', 'X', 'X', '2', 0],
 						['Nourishing Blood', 				'3', 'X', '1', 'X', 1],
 						['MARIO SING AND GAME RYTHM 9', 	'X', '2', 'X', 'X', 2]
 						];

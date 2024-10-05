@@ -5778,8 +5778,8 @@ class PlayState extends MusicBeatState
 		#end
 
 		var daSong:String = Paths.formatToSongPath(curSong);
-		trace(isStoryMode);
-		trace(seenCutscene);
+		//trace(isStoryMode);
+		//trace(seenCutscene);
 		if (isStoryMode && !seenCutscene)
 		{
 			switch (daSong)
