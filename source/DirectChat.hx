@@ -188,6 +188,8 @@ class DirectChat
 				'kennyl',
 				'DeltaZ',
 				'EpsilonU',
+				'DarkXWolf17',
+				'Serial Designation N',
 
 				//ones below here have special messages for their names
 				'Duo',
@@ -263,10 +265,14 @@ class DirectChat
 				case 'Pyrocynical':
 					chosenMessage = "[SPAM] go subscribe to me https://www.youtube.com/@pyrocynical";		
 				case '504brandon':
-					chosenMessage = "I was killed by a sleeping cat smh";
+					if (FlxG.random.bool(50) || chatText.contains("kittysleeper"))
+						chosenMessage = "I was killed by a sleeping cat smh";
 				case 'kittysleeper':
 					if (FlxG.random.bool(50) || chatText.contains("504brandon"))
 						chosenMessage = "Fuck you 504brandon";
+				case 'Serial Designation N':
+					if (FlxG.random.bool(35))
+						chosenMessage = "I love doing anything!";
 			}
 
 			chatText = tagcolor + chosenUsername + ': ' + tagcolor + chosenMessage;

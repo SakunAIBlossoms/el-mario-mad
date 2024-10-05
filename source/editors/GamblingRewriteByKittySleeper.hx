@@ -9,7 +9,6 @@ class GamblingRewriteByKittySleeper extends MusicBeatState {
 	var roll:FlxText;
 	var quit:FlxText;
 	var song:FlxText;
-    var play:FlxText;
 	var canRoll:Bool = true;
 	var randomShitFuck:Bool = false;
 	var switchTextTime:Bool = true;
@@ -31,11 +30,6 @@ class GamblingRewriteByKittySleeper extends MusicBeatState {
 		song.color = 0xff000000;
 		add(song);
 
-        play = new FlxText(175, 320, FlxG.width, "PLAY", 65);
-		play.color = 0xff000000;
-        play.visible = false;
-		add(play);
-
 		roll = new FlxText(FlxG.width * 0.7, 185, FlxG.width, "ROLL", 65);
 		roll.color = 0xff000000;
 		add(roll);
@@ -49,8 +43,6 @@ class GamblingRewriteByKittySleeper extends MusicBeatState {
 		super.update(elapsed);
 
 		if (FlxG.mouse.overlaps(roll) && FlxG.mouse.justPressed && canRoll) {
-			roll.text = "REROLL";
-            play.visible = false;
 			canRoll = false;
 			FlxG.sound.play(Paths.sound("gamble"));
 			randomShitFuck = true;
@@ -66,33 +58,20 @@ class GamblingRewriteByKittySleeper extends MusicBeatState {
 			new flixel.util.FlxTimer().start(timeSwitch, function(time) {
 				if (timeSwitch > 0.19) {
                     song.text = finalSong;
-                    play.visible = true;
-					resetVars();
+					new flixel.util.FlxTimer().start(0.75, function(time) {
+						PlayState.SONG =  Song.loadFromJson(finalSong.toLowerCase(), finalSong.toLowerCase());
+						PlayState.isStoryMode = false;
+						LoadingState.loadAndSwitchState(new PlayState());	
+					});
 				} else {
                     switchTextTime = true;
 					if (FlxG.random.bool(65))
 						timeSwitch += 0.0015;
                 } 
-
-				trace(timeSwitch);
 			});
 		}
 
-        if (FlxG.mouse.overlaps(play) && FlxG.mouse.justPressed) {
-            try {
-                PlayState.SONG =  Song.loadFromJson(finalSong.toLowerCase(), finalSong.toLowerCase());
-				PlayState.isStoryMode = false;
-                LoadingState.loadAndSwitchState(new PlayState());
-            } catch(e) {trace(e);}
-        }
-
 		if (FlxG.mouse.overlaps(quit) && FlxG.mouse.justPressed)
 			FlxG.switchState(new MainMenuState());
-	}
-
-	function resetVars() {
-		randomShitFuck = false;
-		canRoll = true;
-		timeSwitch = 0.1;
 	}
 }

@@ -15206,6 +15206,17 @@ class PlayState extends MusicBeatState
 				animToPlay = 'singRIGHTmiss';
 		}
 
+		if (PlayState.SONG.song.toLowerCase() == "not great") {
+			var tomato = new FlxSprite(FlxG.random.float(0, FlxG.width), FlxG.random.float(0, FlxG.height));
+			tomato.frames = Paths.getSparrowAtlas("tomato");
+			tomato.animation.addByPrefix("kitty", " tomato", 30, false);
+			tomato.animation.play("kitty");
+			tomato.scale.set(2.1, 2.1);
+			tomato.cameras = [camHUD];
+			FlxTween.tween(tomato, {alpha: 0, y: tomato.y + 100}, 0.45, {ease: FlxEase.backInOut, startDelay: FlxG.random.float(0.5, 10.5), onComplete: function(tween){tomato.destroy();}});
+			add(tomato);
+		}
+
 		if (curStage == 'forest' || curStage == 'hatebg' && PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
 		{
 			capenose.animation.play('miss');
