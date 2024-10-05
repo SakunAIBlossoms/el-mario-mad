@@ -111,7 +111,10 @@ class DirectChat
 				'meow',
 				'watch bocchi the rock',
 				'i love impostor v4',
-				'watch the friday night foundation trailer'
+				'watch the friday night foundation trailer',
+				'IM GONNA GETCHA',
+				'Fortnite',
+				'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 			];
 			
 			var usernames:Array<String> = [
@@ -122,6 +125,7 @@ class DirectChat
 				'krisyphuss',
 				'neonspiderr',
 				'kittysleeper',
+				'504brandon', //my old name lmafo
 				'soggysteve',
 				'THE DIVINE',
 				'zseventeenpencec',
@@ -257,8 +261,12 @@ class DirectChat
 					}
 
 				case 'Pyrocynical':
-					chosenMessage = "[SPAM] go subscribe to me https://www.youtube.com/@pyrocynical";				
-		
+					chosenMessage = "[SPAM] go subscribe to me https://www.youtube.com/@pyrocynical";		
+				case '504brandon':
+					chosenMessage = "I was killed by a sleeping cat smh";
+				case 'kittysleeper':
+					if (FlxG.random.bool(50) || chatText.contains("504brandon"))
+						chosenMessage = "Fuck you 504brandon";
 			}
 
 			chatText = tagcolor + chosenUsername + ': ' + tagcolor + chosenMessage;

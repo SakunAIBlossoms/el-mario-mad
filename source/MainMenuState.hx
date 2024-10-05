@@ -531,7 +531,6 @@ class MainMenuState extends MusicBeatState {
 				var key:FlxKey = FlxG.keys.firstJustPressed();
 				typin += keyInput(key);
 				// i think we need to do stuff here? not sure
-				trace(typin);
 				switch(typin){
 					case 'garlic':
 						typin = '';

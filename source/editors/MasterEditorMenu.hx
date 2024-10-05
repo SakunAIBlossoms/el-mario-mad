@@ -12,7 +12,6 @@ import flixel.math.FlxMath;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import editors.GamblingMenuTest;
 
 using StringTools;
 
@@ -80,7 +79,7 @@ class MasterEditorMenu extends MusicBeatState
 				case 'Character Editor':
 					LoadingState.loadAndSwitchState(new CharacterEditorState(Character.DEFAULT_CHARACTER, false));
 				case 'GAMBLING TEST MENU FUCK YEAH':
-					LoadingState.loadAndSwitchState(new GamblingMenuTest());
+					LoadingState.loadAndSwitchState(new editors.GamblingRewriteByKittySleeper());
 			}
 			FlxG.sound.music.volume = 0;
 		}
