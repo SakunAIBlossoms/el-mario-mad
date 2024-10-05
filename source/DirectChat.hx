@@ -47,18 +47,143 @@ class DirectChat
 				'Who is the girl at the back?',
 				'Zseven.webp',
 				'WE GOT TGCI MOVIE BEFORE NOT GREAT',
-				'bwa'
+				'bwa',
+				'yall wanna hop on bloons',
+				'will you play afternight later?',
+				'yooo zseven',
+				'alr',
+				'ITS THE GOAT OMG',
+				'lmao',
+				'LMAOOOO',
+				'what',
+				'L',
+				'W',
+				'no way',
+				'can you play fnaf',
+				'what happened to taiki',
+				'is that zseven',
+				'is the guy from fortnite',
+				'are you the guy from fnf?',
+				':fish:',
+				'this is peak',
+				'oh',
+				'wait its a banger??',
+				'BROOO????',
+				'hi rose',
+				'its zsover',
+				'love this man',
+				'thats cool',
+				'he looks like the level 2 guy ',
+				'this is just not great',
+				'how',
+				'Yeaaaa',
+				'hi',
+				'they couldnt even get the actual zseven to voice zseven bro wtf',
+				'who the fuck is this guy',
+				'this movie is gonna suck',
+				'what the fuck',
+				'WHAAAAAAAAAT',
+				'what the fuck who cooked',
+				'i wonder who taiki is?',
+				'bruh',
+				'hi',
+				'i was here',
+				'ratio',
+				'you fell off',
+				'hi youtube',
+				'ngl the girl in the back is kinda hot',
+				'i love women',
+				'i love fat bitches',
+				'legit who is this guy',
+				'marios madness is better',
+				'im gonna jump',
+				'piracy is a party',
+				'adobe animate sucks',
+				'will you go gambling later?',
+				'the divine solos',
+				'follow tgci on twitter',
+				'the divine please strike these individuals down',
+				'i believe in alcretism',
+				'there should be an fnf mod of this',
+				'convert to alcretism',
+				'this song took 2 months to make',
+				'who gaf',
+				'meow',
+				'watch bocchi the rock',
+				'i love impostor v4',
+				'watch the friday night foundation trailer'
 			];
 			
 			var usernames:Array<String> = [
-				'Razky',
-				'Dataleak',
+				'razky.',
+				'dataleak_',
 				'Yin',
-				'Taiki',
-				'Kris',
-				'Neon',
-				'Rem',
+				'taiki._.',
+				'krisyphuss',
+				'neonspiderr',
 				'kittysleeper',
+				'soggysteve',
+				'THE DIVINE',
+				'zseventeenpencec',
+				'lazybones94',
+				'COOLSKELETON95',
+				'FabulousKillerRobot',
+				'ryanNTF',
+				'dutchNTF',
+				'kangjeonNTF',
+				'blueballboy',
+				'girlfriend',
+				'pico',
+				'senpai',
+				'maninatank95',
+				'darnell',
+				'nene',
+				'kris',
+				'aubrey',
+				'thompson',
+				'orangejoelover1111',
+				'jonesy',
+				'holidaygirl225',
+				'[[Number1RatedSalesman1997]]',
+				'slicer',
+				'monke',
+				'guitarhero',
+				'ryo',
+				'kita',
+				'nijika',
+				'ZX',
+				'sogu',
+				'milly',
+				'yuika',
+				'NAPSTABLOOK22',
+				'blahaj',
+				'kingfluffybuns201',
+				'StrongFish91',
+				'vaporthecube',
+				'flowery201',
+				'#1firecat',
+				'WolfeyVGC',
+				'PlushtrapDev',
+				'kimi',
+				'dartmonkeybtd6',
+				'wil.meow',
+				'themadoverlord',
+				'dukeofpuzzlesRK603',
+				'goldenboy43',
+				'besttroller33',
+				'Q5U4EX7YY2E9N',
+				'strongestsenator0704',
+				'fallenhuman201',
+				'dontlookatme096',
+				'chaosclown33',
+				'primesoul88',
+				'inkdemon97',
+				'indestructiblereptile682',
+				'shayy',
+				'raul',
+				'kennyl',
+				'DeltaZ',
+				'EpsilonU',
 
 				//ones below here have special messages for their names
 				'Duo',
@@ -98,6 +223,39 @@ class DirectChat
 						case 3:
 							chosenMessage = "[SPAM] go play afternight ours is better";
 					}
+				case 'DeltaZ':
+					chosenMessage = "are you fucking kidding me";
+				case 'EpsilonU':
+					chosenMessage = "are you fucking kidding me";
+				case 'yinnystar':
+					chosenMessage = "THIS BITCH IS :fearful:";
+				case 'wil.meow':
+					switch (FlxG.random.int(1,4)){
+						case 1:
+							chosenMessage = "hop on project afternight";
+						case 2:
+							chosenMessage = "hi im wil";
+						case 3:
+							chosenMessage = "bwaaaa";
+						case 4:
+							chosenMessage = "go stream bwa on soundcloud";
+					}
+				case 'kimi':
+					chosenMessage = "hop on project afternight";
+				case 'dataleak_':
+					switch (FlxG.random.int(1,5)){
+						case 1:
+							chosenMessage = "hop on project afternight";
+						case 2:
+							chosenMessage = "i will pay you 4 cents to stream minecraft parkour civilisation";
+						case 3:
+							chosenMessage = "I coded all this shit btw totally all me i totally didnt just modify the source code :3";
+						case 4:
+							chosenMessage = "this took a while";
+						case 5:
+							chosenMessage = "Wow we actually got not great done im suprised";
+					}
+
 				case 'Pyrocynical':
 					chosenMessage = "[SPAM] go subscribe to me https://www.youtube.com/@pyrocynical";				
 		

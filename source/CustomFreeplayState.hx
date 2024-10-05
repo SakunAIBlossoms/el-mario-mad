@@ -246,10 +246,11 @@ class CustomFreeplayState extends MusicBeatSubstate
 				];
 				if(ClientPrefs.storySave[7]){
 					canciones.push(['All-Stars', 'all-stars', '9']);
+					canciones.push(['Endgame', 'endgame', '9']);
 				}
 			case 'Island':
 				canciones = [
-					['Not Great', 'so-cool', '8'],
+					['Not Great', 'not-great', '8'],
 					['Retro Mayhem', 'nourishing-blood', '16'],
 					['ZSEVEN FUN AND EXCITING MANIA 7', 'mario-sing-and-game-rythm-9', '13']
 				];
@@ -304,6 +305,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 			case 'Extra':
 				canciones = [
 					['Unyappable', 'unbeatable', '14'],
+					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
 					['Troller (Original)', 		'dictator-old', 	'42'],
 					['No Focus (Original)', 'no-party-old', '36'],
 					['Overdose (Original)', 'overdue-old', '37'],

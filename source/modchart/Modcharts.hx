@@ -33,6 +33,12 @@ class Modcharts {
 
                 modManager.queueSet(4800, "transformX", 0, 0);
                 modManager.queueSet(4800, "transformX", 0, 1);
+            case 'endgame':
+                modManager.queueSet(4544, "transformX", -320, 0);
+                modManager.queueSet(4544, "transformX", 1500, 1);
+
+                modManager.queueSet(4800, "transformX", 0, 0);
+                modManager.queueSet(4800, "transformX", 0, 1);
 
             case 'nourishing blood':
                 var counter:Int = 0;

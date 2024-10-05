@@ -5349,8 +5349,8 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'Bad Day':
 				autor = 'RedTV53';
-			case 'So Cool':
-				autor = 'FriedFrick ft. TheWAHBox';
+			case 'Not Great':
+				autor = 'Razky vs Rosebloom';
 			case 'Nourishing Blood':
 				autor = 'Kenny L';
 			case 'Unbeatable':
@@ -10363,7 +10363,7 @@ class PlayState extends MusicBeatState
 						
 				}
 
-			case 'Triggers So Cool':
+			case 'Triggers Not Great':
 				var triggerP:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerP)) triggerP = 0;
 				switch (triggerP)
@@ -13600,10 +13600,6 @@ class PlayState extends MusicBeatState
 						gfwasTaken.visible = false;
 						FOLLOWCHARS = true;
 						ZOOMCHARS = true;
-						var usernamelol = Sys.environment()["USERNAME"];
-						var superSexySubtitles:FlxText = new FlxText(0,200,0,"Whats the matter ");
-						superSexySubtitles.updateHitbox();
-						superSexySubtitles.screenCenter(X);
 						if (ClientPrefs.noVirtual)
 							{
 							camFollowPos.x = 520;
