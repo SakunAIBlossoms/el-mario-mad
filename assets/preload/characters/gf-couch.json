@@ -1,14 +1,13 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				0,
-				0
+				-3,
+				6
 			],
-			"anim": "danceLeft",
+			"loop": false,
 			"fps": 24,
-			"name": "couch gf dance",
+			"anim": "danceLeft",
 			"indices": [
 				0,
 				1,
@@ -25,17 +24,17 @@
 				12,
 				13,
 				14
-			]
+			],
+			"name": "couch gf dance"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				0,
-				0
+				-3,
+				6
 			],
-			"anim": "danceRight",
+			"loop": false,
 			"fps": 24,
-			"name": "couch gf dance",
+			"anim": "danceRight",
 			"indices": [
 				15,
 				16,
@@ -52,31 +51,33 @@
 				27,
 				28,
 				29
-			]
+			],
+			"name": "couch gf dance"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				0,
-				0
+				-3,
+				6
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "sad",
-			"fps": 24,
-			"name": "couch gf cringe",
-			"indices": []
+			"indices": [],
+			"name": "couch gf cringe"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				0,
-				0
+				-3,
+				6
 			],
-			"anim": "scared",
+			"loop": false,
 			"fps": 24,
-			"name": "couch gf cringe",
-			"indices": []
+			"anim": "scared",
+			"indices": [],
+			"name": "couch gf cringe"
 		}
 	],
+	"vocals_file": "",
 	"no_antialiasing": false,
 	"image": "characters/christopher_pratt_gf",
 	"position": [
@@ -95,5 +96,6 @@
 		80
 	],
 	"sing_duration": 4,
-	"scale": 1
+	"scale": 1,
+	"_editor_isPlayer": false
 }

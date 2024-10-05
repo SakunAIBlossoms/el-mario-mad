@@ -4870,7 +4870,7 @@ class PlayState extends MusicBeatState
 		timeBar.alpha = 0;
 		timeBar.visible = !ClientPrefs.hideTime;
 
-		if(PlayState.SONG.song == 'Unbeatable' && isWarp && !ClientPrefs.storySave[8]){
+		if(PlayState.SONG.song == 'Unyappable' && isWarp && !ClientPrefs.storySave[8]){
 			timeBarBG.visible = false;
 			timeBar.visible = false;
 			timeTxt.visible = false;
@@ -5316,69 +5316,69 @@ class PlayState extends MusicBeatState
 		switch (PlayState.SONG.song)
 		{
 			// Story Songs
-			case 'Its a me':
-				autor = 'TheWAHbox\n ft. Sandi and Comodo_';
+			case 'Its Zsover':
+				autor = 'Delta Z vs Rosebloom';
 
-			case 'Starman Slaughter':
-				autor = 'Sandi ft. RedTV53\n FriedFrick and theWAHbox';
+			case 'Genocidal Goat':
+				autor = 'Delta Z vs Rosebloom';
 
-			case 'Golden Land':
-				autor = 'FriedFrick';
+			case 'Desolate World':
+				autor = 'ZB vs Rosebloom';
 
 			case 'All-Stars':
-				autor = 'Kenny L';
+				autor = 'Ultra Z vs Rosebloom';
 
 			// Warp Zone Songs
-			case 'Oh God No':
-				autor = 'Kenny L';
-			case 'I Hate You':
-				autor = 'Kenny L';
-			case 'Powerdown':
-				autor = 'Kenny L ft. TaeSkull';
-			case 'Demise':
-				autor = 'Kenny L';
-			case 'Alone':
-				autor = 'RedTV53';
-			case 'Apparition':
-				autor = 'FriedFrick';
+			case 'Oh Fuck No':
+				autor = 'Zseven vs Taiki';
+			case 'Fuck You':
+				autor = 'Taiki vs Rosebloom';
+			case 'Chokehold':
+				autor = 'ZX vs Rosebloom';
+			case 'Suffering':
+				autor = 'Rosebloom vs ZX';
+			case 'Suicide':
+				autor = 'Taiki vs Rosebloom';
+			case 'Decapitation':
+				autor = 'Razky vs Rosebloom';
 
 			// Extra songs
-			case 'Racetraitors':
-				autor = 'Kenny L';
-			case 'Dark Forest':
-				autor = 'Kenny L';
-			case 'Bad Day':
-				autor = 'RedTV53';
+			case 'Ratio Battle':
+				autor = 'Zseven vs Rosebloom';
+			case 'Wicked Woods':
+				autor = 'Yuika vs Rosebloom';
+			case 'Awful Noon':
+				autor = 'Zseven vs Rosebloom';
 			case 'Not Great':
 				autor = 'Razky vs Rosebloom';
-			case 'Nourishing Blood':
-				autor = 'Kenny L';
-			case 'Unbeatable':
-				autor = 'RedTV53\n ft. theWAHbox and scrumbo_';
-			case 'Paranoia':
-				autor = 'Sandi ft. Kenny L';
-			case 'Day Out':
-				autor = 'TheWAHBox';
-			case 'Thalassophobia':
-				autor = 'Hazy ft. TaeSkull';
-			case 'Promotion':
-				autor = 'Sandi';
-			case 'Dictator':
-				autor = 'Kenny L';
-			case 'Last Course':
-				autor = 'FriedFrick ft. Sandi';
-			case 'No Hope':
-				autor = 'FriedFrick';
-			case 'The End':
-				autor = 'Kenny L';
-			case 'MARIO SING AND GAME RYTHM 9':
-				autor = 'TaeSkull';
-			case 'Overdue':
-				autor = 'FriedFrick ft. Sandi';
-			case 'Abandoned':
-				autor = 'TheWAHBox ft. FriedFrick';
-			case 'No Party':
-				autor = 'Kenny L';
+			case 'Retro Mayhem':
+				autor = 'Alcrete vs Rosebloom';
+			case 'Unyappable':
+				autor = '???????\n ft. theWAHbox and scrumbo_';
+			case 'Intrusive Thoughts':
+				autor = 'Mr. Z vs Rosebloom';
+			case 'Gang In':
+				autor = 'Neon, Proto, Data, Kitty';
+			case 'Claustrophobia':
+				autor = 'Taiki vs Rosebloom';
+			case 'Eradication':
+				autor = 'Zseven vs Rosebloom';
+			case 'Troller':
+				autor = 'Troller vs Rosebloom';
+			case 'Final Whip':
+				autor = 'Monke vs Rosebloom';
+			case 'Bloodlust':
+				autor = 'Slicer vs Rosebloom';
+			case 'The Dream':
+				autor = 'Zseven vs Rosebloom';
+			case 'ZSEVEN FUN AND EXCITING MANIA 7':
+				autor = 'Ysix vs Rosebloom';
+			case 'Overdose':
+				autor = 'Mr. T vs Rosebloom';
+			case 'Forgotten':
+				autor = 'Taiki vs Rosebloom';
+			case 'No Focus':
+				autor = 'Alcrete vs Rosebloom';
 
 			// Old Songs
 			case 'Forbidden Star':
@@ -5399,8 +5399,8 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'Overdue Old':
 				autor = 'Hazy';
-			case 'No Party Old':
-				autor = 'Joey Perleoni ft. RedTV53';
+			case 'No Focus Old':
+				autor = 'Alcrete vs Rosebloom';
 			case 'All-Stars Old':
 				autor = 'Kenny L';
 			case 'Demise Old':
@@ -9839,7 +9839,7 @@ class PlayState extends MusicBeatState
 								act1Fog.visible = false;
 								//part 1
 								titleText.text = 'All-Stars (Act 2)';
-								autorText.text = 'Sandi ft. Kenny L';
+								autorText.text = 'Omega U vs Rosebloom';
 
 								blackBarThingie.alpha = 1;
 								camHUD.alpha = 0;
@@ -9985,7 +9985,7 @@ class PlayState extends MusicBeatState
 								resyncVocals();
 
 								titleText.text = 'All-Stars (Act 3)';
-								autorText.text = 'Scrumbo_ ft. FriedFrick';
+								autorText.text = 'CX vs Rosebloom';
 
 								triggerEventNote('Change Character', '0', 'bfASsad');
 								triggerEventNote('Change Character', '1', 'gx');
@@ -10089,7 +10089,7 @@ class PlayState extends MusicBeatState
 								//act 4
 								resyncVocals();
 								titleText.text = 'All-Stars (Act 4)';
-								autorText.text = 'FriedFrick\n ft. theWAHbox and RedTV53';
+								autorText.text = 'Ultra Z vs Rosebloom';
 
 								ZOOMCHARS = true;
 								FOLLOWCHARS = true;
@@ -12261,7 +12261,7 @@ class PlayState extends MusicBeatState
 				}
 
 			// TODO: finish unbeatable end event
-			case 'Triggers Unbeatable':
+			case 'Triggers Unyappable':
 				var triggerMR:Float = Std.parseFloat(value1);
 				var triggerMR2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(triggerMR2))
@@ -12286,7 +12286,7 @@ class PlayState extends MusicBeatState
 							eventTweens.push(FlxTween.tween(iconP2, {alpha: 0}, 2, {ease: FlxEase.quadInOut}));
 						case 2:
 							titleText.text = 'Unyappable(Level 2)';
-							autorText.text = 'Razky VS Rosebloom';
+							autorText.text = 'RAXE VS Rosebloom';
 							var weanose:Float;
 							weanose = dad.y;
 							dad.alpha = 1;
@@ -12443,7 +12443,7 @@ class PlayState extends MusicBeatState
 									triggerEventNote('Change Character', '1', 'hunter');
 								case 1:
 									triggerEventNote('Change Character', '2', 'hunter');
-									triggerEventNote('Triggers Unbeatable', '30', '');
+									triggerEventNote('Triggers Unyappable', '30', '');
 									healthBar.createFilledBar(FlxColor.fromRGB(gf.healthColorArray[0], gf.healthColorArray[1], gf.healthColorArray[2]),
 										FlxColor.fromRGB(boyfriend.healthColorArray[0], boyfriend.healthColorArray[1], boyfriend.healthColorArray[2]));
 									GF_CAM_X = DAD_CAM_X;
@@ -12455,7 +12455,7 @@ class PlayState extends MusicBeatState
 									dad.alpha = 0.00001;
 								case 2:
 									triggerEventNote('Change Character', '1', 'mrSYS');
-									triggerEventNote('Triggers Unbeatable', '30', '');
+									triggerEventNote('Triggers Unyappable', '30', '');
 									dad.alpha = 1;
 									dad.y += 1000;
 									remove(gfGroup);
@@ -12485,7 +12485,7 @@ class PlayState extends MusicBeatState
 							switch(triggerMR2){
 								case 0:
 									triggerEventNote('Change Character', '1', 'koopa');
-									triggerEventNote('Triggers Unbeatable', '30', '');
+									triggerEventNote('Triggers Unyappable', '30', '');
 									estatica.alpha = 0.6;
 									eventTweens.push(FlxTween.tween(estatica, {alpha: 0.05}, 0.5, {ease: FlxEase.quadInOut}));
 								case 1:
@@ -12604,7 +12604,7 @@ class PlayState extends MusicBeatState
 							insert(members.indexOf(ycbuWhite) + 1, beatText);
 							FlxTween.tween(camHUD, {alpha: 0}, 0.5, {ease: FlxEase.quadInOut});
 							FlxTween.tween(ycbuWhite, {alpha: 1}, 0.5, {ease: FlxEase.quadInOut, onComplete: function(twn:FlxTween){
-								triggerEventNote('Triggers Unbeatable', '5.5', 'cheese');
+								triggerEventNote('Triggers Unyappable', '5.5', 'cheese');
 							}});
 						case 17:
 							switch(triggerMR2){
@@ -12622,7 +12622,7 @@ class PlayState extends MusicBeatState
 									FlxTween.tween(dadGroup, {alpha: 1}, 0.75, {ease: FlxEase.cubeOut});
 								case 2:
 									triggerEventNote('Change Character', '1', 'mrSYS');
-									triggerEventNote('Triggers Unbeatable', '15', '');
+									triggerEventNote('Triggers Unyappable', '15', '');
 									FlxTween.tween(ycbuWhite, {alpha: 0}, 0.25, {ease: FlxEase.quadOut});
 									FlxTween.tween(camHUD, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 
@@ -12659,7 +12659,7 @@ class PlayState extends MusicBeatState
 							blackinfrontobowser.alpha = 0.85;
 							cutbg.visible = cutskyline.visible = cutstatic.visible = false;
 						case 20:
-							triggerEventNote('Triggers Unbeatable', '5.5', '');
+							triggerEventNote('Triggers Unyappable', '5.5', '');
 							triggerEventNote('Change Character', '1', 'mrSYS');
 							blackinfrontobowser.alpha = 0;
 							ycbuWhite.alpha = ycbuGyromite.alpha = ycbuLakitu.alpha = 1;
@@ -12714,7 +12714,7 @@ class PlayState extends MusicBeatState
 							remove(otherBeatText);
 							insert(members.indexOf(ycbuLakitu) - 1, otherBeatText);
 							insert(members.indexOf(otherBeatText) - 1, ycbuWhite);
-							triggerEventNote('Triggers Unbeatable', '30', '0.5');
+							triggerEventNote('Triggers Unyappable', '30', '0.5');
 							ycbuGyromite.alpha = 0;
 							ycbuLakitu.alpha = 0;
 							ycbuWhite.alpha = 1;
@@ -12761,7 +12761,7 @@ class PlayState extends MusicBeatState
 							clownCar.screenCenter();
 							clownCar.y += 175;
 							clownCar.color = FlxColor.BLACK;
-							triggerEventNote('Triggers Unbeatable', '5.5', 'cheese');
+							triggerEventNote('Triggers Unyappable', '5.5', 'cheese');
 							dad.alpha = 0;
 							eventTimers.push(new FlxTimer().start(0.25, function(tmr:FlxTimer)
 								{
@@ -12969,7 +12969,7 @@ class PlayState extends MusicBeatState
 							switch(triggerMR2){
 								case 0:
 									ycbuPodoboo.setPosition(FlxG.random.int(125, 275), 900);
-									triggerEventNote('Triggers Unbeatable', '32', '2');
+									triggerEventNote('Triggers Unyappable', '32', '2');
 									if(ClientPrefs.flashing){
 										eventTweens.push(FlxTween.color(duckbg, 0.5, 0xFF740000, FlxColor.BLACK, {ease: FlxEase.quadOut}));
 										triggerEventNote('Add Camera Zoom', '0.006', '');
@@ -14266,7 +14266,7 @@ class PlayState extends MusicBeatState
 							#end
 						}
 
-						if(PlayState.SONG.song == 'Unbeatable'){
+						if(PlayState.SONG.song == 'Unyappable'){
 							newName = titleText.text;
 							Lib.application.window.title = "Friday Night Funkin': This GC's Insanity | Unyappable | Taiki";
 							autor = autorText.text;
@@ -14608,7 +14608,7 @@ class PlayState extends MusicBeatState
 					WarpState.pipeCut = true;
 					ClientPrefs.worlds[4] = 3; 
 				}
-				case 'Unbeatable':
+				case 'Unyappable':
 					ClientPrefs.storySave[8] = true;
 				default:
 					if(WarpState.worldSelected == (ClientPrefs.worlds[(WarpState.curSelected - 1)] + 1)){

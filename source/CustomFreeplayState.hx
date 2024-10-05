@@ -241,8 +241,8 @@ class CustomFreeplayState extends MusicBeatSubstate
 		{
 			case 'Mainweek':
 				canciones = [
-					["It's Zsover", 'its-a-me', '26'],
-					["Genocidal Goat", 'starman-slaughter', '34'],
+					["It's Zsover", 'its-zsover', '26'],
+					["Genocidal Goat", 'genocidal-goat', '34'],
 				];
 				if(ClientPrefs.storySave[7]){
 					canciones.push(['All-Stars', 'all-stars', '9']);
@@ -251,64 +251,64 @@ class CustomFreeplayState extends MusicBeatSubstate
 			case 'Island':
 				canciones = [
 					['Not Great', 'not-great', '8'],
-					['Retro Mayhem', 'nourishing-blood', '16'],
-					['ZSEVEN FUN AND EXCITING MANIA 7', 'mario-sing-and-game-rythm-9', '13']
+					['Retro Mayhem', 'retro-mayhem', '16'],
+					['ZSEVEN FUN AND EXCITING MANIA 7', 'zseven-fun-and-exciting-mania-7', '13']
 				];
 			case 'Woodland':
 				canciones = [
-					['Suicide', 			'alone', 			'22'],
-					['Oh Fuck No', 		'oh-god-no', 		'21'],
-					['Fuck You', 		'i-hate-you', 		'25'],
-					['Claustrophobia',	'thalassophobia',   '31'],
-					['Decapitation', 		'apparition', 		'24'],
-					['Final Whip',		'last-course',      '18'],
-					['Wicked Woods', 	'dark-forest', 		'17']
+					['Suicide', 			'suicide', 			'22'],
+					['Oh Fuck No', 		'oh-fuck-no', 		'21'],
+					['Fuck You', 		'fuck-you', 		'25'],
+					['Claustrophobia',	'claustrophobia',   '31'],
+					['Decapitation', 		'decapitation', 		'24'],
+					['Final Whip',		'final-whip',      '18'],
+					['Wicked Woods', 	'wicked-woods', 		'17']
 				];			
 
 			case 'Cosmos':
 				canciones = [
-					['Awdul Noon', 		'bad-day', 		'12'],
-					['Gang In', 		'day-out', 		'10'],
-					['Troller', 		'dictator', 	'11'],
-					['Ratio Battle', 	'racetraitors', '20'],
-					['Bloodlust',			'no-hope',      '19']
+					['Awdul Noon', 		'awful-noon', 		'12'],
+					['Gang In', 		'gang-in', 		'10'],
+					['Troller', 		'troller', 	'11'],
+					['Ratio Battle', 	'ratio-battle', '20'],
+					['Bloodlust',			'bloodlust',      '19']
 				];
 			case 'Heights':
 				canciones = [
-					['Desolate World', 'golden-land', '28'],
-					['No Focus',		'no-party',         '30'],
-					['Intrusive Thoughts', 'paranoia', '41'],
-					['Overdose',		'overdue',         '35'],
-					['Chokehold', 'powerdown', '27'],
-					['Suffering', 'demise', '23']
+					['Desolate World', 'desolate-world', '28'],
+					['No Focus',		'no-focus',         '30'],
+					['Intrusive Thoughts', 'intrusive-thoughts', '41'],
+					['Overdose',		'overdose',         '35'],
+					['Chokehold', 'chokehold', '27'],
+					['Suffering', 'suffering', '23']
 				];
 
 			case 'Classified':
 				canciones = [
-					['Eradication', 'promotion', 	'15'],
-					['Forgotten', 'abandoned', 	'32'],
-					['The Dream', 'the-end', 		'33']
+					['Eradication', 'eradication', 	'15'],
+					['Forgotten', 'forgotten', 	'32'],
+					['The Dream', 'the-dream', 		'33']
 				];
 			
 			case 'Oneshots':
 				canciones = [
 					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
-					['A stupid video', 'Petscop-2-remix', '26'],
-					['Starry Night', 'Headache-remix', '26'],
-					['name pending', 'disassembler-remix', '26'],
-					['The Titans Contract', 'devils-gambit-remix', '26'],
-					['Alcourt Case', 'turnabout-remix', '26'],
-					['Sliced', 'Defeat-remix', '26'],
-					['This GC Theory', 'just-a-theory-remix', '26'],
-					['name pending', 'koopa-karnage-remix', '26'],
-					['name pending', 'silly-billy-remix', '26']			
+					['A stupid video', 'Petscop-2-remix', '0'],
+					['Starry Night', 'Headache-remix', '0'],
+					['name pending', 'disassembler-remix', '0'],
+					['The Titans Contract', 'devils-gambit-remix', '0'],
+					['Alcourt Case', 'turnabout-remix', '0'],
+					['Sliced', 'Defeat-remix', '0'],
+					['This GC Theory', 'just-a-theory-remix', '0'],
+					['name pending', 'koopa-karnage-remix', '0'],
+					['name pending', 'silly-billy-remix', '0']			
 				];
 			
 			case 'Extra':
 				canciones = [
-					['Unyappable', 'unbeatable', '14'],
+					['Unyappable', 'unyappable', '14'],
 					['Troller (Original)', 		'dictator-old', 	'42'],
-					['No Focus (Original)', 'no-party-old', '36'],
+					['No Focus (Original)', 'no-focus-old', '36'],
 					['Overdose (Original)', 'overdue-old', '37'],
 					['Time Out (Demise Original)', 'demise-old', '40'],
 					['All Stars Act 1 (Original)', 'all-stars-old', '38']
