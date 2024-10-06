@@ -1709,7 +1709,7 @@
 					[
 						44137.9310344828,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"3",
 						""
 					]
@@ -1732,28 +1732,28 @@
 					[
 						45517.2413793104,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"4",
 						"1"
 					],
 					[
 						45862.0689655173,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"4",
 						""
 					],
 					[
 						46206.8965517242,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"4",
 						""
 					],
 					[
 						46551.7241379311,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"4",
 						""
 					],
@@ -1833,7 +1833,7 @@
 					[
 						46896.5517241379,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"5",
 						""
 					]
@@ -6413,7 +6413,7 @@
 					[
 						164899.425287356,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"0",
 						""
 					]
@@ -8503,7 +8503,7 @@
 					[
 						193793.103448276,
 						-1,
-						"Triggers Powerdown",
+						"Triggers Chokehold",
 						"6",
 						""
 					]

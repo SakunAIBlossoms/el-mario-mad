@@ -1603,14 +1603,14 @@ class PlayState extends MusicBeatState
 					add(midsongVid);
 				}
 
-			case 'hatebg': // Luigi I hate You
+			case 'hatebg': // Luigi Fuck You
 
 				noCount = true;
 				noHUD = true;
 
 				var cosomario:String = '';
 
-				if (PlayState.SONG.song == 'Oh God No')
+				if (PlayState.SONG.song == 'Oh Fuck No')
 				{
 					flipchar = true;
 					gfGroup.alpha = 0.000001;
@@ -1628,7 +1628,7 @@ class PlayState extends MusicBeatState
 					
 				}
 
-				if(PlayState.SONG.song == 'I Hate You Old'){
+				if(PlayState.SONG.song == 'Fuck You Old'){
 					GameOverSubstate.loopSoundName = 'gameOver';
 					GameOverSubstate.endSoundName = 'gameOverEnd';
 
@@ -1660,7 +1660,7 @@ class PlayState extends MusicBeatState
 				bgsign.antialiasing = ClientPrefs.globalAntialiasing;
 				add(bgsign);
 
-				if (PlayState.SONG.song == 'Oh God No'){
+				if (PlayState.SONG.song == 'Oh Fuck No'){
 				fire1  = new BGSprite('mario/IHY/OGN_Fireball', FlxG.random.float(-900, 230), -1200, 1.5, 1.5, ['flame'], true);
 				fire1.antialiasing = ClientPrefs.globalAntialiasing;
 				fire1.animation.addByPrefix('idle', 'flame', 21, true);
@@ -1695,7 +1695,7 @@ class PlayState extends MusicBeatState
 				degrad.antialiasing = ClientPrefs.globalAntialiasing;
 				add(degrad);
 
-				if(PlayState.SONG.song == 'I Hate You Old'){
+				if(PlayState.SONG.song == 'Fuck You Old'){
 
 					GameOverSubstate.loopSoundName = 'gameOver';
 					GameOverSubstate.endSoundName = 'gameOverEnd';
@@ -1763,7 +1763,7 @@ class PlayState extends MusicBeatState
 					eyelessboo3.antialiasing = ClientPrefs.globalAntialiasing;
 					add(eyelessboo3);
 
-					if (PlayState.SONG.song == 'Oh God No'){
+					if (PlayState.SONG.song == 'Oh Fuck No'){
 						var puenteHate:BGSprite = new BGSprite('mario/IHY/PuenteCompleto', -1360, -680);
 						puenteHate.antialiasing = ClientPrefs.globalAntialiasing;
 						add(puenteHate);
@@ -4403,7 +4403,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if(curStage == 'hatebg'){
-			if (PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
+			if (PlayState.SONG.song != 'Fuck You Old' && PlayState.SONG.song != 'Oh Fuck No')
 				{
 					capenose = new BGSprite('characters/MM_IHY_Boyfriend_AssetsFINAL', 1130, 520, ['Capejajacomoelcharter'], false);
 					capenose.animation.addByPrefix('idle', 'Capejajacomoelcharter', 24, true);
@@ -4429,7 +4429,7 @@ class PlayState extends MusicBeatState
 				add(platform2);
 
 			case 'hatebg':
-				if (PlayState.SONG.song == 'Oh God No'){
+				if (PlayState.SONG.song == 'Oh Fuck No'){
 				add(fire2);
 				add(fire1);
 				}
@@ -4657,7 +4657,7 @@ class PlayState extends MusicBeatState
 			// add(act4Spotlight);
 		}
 
-		if (PlayState.SONG.song == 'Oh God No')
+		if (PlayState.SONG.song == 'Oh Fuck No')
 		{
 			boyfriend.shader = new SilhouetteShader(255, 0, 59);
 			dad.shader = new SilhouetteShader(20, 180, 0);
@@ -5111,7 +5111,7 @@ class PlayState extends MusicBeatState
 
 			var cosomario:String = '';
 
-			if (PlayState.SONG.song == 'Oh God No')
+			if (PlayState.SONG.song == 'Oh Fuck No')
 				cosomario = 'M';
 
 			startbf = new FlxSprite().loadGraphic(Paths.image('modstuff/hatestart' + cosomario));
@@ -5171,7 +5171,7 @@ class PlayState extends MusicBeatState
 				lavaEmitter.y = 0;
 			}
 
-			if (PlayState.SONG.song == 'Oh God No'){
+			if (PlayState.SONG.song == 'Oh Fuck No'){
 	
 				introbg  = new BGSprite('mario/IHY/cutscene/ihy_intro_bg', 0, 180, ['ihy intro bg stage no way'], true);
 				introbg.antialiasing = false;
@@ -5472,7 +5472,7 @@ class PlayState extends MusicBeatState
 				autor = 'KINGF0X';
 			case 'Golden Land Old':
 				autor = 'Kenny L';
-			case 'I Hate You Old':
+			case 'Fuck You Old':
 				autor = 'Kenny L';
 			case 'Decapitation Old':
 				autor = 'Kenny L';
@@ -5631,7 +5631,7 @@ class PlayState extends MusicBeatState
 			add(fogbad);
 		}
 
-		if(curStage == 'hatebg' && SONG.song == 'Oh God No'){
+		if(curStage == 'hatebg' && SONG.song == 'Oh Fuck No'){
 			add(susto);
 			add(estatica);
 		}
@@ -5890,7 +5890,7 @@ class PlayState extends MusicBeatState
 				startVideo('overdue_cutscn');				
 			case 'suffering':
 				startVideo('demise_cutscene');
-			case 'i-hate-you':
+			case 'fuck-you':
 				startVideo('ihy_cutscene');
 			case 'eradication':
 				startVideo('promocut');
@@ -6466,7 +6466,7 @@ class PlayState extends MusicBeatState
 				}));
 				}
 			else if(curStage == 'hatebg' || curStage == 'forest'){
-				if(PlayState.SONG.song == 'Oh God No'){
+				if(PlayState.SONG.song == 'Oh Fuck No'){
 				eventTimers.push(new FlxTimer().start(2, function(tmr:FlxTimer)
 					{
 				eventTweens.push(FlxTween.tween(introM, {x: 400}, 1.5, {onComplete: function(twn:FlxTween)
@@ -7703,8 +7703,8 @@ class PlayState extends MusicBeatState
 
 		if (curStage == 'hatebg'
 			&& !boyfriend.animation.curAnim.name.endsWith('miss')
-			&& PlayState.SONG.song != 'I Hate You Old'
-			&& PlayState.SONG.song != 'Oh God No')
+			&& PlayState.SONG.song != 'Fuck You Old'
+			&& PlayState.SONG.song != 'Oh Fuck No')
 		{
 			capenose.animation.play('idle');
 		}
@@ -7724,7 +7724,7 @@ class PlayState extends MusicBeatState
 			Lib.application.window.move(winx, winy);
 		}
 
-		if (PlayState.SONG.song == 'Oh God No')
+		if (PlayState.SONG.song == 'Oh Fuck No')
 		{
 			// cast(boyfriend.shader, SilhouetteShader).update(shaderOGN);
 			// cast(dad.shader, SilhouetteShader).update(shaderOGN);
@@ -8979,7 +8979,7 @@ class PlayState extends MusicBeatState
 					vocals.stop();
 					FlxG.sound.music.stop();
 
-					if (SONG.song == 'I Hate You' || SONG.song == 'Oh God No' && isWarp){
+					if (SONG.song == 'Fuck You' || SONG.song == 'Oh Fuck No' && isWarp){
 						ClientPrefs.deathIHY = true;
 						ClientPrefs.saveSettings();
 					}
@@ -14685,7 +14685,7 @@ class PlayState extends MusicBeatState
 				add(blackthing);
 
 				switch(SONG.song){
-					case 'Thalassophobia':
+					case 'Claustrophobia':
 						if(ClientPrefs.worldsALT[1] == 0){
 							ClientPrefs.worldsALT[1] = 1;
 							}else if(ClientPrefs.worldsALT[1] == 2 && ClientPrefs.worlds[(WarpState.curSelected - 1)] < 4){
@@ -15342,7 +15342,7 @@ class PlayState extends MusicBeatState
 			add(tomato);
 		}
 
-		if (curStage == 'forest' || curStage == 'hatebg' && PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
+		if (curStage == 'forest' || curStage == 'hatebg' && PlayState.SONG.song != 'Fuck You Old' && PlayState.SONG.song != 'Oh Fuck No')
 		{
 			capenose.animation.play('miss');
 		}
@@ -15524,7 +15524,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 			vocals.volume = 0;
-			if (curStage == 'hatebg' && PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
+			if (curStage == 'hatebg' && PlayState.SONG.song != 'Fuck You Old' && PlayState.SONG.song != 'Oh Fuck No')
 			{
 				capenose.animation.play('miss');
 			}
@@ -15561,7 +15561,7 @@ class PlayState extends MusicBeatState
 
 	function goodNoteHit(note:Note):Void
 	{
-		if (curStage == 'hatebg' && PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
+		if (curStage == 'hatebg' && PlayState.SONG.song != 'Fuck You Old' && PlayState.SONG.song != 'Oh Fuck No')
 		{
 			capenose.animation.play('idle');
 		}
@@ -16136,7 +16136,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (curStage == 'hatebg' && PlayState.SONG.song == 'Oh God No')
+		if (curStage == 'hatebg' && PlayState.SONG.song == 'Oh Fuck No')
 			{
 				if(curStep == 1235){
 					camEst.shake(0.01, 0.2); 
@@ -16421,7 +16421,7 @@ class PlayState extends MusicBeatState
 				if (boyfriend.animation.curAnim.name != null && !boyfriend.animation.curAnim.name.startsWith("sing") && boyfriend.animation.curAnim.name != 'death' && boyfriend.animation.curAnim.name != 'hit')
 				{
 					boyfriend.dance();
-					if (curStage == 'hatebg' && PlayState.SONG.song != 'I Hate You Old' && PlayState.SONG.song != 'Oh God No')
+					if (curStage == 'hatebg' && PlayState.SONG.song != 'Fuck You Old' && PlayState.SONG.song != 'Oh Fuck No')
 					{
 						capenose.animation.play('idle');
 					}
@@ -16489,7 +16489,7 @@ class PlayState extends MusicBeatState
 				{
 					blueMario.animation.play('dance', false);
 
-					if(PlayState.SONG.song == 'I Hate You Old'){
+					if(PlayState.SONG.song == 'Fuck You Old'){
 					blueMario.y = 473;
 					blueMario.x = -220;
 					}else{
@@ -16499,7 +16499,7 @@ class PlayState extends MusicBeatState
 				if (curBeat >= 330 && curBeat % 2 == 0)
 				{
 					blueMario2.animation.play('dance', false);
-					if(PlayState.SONG.song == 'I Hate You Old'){
+					if(PlayState.SONG.song == 'Fuck You Old'){
 					blueMario2.y = 473;
 					blueMario2.x = 1100;
 					}else{
@@ -16507,7 +16507,7 @@ class PlayState extends MusicBeatState
 					}
 				}
 
-				if (PlayState.SONG.song == 'Oh God No')
+				if (PlayState.SONG.song == 'Oh Fuck No')
 				{
 
 				}

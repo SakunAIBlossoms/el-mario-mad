@@ -33,6 +33,12 @@ class Modcharts {
                 //modManager.queueSet(0, "transformX", 0, 0);
                 //modManager.queueSet(0, "transformX", 0, 1);
             case 'all-stars':
+                modManager.queueSet(1072, "transformX", -320, 0);
+                modManager.queueSet(1072, "transformX", 1500, 1);
+
+                modManager.queueSet(2256, "transformX", 0, 0);
+                modManager.queueSet(2256, "transformX", 0, 1);
+
                 modManager.queueSet(4544, "transformX", -320, 0);
                 modManager.queueSet(4544, "transformX", 1500, 1);
 
@@ -112,7 +118,7 @@ class Modcharts {
                 }else{
                     modManager.queueEase(2048, 2052, "alpha", 1, 1);
                 }
-            case 'oh god no':
+            case 'oh fuck no':
                 modManager.setValue("alpha", 1, 1);
                 modManager.setValue("opponentSwap", 1);
                 modManager.setValue("transformX", 320, 0);
