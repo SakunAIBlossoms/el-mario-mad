@@ -120,7 +120,7 @@ class StoryMenuState extends MusicBeatSubstate
 		alpOp.alpha = 0;
 		add(alpOp);
 
-		songsText = new FlxText(650, 0, 400, "vs. Super Horror Mario", 32);
+		songsText = new FlxText(650, 0, 400, "vs. Delta Z", 32);
 		songsText.setFormat(Paths.font("mariones.ttf"), 16, FlxColor.RED, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		songsText.scrollFactor.set(1, 1);
 		songsText.updateHitbox();
@@ -132,7 +132,7 @@ class StoryMenuState extends MusicBeatSubstate
 		titleText.updateHitbox();
 		add(titleText);
 
-		if(ClientPrefs.storySave[0]) titleText.text = "Includes\nIt's-a-me\nStarman Slaughter";
+		if(ClientPrefs.storySave[0]) titleText.text = "Includes\nIt's Zsover\nGenocidal Goat";
 
 		startText = new FlxText(800, 600, 400, "Press Enter to Begin", 32);
 		startText.setFormat(Paths.font("mariones.ttf"), 24, FlxColor.RED, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -368,9 +368,9 @@ class StoryMenuState extends MusicBeatSubstate
 		}
 		FlxTween.tween(FlxG.camera, {zoom: 1.3}, 2, {ease: FlxEase.circIn});
 		FlxTween.tween(FlxG.sound.music, {volume: 0}, 2, {ease: FlxEase.circIn});
-		PlayState.storyPlaylist = ['Its a me', 'Starman Slaughter'];
+		PlayState.storyPlaylist = ['Its Zsover', 'Genocidal Goat'];
 		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
-		PauseSubState.tengo = 'its-a-me';
+		PauseSubState.tengo = 'its-zsover';
 		PlayState.storyWeek = 0;
 		PlayState.campaignScore = 0;
 		PlayState.campaignMisses = 0;

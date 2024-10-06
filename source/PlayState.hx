@@ -1,5 +1,5 @@
 package;
-
+// This is the most disgusting and messy freeplay i have EVER had to lay my eyes on - Data
 import FunkinLua;
 import LavaParticle;
 import Section.SwagSection;
@@ -1823,7 +1823,7 @@ class PlayState extends MusicBeatState
 				GameOverSubstate.deathSoundName = 'gameoverwario';
 				warioDead = false;
 
-				if(PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star'){
+				if(PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star'){
 				tvEffect = true;
 				oldTV = true;
 				}
@@ -1833,27 +1833,27 @@ class PlayState extends MusicBeatState
 				bgwario.antialiasing = ClientPrefs.globalAntialiasing;
 				add(bgwario);
 
-				if(PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star'){
+				if(PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star'){
 					
 					GameOverSubstate.deathSoundName = 'Wario/APPdeath';
 					GameOverSubstate.loopSoundName = 'Wario/APPgameover';
 					GameOverSubstate.endSoundName = 'Wario/APPconfirm';
 					specialGameOver = true;
 
-					bftors = new BGSprite('characters/apparitionbf/BFRUNNING_backlegs', 490, 780, ['back0'], true);
+					bftors = new BGSprite('characters/Decapitationbf/BFRUNNING_backlegs', 490, 780, ['back0'], true);
 					bftors.animation.addByPrefix('idle', 'back0', 48, true);
 					bftors.antialiasing = ClientPrefs.globalAntialiasing;
 
-					bfext = new BGSprite('characters/apparitionbf/BFRUNNING_frontlegs', 440, 730, ['frontlegs'], true);
+					bfext = new BGSprite('characters/Decapitationbf/BFRUNNING_frontlegs', 440, 730, ['frontlegs'], true);
 					bfext.animation.addByPrefix('idle', 'front0', 48, true);
 					bfext.antialiasing = ClientPrefs.globalAntialiasing;
 
-					bftorsmiss = new BGSprite('characters/apparitionbf/BFRUNNING_backlegs', 490, 780, ['back fail'], true);
+					bftorsmiss = new BGSprite('characters/Decapitationbf/BFRUNNING_backlegs', 490, 780, ['back fail'], true);
 					bftorsmiss.animation.addByPrefix('idle', 'back fail', 48, true);
 					bftorsmiss.antialiasing = ClientPrefs.globalAntialiasing;
 					bftorsmiss.visible = false;
 
-					bfextmiss = new BGSprite('characters/apparitionbf/BFRUNNING_frontlegs', 440, 730, ['front fail'], true);
+					bfextmiss = new BGSprite('characters/Decapitationbf/BFRUNNING_frontlegs', 440, 730, ['front fail'], true);
 					bfextmiss.animation.addByPrefix('idle', 'front fail', 48, true);
 					bfextmiss.antialiasing = ClientPrefs.globalAntialiasing;
 					bfextmiss.visible = false;
@@ -1861,7 +1861,7 @@ class PlayState extends MusicBeatState
 					bftorsmiss.animation.play('idle');
 					bfextmiss.animation.play('idle');
 
-					bfFall = new BGSprite('mario/Wario/Apparition_Game_Over', boyfriendGroup.x - 70, boyfriendGroup.y + 150, ['bf fall anim'], false);
+					bfFall = new BGSprite('mario/Wario/Decapitation_Game_Over', boyfriendGroup.x - 70, boyfriendGroup.y + 150, ['bf fall anim'], false);
 					bfFall.animation.addByPrefix('fall', "bf fall anim", 24, true);
 					bfFall.scale.set(0.9, 0.9);
 					bfFall.alpha = 0.00001;
@@ -4909,7 +4909,7 @@ class PlayState extends MusicBeatState
 			worldText.visible = !ClientPrefs.hideTime;
 			add(worldText);
 		}
-		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')))
+		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')))
 		{
 			timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 20, 400, "", 32);
 			timeTxt.setFormat(Paths.font("vcr.ttf"), 70, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -5012,7 +5012,7 @@ class PlayState extends MusicBeatState
 			add(scoreTxt);
 		}
 
-		if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')))
+		if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')))
 		{
 			scoreTxt = new FlxText(-100, 565, FlxG.width, "", 100);
 			scoreTxt.setFormat(Paths.font("vcr.ttf"), 70, FlxColor.WHITE, RIGHT);
@@ -5474,7 +5474,7 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'I Hate You Old':
 				autor = 'Kenny L';
-			case 'Apparition Old':
+			case 'Decapitation Old':
 				autor = 'Kenny L';
 			case 'Suicide Old':
 				autor = 'KINGF0X';
@@ -5578,7 +5578,7 @@ class PlayState extends MusicBeatState
 			customHB.visible = false;
 			healthBar.visible = false;
 		}
-		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')))
+		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')))
 		{
 			timeBarBG.visible = false;
 			timeBar.visible = false;
@@ -5621,7 +5621,7 @@ class PlayState extends MusicBeatState
 		if (curStage == 'warioworld')
 		{
 			fogbad = new FlxSprite();
-			fogbad.frames = Paths.getSparrowAtlas('modstuff/Wario_Apparition_Overlay_v1');
+			fogbad.frames = Paths.getSparrowAtlas('modstuff/Wario_Decapitation_Overlay_v1');
 			fogbad.animation.addByPrefix('idle', "WarioOverlay", 24);
 			fogbad.antialiasing = ClientPrefs.globalAntialiasing;
 			fogbad.cameras = [camEst];
@@ -5807,7 +5807,7 @@ class PlayState extends MusicBeatState
 			add(blackHUD2);
 		}
 
-		if (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star'))
+		if (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star'))
 		{
 			// scoreTxt.x += 200;
 			// iconP1.x += 200;
@@ -5869,10 +5869,10 @@ class PlayState extends MusicBeatState
 		{
 			switch (daSong)
 			{
-				case 'its-a-me':
+				case 'its-zsover':
 					startVideo('Itsame_cutscene');
 
-				case 'starman-slaughter' | 'starman slaughter':
+				case 'genocidal-goat' | 'genocidal goat':
 					startVideo('ss_cutscene');
 
 				case 'golden-land':
@@ -5886,15 +5886,15 @@ class PlayState extends MusicBeatState
 		else if(isWarp && !seenCutscene){
 			seenCutscene = true;
 			switch(daSong){
-			case 'overdue':
+			case 'overdose':
 				startVideo('overdue_cutscn');				
-			case 'demise':
+			case 'suffering':
 				startVideo('demise_cutscene');
 			case 'i-hate-you':
 				startVideo('ihy_cutscene');
 			case 'eradication':
 				startVideo('promocut');
-			case 'abandoned':
+			case 'forgotten':
 				startVideo('abandoncut');
 			default:
 				startCountdown();
@@ -6904,7 +6904,7 @@ class PlayState extends MusicBeatState
 						charType = Std.parseInt(event[3]);
 						if (Math.isNaN(charType)) charType = 0;
 				}
-			case 'Triggers Race Traitors':
+			case 'Triggers Ratio Battle':
 				var charType:Int = 0;
 				switch (event[3].toLowerCase())
 				{
@@ -7522,7 +7522,7 @@ class PlayState extends MusicBeatState
 			}
 			ringcount.text = extrazero + ring;
 		}
-		else if (curStage == 'endstage' || (curStage == 'warioworld' && PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star'))
+		else if (curStage == 'endstage' || (curStage == 'warioworld' && PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star'))
 		{
 			var newhealth:Int = Std.int(health * 100);
 			if (newhealth >= 200)
@@ -7530,10 +7530,10 @@ class PlayState extends MusicBeatState
 
 			scoreTxt.text = "H:" + newhealth + "\nS:" + songScore;
 
-			if (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')){
+			if (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')){
 				bftors.visible = bfext.visible = !(bftorsmiss.visible = bfextmiss.visible = boyfriend.animation.curAnim.name.endsWith('miss'));
 				if(warioDead){
-					//apparition game over confirm/exit
+					//Decapitation game over confirm/exit
 					if(controls.ACCEPT){
 						FlxG.sound.music.volume = 0;
 						FlxG.sound.play(Paths.music(GameOverSubstate.endSoundName));
@@ -9076,14 +9076,14 @@ class PlayState extends MusicBeatState
 								}));
 						case 'warioworld':
 							triggerEventNote('Show Song', '1', '');
-							//apparition game over
+							//Decapitation game over
 							eventTweens.push(FlxTween.tween(camGame, {zoom: 1.1}, 0.5, {ease: FlxEase.quadInOut}));
 							eventTweens.push(FlxTween.tween(this, {defaultCamZoom: 1.1}, 0.5, {ease: FlxEase.quadInOut}));
 
 							eventTweens.push(FlxTween.tween(camHUD, {alpha: 0}, 0.5, {ease: FlxEase.quadInOut}));
 							eventTweens.push(FlxTween.tween(FlxG.sound.music, {volume: 0}, 0.5, {ease: FlxEase.quadInOut}));
 
-							var warioOpen:BGSprite = new BGSprite('mario/Wario/Apparition_Game_Over', -65, 65, ['wario open mouth'], false);
+							var warioOpen:BGSprite = new BGSprite('mario/Wario/Decapitation_Game_Over', -65, 65, ['wario open mouth'], false);
 							warioOpen.animation.addByPrefix('open', "wario open mouth", 20, false);
 							warioOpen.animation.addByPrefix('close', "wario bite", 24, false);
 							
@@ -9618,7 +9618,7 @@ class PlayState extends MusicBeatState
 
 				triggerEventNote('Triggers ' + songName, '' + value1, '' + value2);
 
-			case 'Triggers Its a me':
+			case 'Triggers Its Zsover':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -9656,7 +9656,7 @@ class PlayState extends MusicBeatState
 				var border:VCRBorder = new VCRBorder();
 				camHUD.setFilters([new ShaderFilter(border)]);
 				camGame.setFilters([new ShaderFilter(border)]);
-			case 'Triggers Starman Slaughter':
+			case 'Triggers Genocidal Goat':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -10594,7 +10594,7 @@ class PlayState extends MusicBeatState
 						eventTweens.push(FlxTween.tween(this, {defaultCamZoom: 0.8}, (1.9 * (1 / (Conductor.bpm / 60))), {ease: FlxEase.expoIn}));
 				}
 
-			case 'Triggers MARIO SING AND GAME RYTHM 9':
+			case 'Triggers ZSEVEN FUN AND EXCITING MANIA 7':
 				var triggerP:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerP)) triggerP = 0;
 				switch (triggerP)
@@ -10624,7 +10624,7 @@ class PlayState extends MusicBeatState
 							}
 						}
 				}
-			case 'Triggers No Party':
+			case 'Triggers No Focus':
 				var triggerP:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerP)) triggerP = 0;
 				switch (triggerP)
@@ -10691,7 +10691,7 @@ class PlayState extends MusicBeatState
 						thetext.visible = !thetextC.visible;
 				}
 
-			case 'Triggers Last Course':
+			case 'Triggers Final Whip':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -10737,7 +10737,7 @@ class PlayState extends MusicBeatState
 				}
 			
 
-			case 'Triggers No Hope':
+			case 'Triggers Bloodlust':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -10777,7 +10777,7 @@ class PlayState extends MusicBeatState
 						eventTweens.push(FlxTween.tween(powerWarning, {alpha: 0}, 1, {startDelay: vanish}));
 				}
 
-			case 'Triggers Golden Land':
+			case 'Triggers Desolate World':
 				var tiempoN:Float = 0.001;
 				var triggerGL:Float = Std.parseFloat(value1);
 				var blackcoso:Float = Std.parseFloat(value2);
@@ -11142,7 +11142,7 @@ class PlayState extends MusicBeatState
 					}
 				}));
 
-			case 'Triggers Powerdown':
+			case 'Triggers Chokehold':
 				var triggerMX:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMX))
 					triggerMX = 0;
@@ -11179,7 +11179,7 @@ class PlayState extends MusicBeatState
 						}
 
 					case 1:
-						if (PlayState.SONG.song == 'Powerdown Old')
+						if (PlayState.SONG.song == 'Chokehold Old')
 						{
 							eventTweens.push(FlxTween.tween(mxLaugh, {alpha: 0}, 1, {ease: FlxEase.quadInOut}));
 							eventTimers.push(new FlxTimer().start(2, function(tmr:FlxTimer)
@@ -11200,7 +11200,7 @@ class PlayState extends MusicBeatState
 							eventTweens.push(FlxTween.tween(mxLaughNEW, {alpha: 0}, 0.5, {startDelay: 0.2, ease: FlxEase.quadInOut}));
 						}
 					case 2:
-						if (PlayState.SONG.song == 'Powerdown Old')
+						if (PlayState.SONG.song == 'Chokehold Old')
 						{
 							wahooText.alpha = 1;
 							eventTweens.push(FlxTween.angle(wahooText, 0, 40, 2, {ease: FlxEase.quadInOut}));
@@ -11288,7 +11288,7 @@ class PlayState extends MusicBeatState
 						}
 				}
 
-			case 'Triggers Demise':
+			case 'Triggers Suffering':
 				var triggerMX:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMX))
 					triggerMX = 0;
@@ -11422,7 +11422,7 @@ class PlayState extends MusicBeatState
 						demFlash = !demFlash;
 				}
 
-			case 'Triggers Oh God No':
+			case 'Triggers Oh Fuck No':
 				var triggerHate:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerHate))
 					triggerHate = 0;
@@ -11502,7 +11502,7 @@ class PlayState extends MusicBeatState
 
 				}
 
-			case 'Triggers I Hate You':
+			case 'Triggers Fuck You':
 				var triggerHate:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerHate))
 					triggerHate = 0;
@@ -11510,7 +11510,7 @@ class PlayState extends MusicBeatState
 				switch (triggerHate)
 				{
 					case 0:
-						if(PlayState.SONG.song == 'I Hate You Old'){
+						if(PlayState.SONG.song == 'Fuck You Old'){
 							eventTweens.push(FlxTween.tween(eyelessboo, {alpha: 1, x: -100}, 0.6, {ease: FlxEase.quadOut}));
 							eventTweens.push(FlxTween.tween(eyelessboo2, {alpha: 1, x: 1100}, 0.5, {ease: FlxEase.quadOut}));
 							eventTweens.push(FlxTween.tween(eyelessboo3, {alpha: 1, x: 1050}, 0.8, {ease: FlxEase.quadOut}));
@@ -11605,7 +11605,7 @@ class PlayState extends MusicBeatState
 
 				}
 
-			case 'Triggers Apparition':
+			case 'Triggers Decapitation':
 				var triggerWa:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerWa))
 					triggerWa = 0;
@@ -11640,7 +11640,7 @@ class PlayState extends MusicBeatState
 						camOther.visible = false;
 				}
 
-			case 'Triggers Race Traitors':
+			case 'Triggers Ratio Battle':
 				var triggerMR:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMR))
 					triggerMR = 0;
@@ -13284,7 +13284,7 @@ class PlayState extends MusicBeatState
 						eventTweens.push(FlxTween.tween(camHUD, {alpha: 0}, 4));
 				}
 
-			case 'Triggers Abandoned':
+			case 'Triggers Forgotten':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -13403,7 +13403,7 @@ class PlayState extends MusicBeatState
 						extraTween.push(FlxTween.tween(dadGroup, {y: enemyY - 100}, 8, {ease: FlxEase.quadInOut, type: PINGPONG}));
 			}
 
-			case 'Triggers The End':
+			case 'Triggers The Dream':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -13480,7 +13480,7 @@ class PlayState extends MusicBeatState
 						eventTweens.push(FlxTween.tween(camHUD, {alpha: 0}, 1));
 				}
 
-			case 'Triggers Dark Forest':
+			case 'Triggers Wicked Woods':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -13935,7 +13935,7 @@ class PlayState extends MusicBeatState
 						}
 				}
 
-			case 'Triggers Dictator':
+			case 'Triggers Troller':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -14013,7 +14013,7 @@ class PlayState extends MusicBeatState
 						add(secretWarning);
 				}
 
-			case 'Triggers Thalassophobia':
+			case 'Triggers Claustrophobia':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -14070,7 +14070,7 @@ class PlayState extends MusicBeatState
 
 				}
 
-			case 'Triggers Overdue':
+			case 'Triggers Overdose':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -14694,23 +14694,23 @@ class PlayState extends MusicBeatState
 							}
 
 
-				case 'I Hate You':
+				case 'Fuck You':
 					if(ClientPrefs.worldsALT[1] == 0){
 						ClientPrefs.worldsALT[1] = 2;
 					}else if(ClientPrefs.worldsALT[1] == 1 && ClientPrefs.worlds[(WarpState.curSelected - 1)] < 4){
 						ClientPrefs.worlds[(WarpState.curSelected - 1)] = 4;
 						WarpState.unlockpath = true;
 					}
-				case 'Powerdown':
+				case 'Chokehold':
 					if(ClientPrefs.worlds[3] == 4){
 						ClientPrefs.worlds[3] = 5;
 						WarpState.unlockpath = true;
 					}
-				case 'Demise':
+				case 'Suffering':
 					if(ClientPrefs.worlds[3] == 5){
 						ClientPrefs.worlds[3] = 6;
 					}
-				case 'Overdue':
+				case 'Overdose':
 					if(ClientPrefs.worldsALT[3] == 0){
 						ClientPrefs.worldsALT[3] = 1;
 					}else if(ClientPrefs.worldsALT[3] == 2){
@@ -14720,7 +14720,7 @@ class PlayState extends MusicBeatState
 					}
 					WarpState.isPico = true;
 					ClientPrefs.saveSettings();
-				case 'No Party':
+				case 'No Focus':
 					if(ClientPrefs.worldsALT[3] == 0){
 						ClientPrefs.worldsALT[3] = 2;
 					}else if(ClientPrefs.worldsALT[3] == 1){
@@ -14728,7 +14728,7 @@ class PlayState extends MusicBeatState
 						ClientPrefs.worlds[3] = 4;
 						WarpState.unlockpath = true;
 					}
-				case 'The End':
+				case 'The Dream':
 				if(ClientPrefs.worlds[4] == 2){
 					WarpState.pipeCut = true;
 					ClientPrefs.worlds[4] = 3; 
@@ -14784,7 +14784,7 @@ class PlayState extends MusicBeatState
 			else
 			{
 				FlxG.sound.music.stop();
-				if (curSong == 'Racetraitors')
+				if (curSong == 'Ratio Battle')
 				{
 					ClientPrefs.carPass = true;
 					ClientPrefs.saveSettings();
@@ -14858,7 +14858,7 @@ class PlayState extends MusicBeatState
 
 		var xchangetext:Float = 0;
 
-		if (PlayState.SONG.song == 'Oh God No')
+		if (PlayState.SONG.song == 'Oh Fuck No')
 		{
 			xchangetext = -130;
 		}
@@ -14932,7 +14932,7 @@ class PlayState extends MusicBeatState
 			{
 				scoreTxtTween.cancel();
 			}
-			if (curStage != 'somari' && curStage != 'endstage' && curStage != 'piracy' && (curStage != 'warioworld' || PlayState.SONG.song == 'Apparition Old'))
+			if (curStage != 'somari' && curStage != 'endstage' && curStage != 'piracy' && (curStage != 'warioworld' || PlayState.SONG.song == 'Decapitation Old'))
 			{
 				scoreTxt.scale.x = 1.1;
 				scoreTxt.scale.y = 1.1;
@@ -14997,7 +14997,7 @@ class PlayState extends MusicBeatState
 				goodlol = true;
 			}
 		}
-		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')))
+		else if (curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')))
 		{
 			rating.visible = false;
 			for (timer in ratingTimers)
@@ -15039,7 +15039,7 @@ class PlayState extends MusicBeatState
 			rating.antialiasing = false;
 			comboSpr.visible = false;
 		}
-		else if (curStage == "endstage" || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')))
+		else if (curStage == "endstage" || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')))
 		{
 			comboSpr.visible = false;
 		}
@@ -15095,7 +15095,7 @@ class PlayState extends MusicBeatState
 			numScore.velocity.x = FlxG.random.float(-5, 5);
 			numScore.visible = !ClientPrefs.hideHud;
 
-			if (curStage == 'somari' || curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Apparition Old' && PlayState.SONG.song != 'Forbidden Star')) || curStage == "piracy")
+			if (curStage == 'somari' || curStage == 'endstage' || (curStage == 'warioworld' && (PlayState.SONG.song != 'Decapitation Old' && PlayState.SONG.song != 'Forbidden Star')) || curStage == "piracy")
 			{
 				numScore.visible = false;
 			}
@@ -15330,7 +15330,7 @@ class PlayState extends MusicBeatState
 			case 3:
 				animToPlay = 'singRIGHTmiss';
 		}
-
+		//kitty's tomato shit they made for not great its the funniest shit ever LMAO - Data
 		if (PlayState.SONG.song.toLowerCase() == "not great") {
 			var tomato = new FlxSprite(FlxG.random.float(0, FlxG.width), FlxG.random.float(0, FlxG.height));
 			tomato.frames = Paths.getSparrowAtlas("tomato");
