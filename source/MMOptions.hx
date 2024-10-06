@@ -840,7 +840,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 		'Hide HUD',
 		'Hide Song Length',
 		'Flashing Lights',
-		'Camera Zooms'
+		'Camera Zooms',
+		'New Camera Bop'
 		#if !mobile, 'FPS Counter' #end
 	];
 
@@ -1049,6 +1050,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 
 					case 'Hide Song Length':
 						ClientPrefs.hideTime = !ClientPrefs.hideTime;
+					case 'New Camera Bop':
+						ClientPrefs.camBop = !ClientPrefs.camBop;
 				}
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				reloadValues();
@@ -1164,6 +1167,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If checked, hides most HUD elements.";
 			case 'Hide Song Length':
 				daText = "If checked, the bar showing how much time is left\nwill be hidden.";
+			case 'New Camera Bop':
+				daText = "If checked, camera bops will be set to the same\nones as friday night funkin";
 		}
 		descText.text = daText;
 
@@ -1248,6 +1253,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.hideHud;
 					case 'Hide Song Length':
 						daValue = ClientPrefs.hideTime;
+					case 'New Camera Bop':
+						daValue = ClientPrefs.camBop;
 				}
 				checkbox.daValue = daValue;
 			}

@@ -27,6 +27,11 @@ class Modcharts {
     public static function loadModchart(modManager:ModManager, songName:String){
         PlayState.songIsModcharted = true;
         switch (songName.toLowerCase()){
+            case 'a stupid video':
+                modManager.queueSet(0,"transformX", -320, 0);
+                modManager.queueSet(0, "transformX", 1500, 1);
+                //modManager.queueSet(0, "transformX", 0, 0);
+                //modManager.queueSet(0, "transformX", 0, 1);
             case 'all-stars':
                 modManager.queueSet(4544, "transformX", -320, 0);
                 modManager.queueSet(4544, "transformX", 1500, 1);
@@ -40,7 +45,7 @@ class Modcharts {
                 modManager.queueSet(4800, "transformX", 0, 0);
                 modManager.queueSet(4800, "transformX", 0, 1);
 
-            case 'nourishing blood':
+            case 'retro mayhem':
                 var counter:Int = 0;
                 numericForInterval(656, 912, 2, function(step){
                     
@@ -131,7 +136,7 @@ class Modcharts {
                 modManager.queueSet(296 * 4, "opponentSwap", 0.5);
                 modManager.queueSet(296 * 4, "alpha", 1, 1);
                 modManager.queueSet(296 * 4, "flip", -0.25);
-            case 'bad day':
+            case 'awful noon':
                 if(!ClientPrefs.downScroll){
                     for(i in 0...4){
                         modManager.setValue("transform" + i + "Y", 0, 0);
@@ -157,7 +162,7 @@ class Modcharts {
                 }
 
                 PlayState.songIsModcharted = false;
-            case 'no party' | 'no party old':
+            case 'no focus' | 'no focus old':
                 var thex = -983;
                 modManager.setValue("alpha", 1, 1);
                 modManager.setValue("transform0X", thex        , 0);
@@ -170,14 +175,14 @@ class Modcharts {
                     modManager.setValue("transformY", -100, 0);
                 }
 
-            case 'alone':
+            case 'suicide':
                 modManager.setValue("alpha", 1, 0);
                 modManager.setValue("alpha", 0.3, 1);
                 modManager.setValue("drunk", 0.5, 0);
                 modManager.queueEase(192, 208, "alpha", 0.2, 0);
                 modManager.queueEase(160, 184, "alpha", 0, 1);
                 modManager.queueEase(1660, 1704, "alpha", 1, 0);
-            case 'promotion':
+            case 'eradication':
                 modManager.setValue("opponentSwap", 1);
 
                 modManager.queueEase(655, 668, "alpha", 1, 'quadInOut');
@@ -422,7 +427,7 @@ class Modcharts {
                 modManager.queueEase(1760, 1760 + 8, 'alpha2', 1, 'expoIn');
 
                 
-            case 'day out':
+            case 'gang in':
                 modManager.setValue("opponentSwap", 1);
                 
                 modManager.queueEase(460, 467, "opponentSwap", 0, 'backInOut', 0);

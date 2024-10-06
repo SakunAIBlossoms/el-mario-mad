@@ -49,7 +49,6 @@ class CustomFreeplayState extends MusicBeatSubstate
 	override function create()
 	{
 		FlxG.mouse.visible = true;
-
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In Freeplay", null);
@@ -292,16 +291,17 @@ class CustomFreeplayState extends MusicBeatSubstate
 			
 			case 'Oneshots':
 				canciones = [
-					['CAN YOU BEAT US?', 'atrocity-remix', '14'],
-					['A stupid video', 'A-stupid-video', '0'],
-					['Starry Night', 'Headache-remix', '0'],
+					['CAN YOU BEAT US?', 'atrocity-remix', '14'], // atrocity cover
+					['A stupid video', 'A-stupid-video', '0'], // Hazel Petscop 2 cover
+					['Starry Night', 'Headache-remix', '0'], 
 					['name pending', 'disassembler-remix', '0'],
 					['The Titans Contract', 'devils-gambit-remix', '0'],
 					['Alcourt Case', 'turnabout-remix', '0'],
 					['Sliced', 'Defeat-remix', '0'],
 					['This GC Theory', 'just-a-theory-remix', '0'],
 					['name pending', 'koopa-karnage-remix', '0'],
-					['name pending', 'silly-billy-remix', '0']			
+					['name pending', 'silly-billy-remix', '0'],
+					['Silly :3', 'silly', '0']	//yin bwa cover		
 				];
 			
 			case 'Extra':

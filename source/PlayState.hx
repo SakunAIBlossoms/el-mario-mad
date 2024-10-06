@@ -307,8 +307,11 @@ class PlayState extends MusicBeatState
 	public var camHUD:FlxCamera;
 	public var camEst:FlxCamera;
 	public var camGame:FlxCamera;
+	//public var camgamebg:Boolean;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
+	public var cameraBopMultiplier:Float = 1.0;
+	public var currentCameraZoom:Float = FlxCamera.defaultZoom;
 	var iconGF:FlxSprite;
 
 	var promoBG:BGSprite;
@@ -1076,12 +1079,24 @@ class PlayState extends MusicBeatState
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 		switch (curStage)
 		{
+			case 'bwa': // Week 1
+				//var bg:BGSprite = new BGSprite('mario/bwa/white', 0, 0, 3, 3);
+				//bg.screenCenter(X);
+				//add(bg);
+				//camGame.bgColor = flixel.util.FlxColor.WHITE;
+				BF_CAM_X = 500;
+				BF_CAM_Y = 400;
+				DAD_CAM_X = 700;
+				DAD_CAM_Y = 400;
+				DAD_ZOOM = 1.3;
+				BF_ZOOM = 1.3;
 			case 'youtube':
 				var bg:BGSprite = new BGSprite('mario/youtube/youtube', 0, 0, 1, 1);
 				add(bg);
 				var blackbars = new FlxSprite().loadGraphic(Paths.image('mario/youtube/blackbars'));
 				blackbars.cameras = [camHUD];
 				blackbars.screenCenter();
+				
 				blackbars.scale.x = 1.3;
 				blackbars.scale.y = 1.3;
 				//blackbars.scale = 1.3;
@@ -1976,7 +1991,7 @@ class PlayState extends MusicBeatState
 			case 'betamansion':
 				noCount = true;
 
-				if (PlayState.SONG.song != 'Alone Old')
+				if (PlayState.SONG.song != 'Suicide Old')
 				{
 					noHUD = true;
 					specialGameOver = true;
@@ -1990,12 +2005,12 @@ class PlayState extends MusicBeatState
 
 					add(gfGroup);
 
-					var betafire1:BGSprite = new BGSprite('mario/LuigiBeta/Alone_Fire', -320, -630, ['fire'], true);
+					var betafire1:BGSprite = new BGSprite('mario/LuigiBeta/Suicide_Fire', -320, -630, ['fire'], true);
 					//betafire.setGraphicSize(Std.int(lluvia.width * 1.7));
 					betafire1.antialiasing = ClientPrefs.globalAntialiasing;
 					add(betafire1);
 
-					var betafire2:BGSprite = new BGSprite('mario/LuigiBeta/Alone_Fire', 1270, -630, ['fire'], true);
+					var betafire2:BGSprite = new BGSprite('mario/LuigiBeta/Suicide_Fire', 1270, -630, ['fire'], true);
 					//betafire.setGraphicSize(Std.int(lluvia.width * 1.7));
 					betafire2.antialiasing = ClientPrefs.globalAntialiasing;
 					betafire2.flipX = true;
@@ -4355,7 +4370,7 @@ class PlayState extends MusicBeatState
 
 		// trace('set pause music to ' + PauseSubState.pausemusic);
 
-		if (curStage != 'realbg' || curStage != 'landstage' || (PlayState.SONG.song != 'Alone Old' && curStage != 'betamansion'))
+		if (curStage != 'realbg' || curStage != 'landstage' || (PlayState.SONG.song != 'Suicide Old' && curStage != 'betamansion'))
 		{
 			add(gfGroup); // GIRLFRIEND LAYER
 		}
@@ -5323,8 +5338,14 @@ class PlayState extends MusicBeatState
 		}
 		subTitle.scrollFactor.set();
 		subTitle.borderSize = 1.25;
-		subTitle.cameras = [camOther];
-		subTitle.visible = !ClientPrefs.hideHud;
+		if (curStage == 'youtube') {
+			subTitle.cameras = [camOther];
+		}
+		else {
+			subTitle.cameras = [camOther];
+		}
+		//subTitle.visible = !ClientPrefs.hideHud;
+		subTitle.visible = true;
 		add(subTitle);
 
 		if(curStage == 'nesbeat'){
@@ -5403,6 +5424,8 @@ class PlayState extends MusicBeatState
 				autor = 'Razky vs Rosebloom';
 
 			// Extra songs
+			case 'Silly':
+				autor = 'Yin';
 			case 'A stupid video':
 				autor = 'Hazel vs somebody idfk';
 			case 'Ratio Battle':
@@ -5453,7 +5476,7 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'Apparition Old':
 				autor = 'Kenny L';
-			case 'Alone Old':
+			case 'Suicide Old':
 				autor = 'KINGF0X';
 			case 'Powerdown Old':
 				autor = 'Kenny L';
@@ -5869,7 +5892,7 @@ class PlayState extends MusicBeatState
 				startVideo('demise_cutscene');
 			case 'i-hate-you':
 				startVideo('ihy_cutscene');
-			case 'promotion':
+			case 'eradication':
 				startVideo('promocut');
 			case 'abandoned':
 				startVideo('abandoncut');
@@ -7529,6 +7552,9 @@ class PlayState extends MusicBeatState
 					}
 					if(controls.BACK){
 						ClientPrefs.saveSettings();
+						if(curStage == 'bwa') {
+							camGame.bgColor = flixel.util.FlxColor.BLACK;
+						}
 						FlxG.sound.music.stop();
 						deathCounter = 0;
 						seenCutscene = false;
@@ -7597,20 +7623,27 @@ class PlayState extends MusicBeatState
 			}
 		}
 		luigiLogo.visible = cpuControlled;
+		
 		if(curStage != 'virtual' && curStage != 'landstage' && curStage != 'somari' && curStage != 'endstage' && curStage != 'piracy' && curStage != 'warioworld'){
 			if(cpuControlled){
 				if(curStage != 'forest' && curStage != 'hatebg'){
 					timeTxt.color = 0xFFff4040;
+					scoreTxt.color = 0xFFff4040;
 				}
 				scoreTxt.color = 0xFFff4040;
 				customHBweegee.visible = true;	
 			}
 			else{
+				
 				if(curStage != 'forest' && curStage != 'hatebg'){
 					timeTxt.color = 0xFF0023cc;	
 				}
 				scoreTxt.color = 0xFF0023cc;
 				customHBweegee.visible = false;
+				if(curStage == 'virtual'){
+					timeTxt.color = 0xFFff4040;
+					scoreTxt.color = 0xFFff4040;
+				}
 			}
 		}
 
@@ -7699,6 +7732,9 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN && !endingSong && !inCutscene && ClientPrefs.storySave[7])
 		{
+			if(curStage == 'bwa') {
+				camGame.bgColor = flixel.util.FlxColor.BLACK;
+			}
 			persistentUpdate = false;
 			paused = true;
 			if (getspeed != 0)
@@ -7717,6 +7753,9 @@ class PlayState extends MusicBeatState
 		#if debug
 		if (FlxG.keys.justPressed.SEVEN && !endingSong && !inCutscene)
 		{
+			if(curStage == 'bwa') {
+				camGame.bgColor = flixel.util.FlxColor.BLACK;
+			}
 			persistentUpdate = false;
 			paused = true;
 			if (getspeed != 0)
@@ -7811,6 +7850,9 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.EIGHT && !endingSong && !inCutscene)
 		{
+			if(curStage == 'bwa') {
+				camGame.bgColor = flixel.util.FlxColor.BLACK;
+			}
 			persistentUpdate = false;
 			paused = true;
 			cancelFadeTween();
@@ -7922,7 +7964,7 @@ class PlayState extends MusicBeatState
 					eventTweens.push(FlxTween.tween(blackBarThingie, {alpha: 0}, 4, {startDelay: 1, ease: FlxEase.quadInOut}));
 					eventTweens.push(FlxTween.tween(buttonxml, {alpha: 0}, 2, {startDelay: 3, ease: FlxEase.quadInOut}));
 				}
-				else if (curStage == 'betamansion' && PlayState.SONG.song != 'Alone Old')
+				else if (curStage == 'betamansion' && PlayState.SONG.song != 'Suicide Old')
 				{
 					Conductor.songPosition = 0;
 					camGame.zoom = 1.3;
@@ -8022,9 +8064,20 @@ class PlayState extends MusicBeatState
 		}
 
 		if (camZooming && curStage != 'somari' && !blockzoom)
-		{
-			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
-			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
+		{	
+			if (ClientPrefs.camBop == true) {
+				// NEW CAMERA BOP
+				cameraBopMultiplier = FlxMath.lerp(1, cameraBopMultiplier, 0.95); // Lerp bop multiplier back to 1.0x
+				var zoomPlusBop = currentCameraZoom * cameraBopMultiplier; // Apply camera bop multiplier.
+			  	camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, 0.95);
+				FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, 0.95);
+			}
+			else if (ClientPrefs.camBop == false) {
+				// OLD CAMERA BOP:
+				camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 4), 0, 1));
+				FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
+			}
+			
 			if (curStage == 'directstream')
 			{
 				camEst.zoom = FlxMath.lerp(1, camEst.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
@@ -8107,7 +8160,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if(curStage == 'betamansion' && SONG.song != 'Alone Old'){
+		if(curStage == 'betamansion' && SONG.song != 'Suicide Old'){
 			//alone mario controller
 			iconGF.x = iconP2.x -70;
 			iconGF.scale.set(iconP1.scale.x - 0.2, iconP1.scale.y - 0.2);
@@ -9596,7 +9649,13 @@ class PlayState extends MusicBeatState
 						});
 					}
 				}
-
+			case 'Triggers A stupid video': 
+				var trigger:Float = Std.parseFloat(value1);
+				var trigger2:Float = Std.parseFloat(value2);
+				staticShader = new TVStatic();
+				var border:VCRBorder = new VCRBorder();
+				camHUD.setFilters([new ShaderFilter(border)]);
+				camGame.setFilters([new ShaderFilter(border)]);
 			case 'Triggers Starman Slaughter':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
@@ -10447,7 +10506,7 @@ class PlayState extends MusicBeatState
 						eventTweens.push(FlxTween.tween(nametag, {alpha: 1, x: 200}, 1, {ease: FlxEase.quadOut}));
 				}
 
-			case 'Triggers Nourishing Blood':
+			case 'Triggers Retro Mayhem':
 				var triggerMR:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMR))
 					triggerMR = 0;
@@ -11741,7 +11800,7 @@ class PlayState extends MusicBeatState
 						blackBarThingie.scrollFactor.set(0, 0);
 						add(blackBarThingie);
 				}
-			case 'Triggers Alone':
+			case 'Triggers Suicide':
 				var triggerMR:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMR))
 					triggerMR = 0;
@@ -11751,7 +11810,7 @@ class PlayState extends MusicBeatState
 						if (ClientPrefs.flashing)
 						{
 							FlxG.camera.flash(FlxColor.WHITE, 1);
-							if (PlayState.SONG.song == 'Alone Old')
+							if (PlayState.SONG.song == 'Suicide Old')
 							{
 								FlxG.sound.play(Paths.sound('thunder_1'));
 							}
@@ -11759,7 +11818,7 @@ class PlayState extends MusicBeatState
 							bfcolgao.alpha = 1;
 							eventTweens.push(FlxTween.tween(bfcolgao, {alpha: 0}, 2, {ease: FlxEase.quadOut}));
 						}
-						if (PlayState.SONG.song != 'Alone Old')
+						if (PlayState.SONG.song != 'Suicide Old')
 							{
 								eventTweens.push(FlxTween.tween(blackBarThingie, {alpha: 0}, 5));
 								eventTweens.push(FlxTween.tween(lluvia, {alpha: 0.6}, 5));
@@ -11768,7 +11827,7 @@ class PlayState extends MusicBeatState
 						if (ClientPrefs.flashing)
 						{
 							FlxG.camera.flash(FlxColor.WHITE, 1);
-							if (PlayState.SONG.song == 'Alone Old')
+							if (PlayState.SONG.song == 'Suicide Old')
 							{
 								FlxG.sound.play(Paths.sound('thunder_1'));
 							}
@@ -11778,14 +11837,14 @@ class PlayState extends MusicBeatState
 						{
 							FlxG.camera.flash(FlxColor.WHITE, 1);
 
-							if (PlayState.SONG.song == 'Alone Old')
+							if (PlayState.SONG.song == 'Suicide Old')
 							{
 								FlxG.sound.play(Paths.sound('thunder_1'));
 								lluvia.visible = true;
 							}
 						}
 					case 3:
-						if (PlayState.SONG.song != 'Alone Old')
+						if (PlayState.SONG.song != 'Suicide Old')
 							{
 								var gota:BGSprite = new BGSprite('mario/LuigiBeta/gota', 1270, 700, ['rain'], false);
 								gota.antialiasing = ClientPrefs.globalAntialiasing;
@@ -11903,7 +11962,7 @@ class PlayState extends MusicBeatState
 						}
 
 				}
-			case 'Triggers Bad Day':
+			case 'Triggers Awful Noon':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -12228,7 +12287,7 @@ class PlayState extends MusicBeatState
 							}
 				}
 
-			case 'Triggers Grand Dad' | 'Triggers Nourishing Blood':
+			case 'Triggers Retro Mayhem':
 				var triggerMR:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMR))
 					triggerMR = 0;
@@ -13124,7 +13183,7 @@ class PlayState extends MusicBeatState
 						}
 					}));
 
-			case 'Triggers Promotion':
+			case 'Triggers Eradication':
 				var triggerMR:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerMR))
 					triggerMR = 0;
@@ -13649,7 +13708,7 @@ class PlayState extends MusicBeatState
 						blackBarThingie.alpha = 1;
 				}
 
-			case 'Triggers Paranoia': // HERE COMES THE MADNESS HAHAHAHAHA
+			case 'Triggers Intrusive Thoughts': // HERE COMES THE MADNESS HAHAHAHAHA
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -13749,6 +13808,7 @@ class PlayState extends MusicBeatState
 							virtuabg.alpha = 0;
 							blackBarThingie.alpha = 0;
 							crazyFloor.visible = false;
+							Lib.application.window.title = "HANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELF";
 						}
 						else
 						{
@@ -13792,7 +13852,7 @@ class PlayState extends MusicBeatState
 						if (ClientPrefs.flashing) dupeMax =  Std.parseInt(value2);
 				}
 
-			case 'Triggers Day Out':
+			case 'Triggers Gang In':
 				var trigger:Float = Std.parseFloat(value1);
 				if (Math.isNaN(trigger))
 					trigger = 0;
@@ -14415,6 +14475,9 @@ class PlayState extends MusicBeatState
 
 	function finishSong():Void
 	{
+		if(curStage == 'bwa') {
+			camGame.bgColor = flixel.util.FlxColor.BLACK;
+		}
 		var finishCallback:Void->Void = endSong; // In case you want to change it in a specific song.
 
 		updateTime = false;
@@ -15273,7 +15336,7 @@ class PlayState extends MusicBeatState
 			tomato.frames = Paths.getSparrowAtlas("tomato");
 			tomato.animation.addByPrefix("kitty", " tomato", 30, false);
 			tomato.animation.play("kitty");
-			tomato.scale.set(2.1, 2.1);
+			tomato.scale.set(7.5, 7.5);
 			tomato.cameras = [camHUD];
 			FlxTween.tween(tomato, {alpha: 0, y: tomato.y + 100}, 0.45, {ease: FlxEase.backInOut, startDelay: FlxG.random.float(0.5, 10.5), onComplete: function(tween){tomato.destroy();}});
 			add(tomato);
@@ -15821,7 +15884,7 @@ class PlayState extends MusicBeatState
 
 	public static function onWinClose()
 	{
-		trace('BUT UN C PAPU MISTERIOSO CIERRA EL JUEGO');
+		trace('you closed the window');
 
 		if (ClientPrefs.noVirtual && curStage == 'virtual')
 		{
@@ -15834,6 +15897,7 @@ class PlayState extends MusicBeatState
 
 	override function destroy()
 	{
+		camGame.bgColor = flixel.util.FlxColor.BLACK;
 		preventLuaRemove = true;
 		for (i in 0...luaArray.length)
 		{
@@ -15869,6 +15933,10 @@ class PlayState extends MusicBeatState
 				Lib.application.window.move(PauseSubState.restX, PauseSubState.restY);
 				CppAPI.restoreWindows();
 				CppAPI.setWallpaper('old');
+			}
+			if (PlayState.curStage == 'bwa')
+			{
+				camGame.bgColor = flixel.util.FlxColor.BLACK;
 			}
 
 			FlxG.mouse.load(TitleState.mouse.pixels, 2);
@@ -16062,9 +16130,9 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if(curStage == 'betamansion' && PlayState.SONG.song != 'Alone Old'){
+		if(curStage == 'betamansion' && PlayState.SONG.song != 'Suicide Old'){
 			if (lluvia.alpha != 0){
-				triggerEventNote('Triggers Alone', '3', '');
+				triggerEventNote('Triggers Suicide', '3', '');
 			}
 		}
 
@@ -16445,7 +16513,7 @@ class PlayState extends MusicBeatState
 				}
 				
 			case 'exesequel' | 'betamansion' | 'nesbeat':
-				if(PlayState.SONG.song != 'Alone Old'){
+				if(PlayState.SONG.song != 'Suicide Old'){
 				if(dupeTimer != 0 && ClientPrefs.flashing && ClientPrefs.filtro85){
 					angel.pixelSize = 0.5;
 					angel.strength = shit;

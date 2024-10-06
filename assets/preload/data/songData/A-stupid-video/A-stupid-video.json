@@ -25,6 +25,41 @@
 						900,
 						1,
 						0
+					],
+					[
+						0,
+						-1,
+						"Triggers Universal",
+						"",
+						""
+					],
+					[
+						150,
+						-1,
+						"Add Subtitle",
+						"Where",
+						"0xFFFFFFFF"
+					],
+					[
+						375,
+						-1,
+						"Add Subtitle",
+						"Where is",
+						"0xFFFFFFFF"
+					],
+					[
+						600,
+						-1,
+						"Add Subtitle",
+						"Pet",
+						"0xFFFFFFFF"
+					],
+					[
+						900,
+						-1,
+						"Add Subtitle",
+						"Petscop",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -36,6 +71,13 @@
 						1200,
 						6,
 						0
+					],
+					[
+						1200,
+						-1,
+						"Add Subtitle",
+						"Petscop 2?",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -7682,18 +7724,54 @@
 				"bpm": 200
 			},
 			{
+				"lengthInSteps": 16,
+				"sectionNotes": [],
 				"gfSection": false,
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"sectionNotes": [],
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
 				"lengthInSteps": 16,
 				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
 				"sectionNotes": [],
 				"bpm": 200,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
-				"gfSection": false,
 				"lengthInSteps": 16,
 				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
 				"sectionNotes": [],
 				"bpm": 200,
 				"changeBPM": false,
@@ -7701,7 +7779,7 @@
 			}
 		],
 		"player2": "pyrocynical",
-		"player3": null,
+		"player3": "gf",
 		"song": "A stupid video",
 		"needsVoices": true,
 		"validScore": true,

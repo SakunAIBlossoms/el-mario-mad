@@ -120,7 +120,7 @@ class PauseSubState extends MusicBeatSubstate
 		bg.scrollFactor.set();
 		add(bg);
 
-		if(PlayState.curStage == 'somari'){
+		if(PlayState.curStage == 'somari' || PlayState.curStage == 'youtube'){
 			retromenu = true; //TURNING RETRO MODE TO ON (so retro)
 		}
 
@@ -128,7 +128,8 @@ class PauseSubState extends MusicBeatSubstate
 		somaridesc.setGraphicSize(Std.int(somaridesc.width * 0.9));
 		somaridesc.alpha = 0;
 		somaridesc.visible = retromenu;
-		add(somaridesc);
+		if(PlayState.curStage != 'youtube')
+			add(somaridesc);
 
 		var ispixel:Array<String> = ['', '0', '150', '1', '0', '0', '215']; //file name - x offset - y offset - size - minioffset ladobg.y porq soy una mierda codificando - y offset sin botplay
 		if(retromenu){
@@ -239,14 +240,17 @@ class PauseSubState extends MusicBeatSubstate
 		descArrow.setGraphicSize(Std.int(descArrow.width * 3.71));
 		descArrow.alpha = 0;
 		descArrow.visible = retromenu;
-		if(PlayState.curStage != 'piracy') add(descArrow);
-
+		if(PlayState.curStage != 'piracy' || PlayState.curStage != 'youtube') {
+			add(descArrow);
+		}
 		ladobg = new FlxSprite().loadGraphic(Paths.image('modstuff/pause/momichi' + ispixel[0]));
 		ladobg.x = -550;
 		ladobg.setGraphicSize(Std.int(ladobg.width * Std.parseFloat(ispixel[3])));
 		ladobg.screenCenter(Y);
 		ladobg.y += Std.parseFloat(ispixel[4]);
-		add(ladobg);
+		if(PlayState.curStage != 'youtube') {
+			add(ladobg);
+		}
 		FlxTween.tween(ladobg, {x: -200 + Std.parseFloat(ispixel[1])}, 0.2, {ease: FlxEase.backOut});
 
 		if(PlayState.curStage == 'piracy'){
@@ -284,10 +288,14 @@ class PauseSubState extends MusicBeatSubstate
 		tweens.push(FlxTween.tween(line2, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
 		tweens.push(FlxTween.tween(descAll, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
 		tweens.push(FlxTween.tween(creditsTxt, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
-		tweens.push(FlxTween.tween(descArrow, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
+		if(PlayState.curStage != 'youtube') {
+			tweens.push(FlxTween.tween(descArrow, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
+		}
 		}else{
 			tweens.push(FlxTween.tween(somaridesc, {alpha: 0.5}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
-			tweens.push(FlxTween.tween(descArrow, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
+			if(PlayState.curStage != 'youtube') {
+				tweens.push(FlxTween.tween(descArrow, {alpha: 1}, 0.4, {ease: FlxEase.quartOut, startDelay: 0.6}));
+			}
 		}
 
 		if (PlayState.SONG.song == "Paranoia")
@@ -329,8 +337,15 @@ class PauseSubState extends MusicBeatSubstate
 
 		for (item in menuItemslol.members)
 		{
-			item.x = ladobg.x + 220;
-			FlxTween.tween(item, {x: 20 + (Std.parseFloat(ispixel[1]) * 0.6)}, 0.2, {ease: FlxEase.backOut});
+			if(PlayState.curStage == 'youtube') {
+				item.screenCenter(X);
+				//FlxTween.tween(item, {x: center}, 0.2, {ease: FlxEase.backOut});
+			}
+			else {
+				item.x = ladobg.x + 220;
+				FlxTween.tween(item, {x: 20 + (Std.parseFloat(ispixel[1]) * 0.6)}, 0.2, {ease: FlxEase.backOut});
+			}
+			
 		}
 
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
@@ -362,7 +377,7 @@ class PauseSubState extends MusicBeatSubstate
 			staticShader.update(elapsed);
 		}
 
-		if(retromenu || PlayState.curStage == 'piracy'){
+		if(PlayState.curStage == 'somari' || PlayState.curStage == 'piracy'){
 			arrowTime += elapsed;
 
 			if(arrowTime > 0.5){
@@ -381,7 +396,7 @@ class PauseSubState extends MusicBeatSubstate
 		var rightP = controls.UI_RIGHT_P;
 		var accepted = controls.ACCEPT;
 
-		if(retromenu || PlayState.curStage == 'piracy'){
+		if(PlayState.curStage == 'somari' || PlayState.curStage == 'piracy'){
 			if (leftP)
 			{
 				toogleDesc(false);
@@ -556,7 +571,6 @@ class PauseSubState extends MusicBeatSubstate
 						botplayText.visible = PlayState.cpuControlled;
 				case "Exit":
 					hideall();
-
 					tweens.push(FlxTween.tween(descAll, {alpha: 0}, 0.4, {ease: FlxEase.quartOut}));
 					tweens.push(FlxTween.tween(bg, {alpha: 0}, 0.4, {
 						ease: FlxEase.quartOut,
@@ -579,7 +593,7 @@ class PauseSubState extends MusicBeatSubstate
 							PlayState.changedDifficulty = false;
 							PlayState.cpuControlled = false;
 
-							if (PlayState.curStage == 'piracy' || PlayState.curStage == 'somari'){
+							if (PlayState.curStage == 'piracy' || PlayState.curStage == 'somari' || PlayState.curStage == 'youtube'){
 								if (ClientPrefs.showFPS){
 									Main.fpsVar.visible = true;
 								}
