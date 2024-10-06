@@ -44,7 +44,7 @@
 						375,
 						-1,
 						"Add Subtitle",
-						"Where is",
+						"Where is-",
 						"0xFFFFFFFF"
 					],
 					[
@@ -78,6 +78,13 @@
 						"Add Subtitle",
 						"Petscop 2?",
 						"0xFFFFFFFF"
+					],
+					[
+						1575,
+						-1,
+						"Add Subtitle",
+						"",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -96,14 +103,42 @@
 						0
 					],
 					[
+						3450,
+						1,
+						0
+					],
+					[
+						2400,
+						-1,
+						"Add Subtitle",
+						"It's",
+						"0xFFFFFFFF"
+					],
+					[
+						2850,
+						-1,
+						"Add Subtitle",
+						"It's being",
+						"0xFFFFFFFF"
+					],
+					[
 						3150,
 						0,
 						0
 					],
 					[
+						3150,
+						-1,
+						"Add Subtitle",
+						"It's being worked",
+						"0xFFFFFFFF"
+					],
+					[
 						3450,
-						1,
-						0
+						-1,
+						"Add Subtitle",
+						"It's being worked on.",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -120,6 +155,41 @@
 						4575,
 						2,
 						0
+					],
+					[
+						4350,
+						-1,
+						"Add Subtitle",
+						"O",
+						"0xFFFFFFFF"
+					],
+					[
+						4425,
+						-1,
+						"Add Subtitle",
+						"Ok",
+						"0xFFFFFFFF"
+					],
+					[
+						4500,
+						-1,
+						"Add Subtitle",
+						"Oka",
+						"0xFFFFFFFF"
+					],
+					[
+						4575,
+						-1,
+						"Add Subtitle",
+						"Okay",
+						"0xFFFFFFFF"
+					],
+					[
+						4650,
+						-1,
+						"Add Subtitle",
+						"Okay?",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -156,13 +226,63 @@
 						5829.375,
 						2,
 						0
+					],
+					[
+						4875,
+						-1,
+						"Add Subtitle",
+						"It's",
+						"0xFFFFFFFF"
+					],
+					[
+						5175,
+						-1,
+						"Add Subtitle",
+						"It's ta",
+						"0xFFFFFFFF"
+					],
+					[
+						5325,
+						-1,
+						"Add Subtitle",
+						"It's taking",
+						"0xFFFFFFFF"
+					],
+					[
+						5550,
+						-1,
+						"Add Subtitle",
+						"It's taking me",
+						"0xFFFFFFFF"
+					],
+					[
+						5625,
+						-1,
+						"Add Subtitle",
+						"It's taking me a",
+						"0xFFFFFFFF"
+					],
+					[
+						5850,
+						-1,
+						"Add Subtitle",
+						"while",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
 				"mustHitSection": false
 			},
 			{
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						6225,
+						-1,
+						"Add Subtitle",
+						"",
+						"0xFFFFFFFF"
+					]
+				],
 				"lengthInSteps": 16,
 				"mustHitSection": true
 			},
@@ -192,6 +312,41 @@
 						8100,
 						2,
 						0
+					],
+					[
+						7200,
+						-1,
+						"Add Subtitle",
+						"I",
+						"0xFFFFFFFF"
+					],
+					[
+						7425,
+						-1,
+						"Add Subtitle",
+						"I can't",
+						"0xFFFFFFFF"
+					],
+					[
+						7650,
+						-1,
+						"Add Subtitle",
+						"I can't make",
+						"0xFFFFFFFF"
+					],
+					[
+						7875,
+						-1,
+						"Add Subtitle",
+						"Pet",
+						"0xFFFFFFFF"
+					],
+					[
+						8100,
+						-1,
+						"Add Subtitle",
+						"Petscop",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -223,6 +378,62 @@
 						9369.375,
 						2,
 						0
+					],
+					[
+						8625,
+						-1,
+						"Add Subtitle",
+						"in",
+						"0xFFFFFFFF"
+					],
+					[
+						8700,
+						-1,
+						"Add Subtitle",
+						"in a",
+						"0xFFFFFFFF"
+					],
+					[
+						8850,
+						-1,
+						"Add Subtitle",
+						"in a day.",
+						"0xFFFFFFFF"
+					],
+					[
+						9150,
+						-1,
+						"Add Subtitle",
+						"O",
+						"0xFFFFFFFF"
+					],
+					[
+						9225,
+						-1,
+						"Add Subtitle",
+						"Ok",
+						"0xFFFFFFFF"
+					],
+					[
+						9300,
+						-1,
+						"Add Subtitle",
+						"Oka",
+						"0xFFFFFFFF"
+					],
+					[
+						9375,
+						-1,
+						"Add Subtitle",
+						"Okay",
+						"0xFFFFFFFF"
+					],
+					[
+						9450,
+						-1,
+						"Add Subtitle",
+						"Okay?",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -259,6 +470,13 @@
 						10650,
 						1,
 						225
+					],
+					[
+						9750,
+						-1,
+						"Add Subtitle",
+						"",
+						"0xFFFFFFFF"
 					]
 				],
 				"lengthInSteps": 16,
@@ -7740,6 +7958,60 @@
 				"bpm": 200,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
 			},
 			{
 				"sectionNotes": [],
