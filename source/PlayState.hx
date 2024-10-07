@@ -5439,7 +5439,7 @@ class PlayState extends MusicBeatState
 			case 'Retro Mayhem':
 				autor = 'Alcrete vs Rosebloom';
 			case 'Unyappable':
-				autor = '???????\n ft. theWAHbox and scrumbo_';
+				autor = '????????????????????????????';
 			case 'Intrusive Thoughts':
 				autor = 'Mr. Z vs Rosebloom';
 			case 'Gang In':
@@ -5492,6 +5492,8 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'Dictator Old':
 				autor = 'Kenny L';
+			case 'Unyappable Old':
+				autor = 'This GC vs Rosebloom';
 			
 		}
 
@@ -12438,7 +12440,8 @@ class PlayState extends MusicBeatState
 									eventTweens.push(FlxTween.tween(dad, {y: (weanose + 100)}, 1, {ease: FlxEase.quadInOut}));
 								}
 							}));
-						case 3:
+
+						case 3: //zap in unyap
 							var whiteSquare:FlxSprite = new FlxSprite().makeGraphic(Std.int(iconP1.width / 2), Std.int(iconP1.height / 2), FlxColor.WHITE);
 							whiteSquare.cameras = [camHUD];
 							whiteSquare.setPosition(iconP1.x + 60, iconP1.y + 30);
@@ -12457,6 +12460,40 @@ class PlayState extends MusicBeatState
 								}));
 							var newhealth:Float = health - 0.1;
 							eventTweens.push(FlxTween.tween(this, {health: newhealth}, 0.1, {ease: FlxEase.quadOut}));
+							if (ClientPrefs.flashing)
+							{
+								duckbg.color = 0xFFDAAFA9;
+							}
+							else
+							{
+								duckbg.color = 0xFF7B99AF;
+							}
+							eventTimers.push(new FlxTimer().start(0.2, function(tmr:FlxTimer)
+							{
+								duckbg.color = 0xFF5595DA;
+							}));
+							triggerEventNote('Add Camera Zoom', '0.010', '');
+							triggerEventNote('Screen Shake', '0.05, 0.007', '0.05, 0.003');
+
+						case 3.5: //zap in unyap v1 (feel free to put them all together in one case cause i dont know shit)
+							var whiteSquare:FlxSprite = new FlxSprite().makeGraphic(Std.int(iconP1.width / 2), Std.int(iconP1.height / 2), FlxColor.WHITE);
+							whiteSquare.cameras = [camHUD];
+							whiteSquare.setPosition(iconP1.x + 60, iconP1.y + 30);
+							whiteSquare.visible = ClientPrefs.flashing;
+							add(whiteSquare);
+
+							eventTimers.push(new FlxTimer().start(0.05, function(tmr:FlxTimer)
+								{
+									whiteSquare.destroy();
+									iconP1.color = 0x000000;
+									whiteSquare.visible = true;
+									eventTimers.push(new FlxTimer().start(0.05, function(tmr:FlxTimer)
+										{
+											iconP1.color = 0xFFFFFF;
+										}));
+								}));
+							var newhealth:Float = health - 0.05;
+							eventTweens.push(FlxTween.tween(this, {health: newhealth}, 0.05, {ease: FlxEase.quadOut}));
 							if (ClientPrefs.flashing)
 							{
 								duckbg.color = 0xFFDAAFA9;
@@ -14390,7 +14427,7 @@ class PlayState extends MusicBeatState
 
 						if(PlayState.SONG.song == 'Unyappable'){
 							newName = titleText.text;
-							Lib.application.window.title = "Friday Night Funkin': This GC's Insanity | Unyappable | Taiki";
+							Lib.application.window.title = "Friday Night Funkin': This GC's Insanity | Unyappable | YOU CANNOT BEAT US";
 							autor = autorText.text;
 							titleText.cameras = [camOther];
 							autorText.cameras = [camOther];
