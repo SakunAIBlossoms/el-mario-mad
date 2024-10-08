@@ -5409,6 +5409,10 @@ class PlayState extends MusicBeatState
 			case 'All-Stars':
 				autor = 'Ultra Z vs Rosebloom';
 
+			// I wont keep you waiting anymore. Welcome to the end
+			case 'Endgame':
+				autor = 'Round 2!';
+
 			// Warp Zone Songs
 			case 'Oh Fuck No':
 				autor = 'Zseven vs Taiki';
@@ -9899,7 +9903,8 @@ class PlayState extends MusicBeatState
 						triggerEventNote('Screen Shake','3.8, 0.01','');
 				}
 
-			case 'Triggers All-Stars':
+			case 'Triggers All-Stars' | 'Triggers Endgame':
+				var songName = SONG.song;
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
 				if (Math.isNaN(trigger))
@@ -9989,9 +9994,14 @@ class PlayState extends MusicBeatState
 								act1Gradient.visible = false;
 								act1Fog.visible = false;
 								//part 1
-								titleText.text = 'All-Stars (Act 2)';
-								autorText.text = 'Omega U vs Rosebloom';
-
+								if (songName == 'endgame') {
+									titleText.text = 'Endgame (Act 2)';
+									autorText.text = 'Not again';
+								}
+								else {
+									titleText.text = 'All-Stars (Act 2)';
+									autorText.text = 'Omega U vs Rosebloom';
+								}
 								blackBarThingie.alpha = 1;
 								camHUD.alpha = 0;
 
@@ -10134,10 +10144,14 @@ class PlayState extends MusicBeatState
 							case 0:
 								//act 3
 								resyncVocals();
-
-								titleText.text = 'All-Stars (Act 3)';
-								autorText.text = 'CX vs Rosebloom';
-
+								if (songName == 'endgame') {
+									titleText.text = 'Endgame (Act 3)';
+									autorText.text = 'Lost chance.';
+								}
+								else {
+									titleText.text = 'All-Stars (Act 3)';
+									autorText.text = 'CX vs Rosebloom';
+								}
 								triggerEventNote('Change Character', '0', 'bfASsad');
 								triggerEventNote('Change Character', '1', 'gx');
 
@@ -10239,9 +10253,15 @@ class PlayState extends MusicBeatState
 							case 0:
 								//act 4
 								resyncVocals();
-								titleText.text = 'All-Stars (Act 4)';
-								autorText.text = 'Ultra Z vs Rosebloom';
-
+								
+								if (songName == 'endgame') {
+									titleText.text = 'Endgame (Act 4)';
+									autorText.text = 'Final act.';
+								}
+								else {
+									titleText.text = 'All-Stars (Act 4)';
+									autorText.text = 'Ultra Z vs Rosebloom';
+								}
 								ZOOMCHARS = true;
 								FOLLOWCHARS = true;
 								DAD_CAM_X = 190;
@@ -10513,7 +10533,7 @@ class PlayState extends MusicBeatState
 						}
 						
 				}
-
+				
 			case 'Triggers Not Great':
 				var triggerP:Float = Std.parseFloat(value1);
 				if (Math.isNaN(triggerP)) triggerP = 0;
