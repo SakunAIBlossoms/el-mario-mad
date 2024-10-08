@@ -9654,10 +9654,38 @@ class PlayState extends MusicBeatState
 			case 'Triggers A stupid video': 
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
-				staticShader = new TVStatic();
 				var border:VCRBorder = new VCRBorder();
 				camHUD.setFilters([new ShaderFilter(border)]);
 				camGame.setFilters([new ShaderFilter(border)]);
+				switch(trigger)
+				{
+					case 0:
+						DAD_CAM_X = 730;
+						DAD_CAM_Y = 400;
+						BF_CAM_X = 730;
+						BF_CAM_Y = 300;
+						DAD_ZOOM = 0.7;
+						BF_ZOOM = 0.7;
+						//bg.alpha = 1;
+						dad.setPosition(60, 282);
+						boyfriend.setPosition(50, -192);
+					case 1:
+						BF_CAM_X = 400;
+						BF_CAM_Y = 200;
+						BF_ZOOM = 0.9;
+					case 2: 
+						BF_ZOOM = 1.2;
+					case 3:
+						dad.setPosition(-300, 0);
+						boyfriend.setPosition(9000, 0);
+						//bg.alpha = 0;
+						DAD_CAM_X = -50;
+						DAD_CAM_Y = 250;
+						BF_CAM_X = -50;
+						BF_CAM_Y = 200;
+						DAD_ZOOM = 1;
+						BF_ZOOM = 1;
+				}
 			case 'Triggers Genocidal Goat':
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);

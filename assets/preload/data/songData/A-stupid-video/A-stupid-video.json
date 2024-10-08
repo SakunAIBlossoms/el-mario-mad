@@ -60,6 +60,13 @@
 						"Add Subtitle",
 						"Petscop",
 						"0xFFFFFFFF"
+					],
+					[
+						75,
+						-1,
+						"Triggers Universal",
+						"0",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -477,6 +484,13 @@
 						"Add Subtitle",
 						"",
 						"0xFFFFFFFF"
+					],
+					[
+						9825,
+						-1,
+						"Show Song",
+						"",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -605,6 +619,13 @@
 						14250,
 						3,
 						0
+					],
+					[
+						14325,
+						-1,
+						"Show Song",
+						"1",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -723,6 +744,13 @@
 						17850,
 						2,
 						0
+					],
+					[
+						16950,
+						-1,
+						"Triggers Universal",
+						"1",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -769,6 +797,20 @@
 						19050,
 						2,
 						0
+					],
+					[
+						18150,
+						-1,
+						"Triggers Universal",
+						"2",
+						""
+					],
+					[
+						19125,
+						-1,
+						"Triggers Universal",
+						"0",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -1495,6 +1537,20 @@
 						37950,
 						2,
 						0
+					],
+					[
+						38175,
+						-1,
+						"Play Animation",
+						"hey!",
+						"BF"
+					],
+					[
+						38250,
+						-1,
+						"Triggers Universal",
+						"3",
+						""
 					]
 				],
 				"lengthInSteps": 16,
@@ -1684,12 +1740,14 @@
 					[
 						44250,
 						2,
-						0
+						0,
+						"No Animation"
 					],
 					[
 						44250,
 						0,
-						0
+						0,
+						"Alt Animation"
 					]
 				],
 				"lengthInSteps": 16,
@@ -1700,12 +1758,14 @@
 					[
 						44550,
 						1,
-						0
+						0,
+						"No Animation"
 					],
 					[
 						44550,
 						3,
-						0
+						0,
+						"Alt Animation"
 					],
 					[
 						44850,
@@ -2014,12 +2074,14 @@
 					[
 						53850,
 						2,
-						0
+						0,
+						"No Animation"
 					],
 					[
 						53850,
 						0,
-						0
+						0,
+						"Alt Animation"
 					]
 				],
 				"altAnim": false,
@@ -2035,12 +2097,14 @@
 					[
 						54150,
 						1,
-						0
+						0,
+						"No Animation"
 					],
 					[
 						54150,
 						3,
-						0
+						0,
+						"Alt Animation"
 					],
 					[
 						54450,
@@ -3293,6 +3357,13 @@
 						77850,
 						3,
 						225
+					],
+					[
+						76800,
+						-1,
+						"Triggers Universal",
+						"0",
+						""
 					]
 				],
 				"typeOfSection": 0,
@@ -8024,21 +8095,84 @@
 			},
 			{
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
 				"bpm": 200,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
 				"bpm": 200,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 200,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 200
 			},
 			{
 				"lengthInSteps": 16,
