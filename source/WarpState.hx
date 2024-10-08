@@ -56,11 +56,11 @@ class WarpState extends MusicBeatState
 	private static var canciones:Array<Dynamic> = [
 		// Name, 				UP, DOWN, LEFT, RIGHT
 		['Start', 				'X', 'X', 'X', '1'],
-		['Irregularity Isle',		'X', 'X', '0', '2'],
-		['Woodland of Lies',	'X', 'X', '1', '3'],
-		['Content Cosmos',			'X', 'X', '2', '4'],
-		["Hellish Heights", 	'X', 'X', '3', '5'],
-		['Classified Castle',	'X', 'X', '4', 'X']
+		['Not Him Isle',		'X', 'X', '0', '2'],
+		['Forest of Carnage',	'X', 'X', '1', '3'],
+		['Gleaming Galaxy',			'X', 'X', '2', '4'],
+		["Digital Hellscape", 	'X', 'X', '3', '5'],
+		['Mysterious Murders',	'X', 'X', '4', 'X']
 	];
 
 	private var starPos:Array<Dynamic> = [
@@ -94,7 +94,7 @@ class WarpState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Overworld", null);
-		Lib.application.window.title = "Friday Night Funkin': Mario's Madness";
+		Lib.application.window.title = "Friday Night Funkin': This GC's Insanity";
 		#end
 		FlxG.mouse.visible = false;
 		FlxG.mouse.load(TitleState.mouse.pixels, 2);
