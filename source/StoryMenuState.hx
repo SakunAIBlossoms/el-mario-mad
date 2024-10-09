@@ -225,12 +225,12 @@ class StoryMenuState extends MusicBeatSubstate
 	override function destroy() {
 		super.destroy();
 
-		dumbTween.cancel();
+		
 		if (ClientPrefs.shaderToggle == true) {
 		MainMenuState.instance.bloom.dim.value = [2.0];
-		}
-
+		dumbTween.cancel();
 		dumbTween2.cancel();
+		}
 	}
 
 	var tottalTimer:Float = 0;
@@ -353,7 +353,7 @@ class StoryMenuState extends MusicBeatSubstate
 			var bloom:BloomShader = MainMenuState.instance.bloom;
 			bloom.Size.value = [0];
 			bloom.dim.value = [.8];
-			
+
 		twn1 = FlxTween.num(0, 2, 2, {
 			onUpdate: (_) -> {
 				bloom.Size.value = [twn1.value];
