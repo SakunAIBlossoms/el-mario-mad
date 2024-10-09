@@ -215,13 +215,14 @@ class NotesSubstate extends MusicBeatSubstate
 			note.scale.set(0.7, 0.7);
 			note.updateHitbox();
 			grpNotes.add(note);
-
+		
 			var newShader:ColorSwap = new ColorSwap();
-			note.shader = newShader.shader;
-			newShader.hue = ClientPrefs.arrowHSV[i][0] / 360;
-			newShader.saturation = ClientPrefs.arrowHSV[i][1] / 100;
-			newShader.brightness = ClientPrefs.arrowHSV[i][2] / 100;
-			shaderArray.push(newShader);
+				note.shader = newShader.shader;
+				newShader.hue = ClientPrefs.arrowHSV[i][0] / 360;
+				newShader.saturation = ClientPrefs.arrowHSV[i][1] / 100;
+				newShader.brightness = ClientPrefs.arrowHSV[i][2] / 100;
+				shaderArray.push(newShader);
+			
 		}
 		hsvText = new Alphabet(0, 0, "Hue    Saturation  Brightness", false, false, 0, 0.65);
 		hsvText.size = 18;
@@ -827,6 +828,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		'GRAPHICS',
 		'Low Quality',
 		'Anti-Aliasing',
+		'Shaders',
 		'VRAM-Sprites',
 		#if !html5
 		'Framerate', // Apparently 120FPS isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
@@ -1026,6 +1028,9 @@ class PreferencesSubstate extends MusicBeatSubstate
 
 					case 'Flashing Lights':
 						ClientPrefs.flashing = !ClientPrefs.flashing;
+					
+					case 'Shaders':
+						ClientPrefs.shaderToggle = !ClientPrefs.shaderToggle;
 
 					case 'Violence':
 						ClientPrefs.violence = !ClientPrefs.violence;
@@ -1145,6 +1150,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If checked, images loaded will stay in memory\nuntil the game is closed, this increases memory usage,\nbut basically makes reloading times instant.";
 			case 'Anti-Aliasing':
 				daText = "If unchecked, disables anti-aliasing, increases performance\nat the cost of the graphics not looking as smooth.";
+			case 'Shaders':
+				daText = "If unchecked, disables shaders, increases performance\nat the cost of no cool effects. (RESTART YOUR GAME WHEN CHANGED)";
 			case 'VRAM-Sprites':
 				daText = "If checked, bitmaps will be stored on vram instead of both the vram and ram, good for preformance.";
 			case 'Downscroll':
@@ -1231,6 +1238,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.lowQuality;
 					case 'Anti-Aliasing':
 						daValue = ClientPrefs.globalAntialiasing;
+					case 'Shaders':
+						daValue = ClientPrefs.shaderToggle;
 					case 'VRAM-Sprites':
 						daValue = ClientPrefs.vramSprites;
 					case 'Note Splashes':

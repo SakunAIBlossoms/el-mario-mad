@@ -27,6 +27,7 @@ class ClientPrefs {
 	public static var hideTime:Bool = false;
 	public static var vramSprites:Bool = true;
 	public static var camBop:Bool = true;
+	public static var shaderToggle:Bool = true;
 
 	public static var filtro85:Bool = true;
 	public static var pauseStart:Bool = false;
@@ -138,6 +139,7 @@ class ClientPrefs {
 		FlxG.save.data.worldsALT = worldsALT;
 		FlxG.save.data.vramSprites = vramSprites;
 		FlxG.save.data.camBop = camBop;
+		FlxG.save.data.shaderToggle = shaderToggle;
 
 		FlxG.save.flush();
 
@@ -201,6 +203,9 @@ class ClientPrefs {
 		}
 		if (FlxG.save.data.camBop != null) {
 			camBop = FlxG.save.data.camBop;
+		}
+		if (FlxG.save.data.shaderToggle != null) {
+			shaderToggle = FlxG.save.data.shaderToggle;
 		}
 		if (FlxG.save.data.hideHud != null) {
 			hideHud = FlxG.save.data.hideHud;

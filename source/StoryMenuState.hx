@@ -91,8 +91,11 @@ class StoryMenuState extends MusicBeatSubstate
 		chars.scrollFactor.set(0.5, 0.5);
 		chars.alpha = 0;
 		chars.origin.set(chars.width/2, 0);
-		charsShader = new NTSCGlitch(5);
-		chars.shader = charsShader;
+		if (ClientPrefs.shaderToggle == true) {
+			charsShader = new NTSCGlitch(5);
+			chars.shader = charsShader;
+			dumbTween = FlxTween.num(2.0, 0.8, 4, {ease: FlxEase.expoOut}, (v:Float) -> {MainMenuState.instance.bloom.dim.value = [v];});
+		}
 		add(chars);
 
 		lineSpr = new FlxSprite().loadGraphic(Paths.image('modstuff/storymode/barraselect'));
@@ -102,7 +105,6 @@ class StoryMenuState extends MusicBeatSubstate
 		lineSpr.scrollFactor.set(1.2, 1.2);
 		add(lineSpr);
 		
-		dumbTween = FlxTween.num(2.0, 0.8, 4, {ease: FlxEase.expoOut}, (v:Float) -> {MainMenuState.instance.bloom.dim.value = [v];});
 
 		selSpr = new FlxSprite().loadGraphic(Paths.image('modstuff/storymode/text1'));
 		selSpr.antialiasing = ClientPrefs.globalAntialiasing;
@@ -181,13 +183,14 @@ class StoryMenuState extends MusicBeatSubstate
 		overlay.updateHitbox();
 		overlay.alpha = 0;
 		add(overlay);
-		
-		@:privateAccess FlxG.camera._filters.insert(0, new ShaderFilter(staticShader = new TVStatic()));
-		staticShader.strengthMulti.value = [0.5];
-		staticShader.imtoolazytonamethis.value = [.3];
+		if (ClientPrefs.shaderToggle == true) {
+			@:privateAccess FlxG.camera._filters.insert(0, new ShaderFilter(staticShader = new TVStatic()));
+			staticShader.strengthMulti.value = [0.5];
+			staticShader.imtoolazytonamethis.value = [.3];
 
-		dumbTween2 = FlxTween.num(0, 0.5, 4, {ease: FlxEase.expoOut}, (v:Float) -> {staticShader.strengthMulti.value = [v];});
-		
+			dumbTween2 = FlxTween.num(0, 0.5, 4, {ease: FlxEase.expoOut}, (v:Float) -> {staticShader.strengthMulti.value = [v];});
+		}
+
 		flicker = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
 		flicker.scrollFactor.set(0, 0);
 		flicker.updateHitbox();
@@ -223,7 +226,9 @@ class StoryMenuState extends MusicBeatSubstate
 		super.destroy();
 
 		dumbTween.cancel();
+		if (ClientPrefs.shaderToggle == true) {
 		MainMenuState.instance.bloom.dim.value = [2.0];
+		}
 
 		dumbTween2.cancel();
 	}
@@ -240,12 +245,13 @@ class StoryMenuState extends MusicBeatSubstate
 			finishVideo();
 			vid.bitmap.stop();
 		}
-
-		charsShader.update(elapsed);
-		chars.angle = 2 * Math.sin(tottalTimer/2);
-		chars.offset.y = 3 * Math.sin(tottalTimer+.67);
-
-		staticShader.iTime.value = [tottalTimer];
+		if (ClientPrefs.shaderToggle == true) {
+			charsShader.update(elapsed);
+			chars.angle = 2 * Math.sin(tottalTimer/2);
+			chars.offset.y = 3 * Math.sin(tottalTimer+.67);
+	
+			staticShader.iTime.value = [tottalTimer];
+		}
 
 		overlay.scale.set(1/FlxG.camera.zoom, 1/FlxG.camera.zoom);
 		flicker.scale.set(1/FlxG.camera.zoom, 1/FlxG.camera.zoom);
@@ -340,14 +346,14 @@ class StoryMenuState extends MusicBeatSubstate
 		FlxG.camera.flash(FlxColor.RED, 0.5);
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
+				var twn1:NumTween;
+				var twn2:NumTween;
 		FlxG.sound.play(Paths.sound('riser'), 1);
-		var bloom:BloomShader = MainMenuState.instance.bloom;
-		bloom.Size.value = [0];
-		bloom.dim.value = [.8];
-
-		var twn1:NumTween;
-		var twn2:NumTween;
-
+		if (ClientPrefs.shaderToggle == true) {
+			var bloom:BloomShader = MainMenuState.instance.bloom;
+			bloom.Size.value = [0];
+			bloom.dim.value = [.8];
+			
 		twn1 = FlxTween.num(0, 2, 2, {
 			onUpdate: (_) -> {
 				bloom.Size.value = [twn1.value];
@@ -359,7 +365,7 @@ class StoryMenuState extends MusicBeatSubstate
 				bloom.dim.value = [twn2.value];
 			}
 		});
-
+		}
 		for (i in 0...10){
 			new FlxTimer().start(0.2 * i, function(tmr:FlxTimer)
 				{

@@ -150,14 +150,15 @@ class TitleState extends MusicBeatState {
 		camGame.zoom = 0.875 * 1.1;
 
 		Conductor.changeBPM(45.593);
-
-		bloom = new BloomShader();
-		bloom.Size.value = [3.0];
-
-		camHUD.setFilters([new ShaderFilter(ntsc = new NTSCSFilter()), new ShaderFilter(bloom)]);
-		@:privateAccess var shadersButCooler:Array<BitmapFilter> = [for (shader in camHUD._filters) shader]; // W NAMING!!!!
-		shadersButCooler.push(new ShaderFilter(staticShader = new TVStatic()));
-		FlxG.camera.setFilters(shadersButCooler);
+		if (ClientPrefs.shaderToggle == true) {
+			bloom = new BloomShader();
+			bloom.Size.value = [3.0];
+	
+			camHUD.setFilters([new ShaderFilter(ntsc = new NTSCSFilter()), new ShaderFilter(bloom)]);
+			@:privateAccess var shadersButCooler:Array<BitmapFilter> = [for (shader in camHUD._filters) shader]; // W NAMING!!!!
+			shadersButCooler.push(new ShaderFilter(staticShader = new TVStatic()));
+			FlxG.camera.setFilters(shadersButCooler);
+		}
 
 		blackSprite = new FlxSprite().makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
 		blackSprite.updateHitbox();
@@ -193,9 +194,9 @@ class TitleState extends MusicBeatState {
 			hand.scale.set(0.75, 0.75);
 			hand.updateHitbox();
 			bottomGroup.add(hand);
-
-			handShaders.push(cast hand.shader = new NTSCGlitch(0.2));
-
+			if (ClientPrefs.shaderToggle == true) {
+				handShaders.push(cast hand.shader = new NTSCGlitch(0.2));
+			}
 			hand.flipX = i == 1; // WHAT NO WAY!!
 
 			hand.ID = i;
@@ -280,17 +281,22 @@ class TitleState extends MusicBeatState {
 	override function update(elapsed:Float) {
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
-
-		if (ntsc != null)
-			ntsc.uFrame.value = [Conductor.songPosition];
-
-		if (staticShader != null)
-			staticShader.iTime.value = [Conductor.songPosition];
-
 		var currentBeat = (Conductor.songPosition / 1000) * (Conductor.bpm / 60);
+		if (ClientPrefs.shaderToggle == true) {
+			if (ntsc != null)
+				ntsc.uFrame.value = [Conductor.songPosition];
+	
+			if (staticShader != null)
+				staticShader.iTime.value = [Conductor.songPosition];
+	
+			
+	
+			if (bloom != null && !transitioning) {
+				bloom.Size.value = [1.0 + (0.5 * FlxMath.fastSin(currentBeat * 2))];
+			}
 
-		if (bloom != null && !transitioning) {
-			bloom.Size.value = [1.0 + (0.5 * FlxMath.fastSin(currentBeat * 2))];
+			for (shader in handShaders)
+				shader.time.value = [Conductor.songPosition];
 		}
 
 		for (hand in hands) {
@@ -302,8 +308,7 @@ class TitleState extends MusicBeatState {
 			}
 		}
 
-		for (shader in handShaders)
-			shader.time.value = [Conductor.songPosition];
+		
 
 		if (logoBl != null) 
 			logoBl.y = 60 + 7.5 * FlxMath.fastCos((currentBeat / 3.) * Math.PI);
@@ -340,26 +345,28 @@ class TitleState extends MusicBeatState {
 			
 			if (titleText != null)
 				titleText.animation.play('press');
+			if (ClientPrefs.shaderToggle == true) {
+				if (ClientPrefs.flashing && bloom != null) {
+					bloom.Size.value = [18 * 2];
+					bloom.dim.value = [0.25];
 
-			if (ClientPrefs.flashing && bloom != null) {
-				bloom.Size.value = [18 * 2];
-				bloom.dim.value = [0.25];
+					var twn1:NumTween;
+					var twn2:NumTween;
 
-				var twn1:NumTween;
-				var twn2:NumTween;
+					twn1 = FlxTween.num(18.0 * 2, 3.0, 1.5, {
+						onUpdate: (_) -> {
+							bloom.Size.value = [twn1.value];
+						}
+					});
 
-				twn1 = FlxTween.num(18.0 * 2, 3.0, 1.5, {
-					onUpdate: (_) -> {
-						bloom.Size.value = [twn1.value];
-					}
-				});
-
-				twn2 = FlxTween.num(0.25, 2.0, 1.5, {
-					onUpdate: (_) -> {
-						bloom.dim.value = [twn2.value];
-					}
-				});
+					twn2 = FlxTween.num(0.25, 2.0, 1.5, {
+						onUpdate: (_) -> {
+							bloom.dim.value = [twn2.value];
+						}
+					});
+				}
 			}
+			
 
 			for (obj in [camGame, curtain, blackSprite])
 				FlxTween.cancelTweensOf(obj);
@@ -451,12 +458,14 @@ class TitleState extends MusicBeatState {
 		}
 
 		if (curStep % 8 == 0) {
-			for (shader in handShaders) {
-				FlxTween.cancelTweensOf(shader);
-				
-				FlxTween.num(FlxG.random.float(1, 2), 0.5, (Conductor.stepCrochet / 1000) * 6, {onUpdate: (_:FlxTween) -> {
-					shader.setGlitch(cast(_, NumTween).value);
-				}});
+			if (ClientPrefs.shaderToggle == true) {
+				for (shader in handShaders) {
+					FlxTween.cancelTweensOf(shader);
+					
+					FlxTween.num(FlxG.random.float(1, 2), 0.5, (Conductor.stepCrochet / 1000) * 6, {onUpdate: (_:FlxTween) -> {
+						shader.setGlitch(cast(_, NumTween).value);
+					}});
+				}
 			}
 		}
 	}
