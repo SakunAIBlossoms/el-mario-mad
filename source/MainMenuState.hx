@@ -521,7 +521,7 @@ class MainMenuState extends MusicBeatState {
 			//}
 			
 			// haha dev menu goes BRRRRRR
-			if (FlxG.keys.justPressed.P) {
+			if (FlxG.keys.justPressed.SEVEN) {
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
 

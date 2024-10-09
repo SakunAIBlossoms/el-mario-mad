@@ -5459,7 +5459,7 @@ class PlayState extends MusicBeatState
 			case 'Bloodlust':
 				autor = 'Slicer vs Rosebloom';
 			case 'The Dream':
-				autor = 'Zseven vs Rosebloom';
+				autor = 'Zseven? vs Rosebloom';
 			case 'ZSEVEN FUN AND EXCITING MANIA 7':
 				autor = 'Ysix vs Rosebloom';
 			case 'Overdose':
@@ -5496,6 +5496,8 @@ class PlayState extends MusicBeatState
 				autor = 'Kenny L';
 			case 'Dictator Old':
 				autor = 'Kenny L';
+			case 'The Dream Old':
+				autor = 'Zseven? vs Rosebloom';
 			case 'Unyappable Old':
 				autor = 'This GC vs Rosebloom';
 			

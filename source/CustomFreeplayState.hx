@@ -311,6 +311,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 					['Overdose (Original)', 'overdue-old', '37'],
 					['Time Out (Demise Original)', 'demise-old', '40'],
 					['All Stars Act 1 (Original)', 'all-stars-old', '38'],
+					['The Dream (Original)', 'the-dream-old', 		'33'],
 					['Unyappable (Original)', 'unyappable-old', '14']
 				];				
 		}

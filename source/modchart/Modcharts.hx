@@ -143,7 +143,7 @@ class Modcharts {
 
                 modManager.queueEase(800, 808, "alpha", 0, 'linear', 0);
 
-            case 'the end':
+            case 'the dream' | 'the dream old':
                 modManager.queueSet(296 * 4, "opponentSwap", 0.5);
                 modManager.queueSet(296 * 4, "alpha", 1, 1);
                 modManager.queueSet(296 * 4, "flip", -0.25);
