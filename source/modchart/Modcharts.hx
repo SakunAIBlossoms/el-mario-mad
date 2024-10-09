@@ -45,12 +45,17 @@ class Modcharts {
                 modManager.queueSet(4800, "transformX", 0, 0);
                 modManager.queueSet(4800, "transformX", 0, 1);
             case 'endgame':
-                modManager.queueSet(4544, "transformX", -320, 0);
-                modManager.queueSet(4544, "transformX", 1500, 1);
+                modManager.queueSet(895, "transformX", -320, 0);
+                modManager.queueSet(895, "transformX", 1500, 1);
 
-                modManager.queueSet(4800, "transformX", 0, 0);
-                modManager.queueSet(4800, "transformX", 0, 1);
+                modManager.queueSet(2512, "transformX", 0, 0);
+                modManager.queueSet(2512, "transformX", 0, 1);
 
+                modManager.queueSet(4144, "transformX", -320, 0);
+                modManager.queueSet(4144, "transformX", 1500, 1);
+
+                modManager.queueSet(4512, "transformX", 0, 0);
+                modManager.queueSet(4512, "transformX", 0, 1);
             case 'retro mayhem':
                 var counter:Int = 0;
                 numericForInterval(656, 912, 2, function(step){

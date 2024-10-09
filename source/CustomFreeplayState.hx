@@ -245,7 +245,6 @@ class CustomFreeplayState extends MusicBeatSubstate
 				];
 				if(ClientPrefs.storySave[7]){
 					canciones.push(['All-Stars', 'all-stars', '9']);
-					canciones.push(['Endgame', 'endgame', '9']);
 				}
 			case 'Island':
 				canciones = [

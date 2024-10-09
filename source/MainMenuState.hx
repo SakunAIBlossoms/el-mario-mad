@@ -565,6 +565,9 @@ class MainMenuState extends MusicBeatState {
 
 						FlxG.sound.music.pause();
 						openSubState(new VideoSubState('scrubb'));
+					case 'endgame':
+						PlayState.SONG = Song.loadFromJson('endgame', 'endgame');
+						LoadingState.loadAndSwitchState(new PlayState());
 				}
 			}
 
