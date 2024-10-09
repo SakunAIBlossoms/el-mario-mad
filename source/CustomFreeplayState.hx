@@ -363,9 +363,10 @@ class FreeplaySubState extends MusicBeatSubstate
 
 		//CustomFreeplayState.estatica.animation.play('idle');
 		curSelected = 0;
-
-		bloom = MainMenuState.instance.bloom;
-		bloom.Size.value = [0];
+		if (ClientPrefs.shaderToggle == true) {
+			bloom = MainMenuState.instance.bloom;
+			bloom.Size.value = [0];
+		}
 //		FlxTween.tween(FlxG.camera, {zoom: 0.75}, 1, {ease: FlxEase.quadOut});
 
 		boxgrp = new FlxTypedSpriteGroup<FlxSprite>();
@@ -600,28 +601,30 @@ class FreeplaySubState extends MusicBeatSubstate
 		#if FREEPLAY
 		PlayState.cpuControlled = !PlayState.cpuControlled;
 		#end
-
-		if (ClientPrefs.flashing && bloom != null) {
-			bloom.Size.value = [2];
-			bloom.dim.value = [0.1];
-
-			var twn1:NumTween;
-			var twn2:NumTween;
-
-			twn1 = FlxTween.num(2, 0, 0.5, {
-				onUpdate: (_) -> {
-					bloom.Size.value = [twn1.value];
-				}
-			});
-
-			twn2 = FlxTween.num(0.1, 2, 0.5, {
-				onUpdate: (_) -> {
-					bloom.dim.value = [twn2.value];
-				}
-			});
-
-			FlxG.camera.shake(0.002, 0.2);
+		if (ClientPrefs.shaderToggle == true) {
+			if (ClientPrefs.flashing && bloom != null) {
+				bloom.Size.value = [2];
+				bloom.dim.value = [0.1];
+	
+				var twn1:NumTween;
+				var twn2:NumTween;
+	
+				twn1 = FlxTween.num(2, 0, 0.5, {
+					onUpdate: (_) -> {
+						bloom.Size.value = [twn1.value];
+					}
+				});
+	
+				twn2 = FlxTween.num(0.1, 2, 0.5, {
+					onUpdate: (_) -> {
+						bloom.dim.value = [twn2.value];
+					}
+				});
+	
+				FlxG.camera.shake(0.002, 0.2);
+			}
 		}
+		
 
 		boxgrp.forEach(function(char:FlxSprite)
 			{

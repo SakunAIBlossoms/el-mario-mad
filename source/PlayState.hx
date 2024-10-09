@@ -62,6 +62,8 @@ import openfl.filters.ShaderFilter;
 import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
 import sys.io.File;
+// HERE COMES THE MADNESS!
+import PlatformUtil;
 
 using StringTools;
 using flixel.util.FlxSpriteUtil;
@@ -1145,7 +1147,9 @@ class PlayState extends MusicBeatState
 					GameOverSubstate.characterName = 'bfexenewdeath';
 					addCharacterToList('bfexenewdeath', 0);
 					if (!ClientPrefs.lowQuality){
-						effect = new SMWPixelBlurShader();
+						if (ClientPrefs.shaderToggle == true) {
+							effect = new SMWPixelBlurShader();
+						}
 					}
 					addCharacterToList('mariohorrorpissed', 1);
 					var bg:BGSprite = new BGSprite('mario/EXE1/Castillo fondo de hasta atras', -1000, -850, 0.45, 0.45);
@@ -1384,11 +1388,14 @@ class PlayState extends MusicBeatState
 				else
 				{
 					GameOverSubstate.loopSoundName = 'GBgameover';
-					staticShader = new TVStatic();
-					var border:VCRBorder = new VCRBorder();
-					camGame.setFilters([new ShaderFilter(staticShader), new ShaderFilter(border)]);
-					staticShader.strengthMulti.value = [0.5];
-					staticShader.imtoolazytonamethis.value = [.3];
+					if (ClientPrefs.shaderToggle == true) {
+						staticShader = new TVStatic();
+						var border:VCRBorder = new VCRBorder();
+						camGame.setFilters([new ShaderFilter(staticShader), new ShaderFilter(border)]);
+						staticShader.strengthMulti.value = [0.5];
+						staticShader.imtoolazytonamethis.value = [.3];
+					}
+					
 					
 					var bglandEXE:BGSprite = new BGSprite('mario/EXE2/bad/4', -500, -200, 0.3, 0.3); // nubes
 					bglandEXE.setGraphicSize(Std.int(bglandEXE.width * 6));
@@ -2463,12 +2470,15 @@ class PlayState extends MusicBeatState
 				PauseSubState.restX = Lib.application.window.x;
 				PauseSubState.restY = Lib.application.window.y;
 
-				effect = new SMWPixelBlurShader();
-				dupe = new CamDupeShader();
-				dupe.mult = 1;
-				angel = new AngelShader();
-				camGame.setFilters([new ShaderFilter(effect.shader), new ShaderFilter(dupe), new ShaderFilter(angel)]);
-				camHUD.setFilters([new ShaderFilter(angel)]);
+				if (ClientPrefs.shaderToggle == true) {
+					effect = new SMWPixelBlurShader();
+					dupe = new CamDupeShader();
+					dupe.mult = 1;
+					angel = new AngelShader();
+					camGame.setFilters([new ShaderFilter(effect.shader), new ShaderFilter(dupe), new ShaderFilter(angel)]);
+					camHUD.setFilters([new ShaderFilter(angel)]);	
+				}
+				
 				// trace(winx + ' and ' + winy);
 
 				var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -5698,10 +5708,13 @@ class PlayState extends MusicBeatState
 			add(badPoisonVG);
 
 			if(!ClientPrefs.lowQuality){
-				badRipple = new RippleShader();
-				camGame.setFilters([new ShaderFilter(badRipple)]);
-				camHUD.setFilters([new ShaderFilter(badRipple)]);
-				camEst.setFilters([new ShaderFilter(badRipple)]);
+				if (ClientPrefs.shaderToggle == true) {
+					badRipple = new RippleShader();
+					camGame.setFilters([new ShaderFilter(badRipple)]);
+					camHUD.setFilters([new ShaderFilter(badRipple)]);
+					camEst.setFilters([new ShaderFilter(badRipple)]);	
+				}
+				
 			}
 		}
 
@@ -5741,58 +5754,64 @@ class PlayState extends MusicBeatState
 		{
 			if (ClientPrefs.filtro85)
 			{
-				var border:VCRBorder = new VCRBorder();
+				if (ClientPrefs.shaderToggle == true) {
+					var border:VCRBorder = new VCRBorder();
 
-				camGame.setFilters([new ShaderFilter(border)]);
-				camEst.setFilters([new ShaderFilter(border)]);
-				camHUD.setFilters([new ShaderFilter(border)]);
+					camGame.setFilters([new ShaderFilter(border)]);
+					camEst.setFilters([new ShaderFilter(border)]);
+					camHUD.setFilters([new ShaderFilter(border)]);
 
-				vcr = new VCRMario85();
+					vcr = new VCRMario85();
 
-				camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
-				camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
-				camHUD.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
+					camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
+					camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
+					camHUD.setFilters([new ShaderFilter(vcr), new ShaderFilter(border),]);
 
-				if(curStage == 'nesbeat'){
-					beatend = new YCBUEndingShader();
-					angel = new AngelShader();
-					camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(border), new ShaderFilter(beatend), new ShaderFilter(angel)]);
-					camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(border), new ShaderFilter(angel)]);
-				}
+					if(curStage == 'nesbeat'){
+						if (ClientPrefs.shaderToggle == true) {
+						beatend = new YCBUEndingShader();
+						angel = new AngelShader();
+						camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(border), new ShaderFilter(beatend), new ShaderFilter(angel)]);
+						camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(border), new ShaderFilter(angel)]);
+						}
+					}
 
-				if (oldTV)
-				{
-					if (ClientPrefs.filtro85)
+					if (oldTV)
 					{
-						oldFX = new OldTVShader();
+						if (ClientPrefs.filtro85)
+						{
+							oldFX = new OldTVShader();
 
-						camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
-						camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
-						camHUD.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
+							camGame.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
+							camEst.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
+							camHUD.setFilters([new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
 
+							contrastFX = new BrightnessContrastShader();
+
+							camGame.setFilters([new ShaderFilter(contrastFX), new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
+						}
+					}	
+					else if(curStage == 'wetworld'){
 						contrastFX = new BrightnessContrastShader();
-
-						camGame.setFilters([new ShaderFilter(contrastFX), new ShaderFilter(vcr), new ShaderFilter(oldFX), new ShaderFilter(border)]);
+						camGame.setFilters([new ShaderFilter(contrastFX)]);
 					}
 				}
 			}
-			else if(curStage == 'wetworld'){
-				contrastFX = new BrightnessContrastShader();
-
-				camGame.setFilters([new ShaderFilter(contrastFX)]);
-			}
+			
 		}
 
 		if (oldTV && !tvEffect)
 		{
 			if (ClientPrefs.filtro85)
 			{
-				oldFX = new OldTVShader();
+				if (ClientPrefs.shaderToggle == true) {
+					oldFX = new OldTVShader();
 
-				camGame.setFilters([new ShaderFilter(oldFX)]);
-				camEst.setFilters([new ShaderFilter(oldFX)]);
-				camHUD.setFilters([new ShaderFilter(oldFX)]);
-				FlxG.camera.setFilters([new ShaderFilter(oldFX)]);
+					camGame.setFilters([new ShaderFilter(oldFX)]);
+					camEst.setFilters([new ShaderFilter(oldFX)]);
+					camHUD.setFilters([new ShaderFilter(oldFX)]);
+					FlxG.camera.setFilters([new ShaderFilter(oldFX)]);
+				}
 			}
 		}
 
@@ -6042,7 +6061,8 @@ class PlayState extends MusicBeatState
 	public function transitionOGN(inOut:Bool, imgonnakillsomeone:Bool)
 	{
 		if (inOut)
-		{
+		{	
+			if (ClientPrefs.shaderToggle == true) {
 			shaderOGN += 0.05;
 			cast(boyfriend.shader, SilhouetteShader).update(0.05);
 			cast(dad.shader, SilhouetteShader).update(0.05);
@@ -6089,6 +6109,7 @@ class PlayState extends MusicBeatState
 				}));
 			}
 		}
+	}
 	}
 
 	function bfJump(){
@@ -6466,11 +6487,13 @@ class PlayState extends MusicBeatState
 				camGame.zoom = 1;
 				eventTweens.push(FlxTween.tween(camGame, {zoom: 0.5}, 1.3, {ease: FlxEase.expoOut}));
 				startedCountdown = true;
+				if (ClientPrefs.shaderToggle == true) {
 				effect.setStrength(40, 40);
 				FlxTween.num(40, 1, 0.7, function(v)
 				{
 					effect.setStrength(v, v);
 				});
+				}	
 				}));
 				}
 			else if(curStage == 'hatebg' || curStage == 'forest'){
@@ -7312,7 +7335,7 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 	}*/
-
+	if (ClientPrefs.shaderToggle == true) {
 		if(angel != null){
 			if(curStage != 'virtual' && ClientPrefs.flashing)
 				angel.strength = FlxMath.lerp(angel.strength, 0, CoolUtil.boundTo(elapsed * 4, 0, 1));
@@ -7323,6 +7346,7 @@ class PlayState extends MusicBeatState
 			angel.data.iTime.value = [Conductor.songPosition / 1000];
 
 		}
+	}
 		if(cpuControlled && (curStage != 'virtual' && curStage != 'landstage' && curStage != 'somari' && curStage != 'endstage' && curStage != 'piracy')){
 			notes.forEachAlive(function(note:Note){
 				if(note.botplaySkin)
@@ -7378,11 +7402,11 @@ class PlayState extends MusicBeatState
 					beatend.update(val, elapsed);
 				}
 			}
-		
+			if (ClientPrefs.shaderToggle == true) {
 			if(staticShader != null){
 				staticShader.update(elapsed);
 			}
-
+		}
 		if(ClientPrefs.framerate <= maxLuaFPS){
 
 			callOnLuas('onUpdate', [elapsed]);
@@ -9649,8 +9673,11 @@ class PlayState extends MusicBeatState
 					eventTweens.push(FlxTween.tween(camHUD, {alpha: 0}, 5));
 					eventTweens.push(FlxTween.tween(camGame, {zoom: 1.3}, 5, {ease: FlxEase.sineIn}));
 					if (!ClientPrefs.lowQuality){
-						effect.setStrength(40, 40);
+						
+						if (ClientPrefs.shaderToggle == true) {
+							effect.setStrength(40, 40);
 						camGame.setFilters([new ShaderFilter(effect.shader)]);
+						}
 						FlxTween.num(1, 20, 3, function(v)
 						{
 							effect.setStrength(v, v);
@@ -9660,9 +9687,11 @@ class PlayState extends MusicBeatState
 			case 'Triggers A stupid video': 
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
+				if (ClientPrefs.shaderToggle == true) {
 				var border:VCRBorder = new VCRBorder();
 				camHUD.setFilters([new ShaderFilter(border)]);
 				camGame.setFilters([new ShaderFilter(border)]);
+				}
 				switch(trigger)
 				{
 					case 0:
@@ -12679,8 +12708,9 @@ class PlayState extends MusicBeatState
 
 							if(triggerMR2 != 2){
 								if(ClientPrefs.flashing && ClientPrefs.filtro85)
+									if (ClientPrefs.shaderToggle == true) {
 									angel.strength = 0.325;
-
+									}
 								estatica.alpha = 0.6;
 								eventTweens.push(FlxTween.tween(estatica, {alpha: 0.05}, 0.5, {ease: FlxEase.quadInOut}));
 							}
@@ -12718,8 +12748,9 @@ class PlayState extends MusicBeatState
 							eventTweens.push(FlxTween.tween(this, {health: newhealth}, 0.1, {ease: FlxEase.quadOut}));
 							
 							if(ClientPrefs.flashing && ClientPrefs.filtro85)
+								if (ClientPrefs.shaderToggle == true) {
 								angel.strength = 0.325;
-
+								}
 							cutbg.visible = cutskyline.visible = cutstatic.visible = true;
 							cutbg.animation.play('bowser');
 							cutskyline.animation.play('duck');
@@ -12850,7 +12881,9 @@ class PlayState extends MusicBeatState
 									resyncVocals();
 
 									if(ClientPrefs.flashing && ClientPrefs.filtro85)
+										if (ClientPrefs.shaderToggle == true) {
 										angel.strength = 0.325;
+										}
 									if (health > 1)
 										{
 											health = 1;
@@ -13041,13 +13074,17 @@ class PlayState extends MusicBeatState
 									//hide all
 									triggerEventNote('ycbu text', '', '');
 									if(ClientPrefs.flashing && ClientPrefs.filtro85)
+										if (ClientPrefs.shaderToggle == true) {
 										angel.strength = 0.325;
+										}
 									ycbuLightningL.visible = ycbuLightningR.visible = ycbuHeadL.visible = ycbuHeadR.visible = false;
 								case 1:
 									//show all
 									triggerEventNote('ycbu text', '', '');
 									if(ClientPrefs.flashing && ClientPrefs.filtro85)
+										if (ClientPrefs.shaderToggle == true) {
 										angel.strength = 0.325;
+										}
 									ycbuHeadL.velocity.y = 600;
 									ycbuHeadR.velocity.y = -600;
 									ycbuLightningL.screenCenter(X);
@@ -13058,7 +13095,9 @@ class PlayState extends MusicBeatState
 								case 2:
 									//reverse direction
 									if (Math.abs(ycbuHeadL.velocity.y) != 1 && ycbuHeadL.animation.curAnim.name == 'LOL' && ClientPrefs.flashing && ClientPrefs.filtro85){
+										if (ClientPrefs.shaderToggle == true) {
 										angel.strength = 0.1;
+										}
 									}
 									
 									eventTweens.push(FlxTween.tween(ycbuHeadL, {y: ycbuHeadL.y + (ycbuHeadL.velocity.y)}, 0.1, {ease: FlxEase.quadOut}));
@@ -13068,7 +13107,9 @@ class PlayState extends MusicBeatState
 								case 3:
 									//skip
 									if (ycbuHeadL.animation.curAnim.name == 'LOL' && ClientPrefs.flashing && ClientPrefs.filtro85){
+										if (ClientPrefs.shaderToggle == true) {
 										angel.strength = 0.1;
+										}
 									}
 									eventTweens.push(FlxTween.tween(ycbuHeadL, {y: ycbuHeadL.y + (250 * (ycbuHeadL.velocity.y / Math.abs(ycbuHeadL.velocity.y)))}, 0.25, {ease: FlxEase.quadOut}));
 									eventTweens.push(FlxTween.tween(ycbuHeadR, {y: ycbuHeadR.y + (250 * (ycbuHeadR.velocity.y / Math.abs(ycbuHeadR.velocity.y)))}, 0.25, {ease: FlxEase.quadOut}));
@@ -13896,6 +13937,7 @@ class PlayState extends MusicBeatState
 							blackBarThingie.alpha = 0;
 							crazyFloor.visible = false;
 							Lib.application.window.title = "HANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELF";
+							PlatformUtil.sendWindowsNotification("MR. Z", "TOO LATE ROSEBLOOM", 0);
 						}
 						else
 						{
@@ -16602,8 +16644,10 @@ class PlayState extends MusicBeatState
 			case 'exesequel' | 'betamansion' | 'nesbeat':
 				if(PlayState.SONG.song != 'Suicide Old'){
 				if(dupeTimer != 0 && ClientPrefs.flashing && ClientPrefs.filtro85){
+					if (ClientPrefs.shaderToggle == true) {
 					angel.pixelSize = 0.5;
 					angel.strength = shit;
+					}
 				}
 				if (curBeat % 2 == 0){
 					if (starmanGF.animation.curAnim.name != 'hey' || (starmanGF.animation.curAnim.name == 'hey' && starmanGF.animation.curAnim.finished)){
@@ -16878,7 +16922,9 @@ class PlayState extends MusicBeatState
 
 				if(dupeTimer != 0){
 					if(curBeat % dupeTimer == 0){
+						if (ClientPrefs.shaderToggle == true) {
 						if(inc){
+							
 							angel.pixelSize = 2;
 							dupe.mirror = false;
 							dupe.mult += 1;
@@ -16893,6 +16939,7 @@ class PlayState extends MusicBeatState
 								inc = true;
 						}
 						angel.strength = ((0.25 / 4))  * dupe.mult;
+						}
 					}	
 				}
 
