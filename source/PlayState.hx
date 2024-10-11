@@ -959,7 +959,7 @@ class PlayState extends MusicBeatState
 				FlxG.camera.y = -260;
 			}
 		}
-		if (curStage == 'youtube')
+		if (curStage == 'youtube' || curStage == 'courtroom')
 			{
 				Lib.application.window.fullscreen = false;
 				Lib.application.window.resizable = false;
@@ -1110,6 +1110,14 @@ class PlayState extends MusicBeatState
 				BF_CAM_Y = 300;
 				DAD_ZOOM = 0.7;
 				BF_ZOOM = 0.7;
+			case 'courtroom':
+				DAD_CAM_X = 0;
+				DAD_CAM_Y = 0;
+				BF_CAM_X = 0;
+				BF_CAM_Y = 0;
+				DAD_ZOOM = 1;
+				BF_ZOOM = 1;
+				Main.fpsVar.visible = false;
 			case 'stage': // Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -1136,6 +1144,7 @@ class PlayState extends MusicBeatState
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
+			case 'garcello': // haha funni cigaret man stag go BRRRRR
 
 			case 'execlassic': // Mario.exe Classic
 				GameOverSubstate.characterName = 'bfexe';
@@ -5440,6 +5449,11 @@ class PlayState extends MusicBeatState
 			// Extra songs
 			case 'Silly':
 				autor = 'Yin';
+			case 'alcourt-case':
+				autor = 'lets hope it doesnt brick itself';
+			case 'Starry Night':
+				autor = 'Hazel vs somebody idfk';
+				curStage = 'garcello';
 			case 'A stupid video':
 				autor = 'Hazel vs somebody idfk';
 			case 'Ratio Battle':
@@ -6019,6 +6033,7 @@ class PlayState extends MusicBeatState
 	public function lofiTweensToBeCreepyTo(sprite:FlxSprite):Void
 	{
 		var tempx = sprite.x;
+		// im going to kill myself - Data
 		// this tween chain is an abomination
 		nesTweens.push(FlxTween.tween(sprite, {x: tempx + 420, angle: -35}, 4.0, {
 			onComplete: function(tween:FlxTween)
@@ -7335,17 +7350,18 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 	}*/
+	if(angel != null){
+		if(curStage != 'virtual' && ClientPrefs.flashing)
+			angel.strength = FlxMath.lerp(angel.strength, 0, CoolUtil.boundTo(elapsed * 4, 0, 1));
+		else
+			angel.strength = FlxMath.lerp(angel.strength, 0, CoolUtil.boundTo(elapsed * 8, 0, 1));
+
+		angel.pixelSize = FlxMath.lerp(angel.pixelSize, 1, CoolUtil.boundTo(elapsed * 4, 0, 1));
+		angel.data.iTime.value = [Conductor.songPosition / 1000];
+
+	}
 	if (ClientPrefs.shaderToggle == true) {
-		if(angel != null){
-			if(curStage != 'virtual' && ClientPrefs.flashing)
-				angel.strength = FlxMath.lerp(angel.strength, 0, CoolUtil.boundTo(elapsed * 4, 0, 1));
-			else
-				angel.strength = FlxMath.lerp(angel.strength, 0, CoolUtil.boundTo(elapsed * 8, 0, 1));
-
-			angel.pixelSize = FlxMath.lerp(angel.pixelSize, 1, CoolUtil.boundTo(elapsed * 4, 0, 1));
-			angel.data.iTime.value = [Conductor.songPosition / 1000];
-
-		}
+		
 	}
 		if(cpuControlled && (curStage != 'virtual' && curStage != 'landstage' && curStage != 'somari' && curStage != 'endstage' && curStage != 'piracy')){
 			notes.forEachAlive(function(note:Note){
@@ -7667,15 +7683,15 @@ class PlayState extends MusicBeatState
 			}
 			else{
 				
-				if(curStage != 'forest' && curStage != 'hatebg'){
+				if(curStage != 'forest' && curStage != 'hatebg' && curStage != 'virtual'){
 					timeTxt.color = 0xFF0023cc;	
+					scoreTxt.color = 0xFF0023cc;
 				}
-				scoreTxt.color = 0xFF0023cc;
-				customHBweegee.visible = false;
-				if(curStage == 'virtual'){
+				else if(curStage == 'virtual'){
 					timeTxt.color = 0xFFff4040;
 					scoreTxt.color = 0xFFff4040;
 				}
+				customHBweegee.visible = false;
 			}
 		}
 
@@ -13937,7 +13953,8 @@ class PlayState extends MusicBeatState
 							blackBarThingie.alpha = 0;
 							crazyFloor.visible = false;
 							Lib.application.window.title = "HANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELF";
-							PlatformUtil.sendWindowsNotification("MR. Z", "TOO LATE ROSEBLOOM", 0);
+							//CppAPI.sendNotif("MR. Z", "TOO LATE ROSEBLOOM", 0);
+							
 						}
 						else
 						{
