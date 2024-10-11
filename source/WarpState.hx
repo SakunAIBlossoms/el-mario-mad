@@ -693,13 +693,13 @@ class WorldState extends MusicBeatSubstate
 	private static var canciones:Array<Dynamic> = [
 		// Name, 			UP, DOWN, LEFT, RIGHT
 		['Start', 			'X', 'X', 'X', '1', 0],
-		['Alone', 			'2', '4', '0', 'X', 0],
-		['Oh God No', 		'3', '4', '1', 'X', 0],
-		['I Hate You', 		'X', '2', 'X', 'X', 0],
-		['Thalassophobia', 	'2', '5', '1', 'X', 0],
-		['Apparition', 		'X', 'X', '4', '6', 0],
-		['Last Course', 	'7', '5', 'X', 'X', 0],
-		['Dark Forest', 	'X', '6', 'X', 'X', 0]
+		['Suicide', 			'2', '4', '0', 'X', 0],
+		['Oh Fuck No', 		'3', '4', '1', 'X', 0],
+		['Fuck You', 		'X', '2', 'X', 'X', 0],
+		['Claustrophobia', 	'2', '5', '1', 'X', 0],
+		['Decapitation', 		'X', 'X', '4', '6', 0],
+		['FInal Whip', 	'7', '5', 'X', 'X', 0],
+		['Wicked Woods', 	'X', '6', 'X', 'X', 0]
 	];
 
 	private static var posmierda:Array<Dynamic> = [ //la posicion en el mismo orden que las canciones esas bien mierda
@@ -881,7 +881,7 @@ class WorldState extends MusicBeatSubstate
 			dot.animation.addByPrefix("anim", theanim, 6, true);
 			dot.animation.play("anim");
 
-			if(canciones[i][0] == "Unbeatable" && !ClientPrefs.storySave[7] && ClientPrefs.worlds[3] != 0){
+			if(canciones[i][0] == "Unyappable" && !ClientPrefs.storySave[7] && ClientPrefs.worlds[3] != 0){
 				dot.alpha = 0;
 			}
 
@@ -1271,7 +1271,7 @@ class WorldState extends MusicBeatSubstate
 									}
 							});
 					}
-					else if(canciones[curSelected][0].toLowerCase() == "unbeatable" && !ClientPrefs.storySave[7]){
+					else if(canciones[curSelected][0].toLowerCase() == "Unyappable" && !ClientPrefs.storySave[7]){
 						if(ClientPrefs.worlds[3] == 0){
 							quieto = false;
 							FlxG.sound.play(Paths.sound('GBSpawn'));
@@ -1385,10 +1385,10 @@ class WorldState extends MusicBeatSubstate
 								WarpState.blackScreen.alpha = 1;
 								FlxG.camera.visible = false;
 								CustomFadeTransition.nextCamera = null;
-								if(thesong == "no-party"){
+								if(thesong == "no-focus"){
 									FlxG.mouse.visible = true;
 									FlxG.switchState(new PartyState());
-								}else if(thesong == "paranoia"){
+								}else if(thesong == "intrusive-thoughts"){
 									FlxG.camera.visible = true;
 									openSubState(new VirtualState());
 								}else{
@@ -1685,7 +1685,7 @@ class WorldState extends MusicBeatSubstate
 
 	function checkName(dir:Int, current:String):String {
 
-		if(canciones[dir][0] == 'Overdue'){
+		if(canciones[dir][0] == 'Overdose'){
 			if(ClientPrefs.worldsALT[3] == 1 || ClientPrefs.worldsALT[3] == 3){
 				return canciones[dir][0].toUpperCase();
 			}else{
@@ -1693,7 +1693,7 @@ class WorldState extends MusicBeatSubstate
 			}
 		}
 
-		if(canciones[dir][0] == 'No Party'){
+		if(canciones[dir][0] == 'No Focus'){
 			if(ClientPrefs.worldsALT[3] >= 2){
 				return canciones[dir][0].toUpperCase();
 			}else{
@@ -1701,19 +1701,19 @@ class WorldState extends MusicBeatSubstate
 			}
 		}
 
-		if(canciones[dir][0] == 'Thalassophobia' && (ClientPrefs.worldsALT[1] == 1 || ClientPrefs.worlds[1] >= 4)){
+		if(canciones[dir][0] == 'Claustrophobia' && (ClientPrefs.worldsALT[1] == 1 || ClientPrefs.worlds[1] >= 4)){
 			return canciones[dir][0].toUpperCase();
-		}else if(canciones[dir][0] == 'Thalassophobia'){
+		}else if(canciones[dir][0] == 'Claustrophobia'){
 			return '????';
 		}
 
-		if(canciones[dir][0] == 'I Hate You' && (ClientPrefs.worldsALT[1] == 2 || ClientPrefs.worlds[1] >= 4)){
+		if(canciones[dir][0] == 'Fuck You' && (ClientPrefs.worldsALT[1] == 2 || ClientPrefs.worlds[1] >= 4)){
 			return canciones[dir][0].toUpperCase();
-		}else if(canciones[dir][0] == 'I Hate You'){
+		}else if(canciones[dir][0] == 'Fuck You'){
 			return '????';
 		}
 
-		if(canciones[dir][0] == 'Unbeatable' && !ClientPrefs.storySave[8]){
+		if(canciones[dir][0] == 'Unyappable' && !ClientPrefs.storySave[8]){
 			return '????';
 		}
 

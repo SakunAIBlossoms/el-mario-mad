@@ -571,6 +571,8 @@ class MainMenuState extends MusicBeatState {
 					case 'endgame':
 						PlayState.SONG = Song.loadFromJson('endgame', 'endgame');
 						LoadingState.loadAndSwitchState(new PlayState());
+					case 'gambling':
+						LoadingState.loadAndSwitchState(new editors.GamblingRewriteByKittySleeper());
 				}
 			}
 

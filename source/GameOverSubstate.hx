@@ -155,7 +155,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			&& PlayState.curStage != 'endstage'
 			&& PlayState.curStage != 'nesbeat'
 			&& PlayState.curStage != 'piracy'
-			&& PlayState.SONG.song != 'Oh God No'
+			&& PlayState.SONG.song != 'Oh Fuck No'
 			&& PlayState.curStage !='forest')
 			camFollow = new FlxPoint(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y);
 
@@ -393,7 +393,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					FlxTween.tween(FlxG.camera, {zoom: 1}, 20, {ease: FlxEase.sineInOut});
 				}));
 		}
-		else if (PlayState.curStage == 'hatebg' && PlayState.SONG.song == 'Oh God No')
+		else if (PlayState.curStage == 'hatebg' && PlayState.SONG.song == 'Oh Fuck No')
 		{
 			pngGameOver = true;
 			songFadeOut = true;

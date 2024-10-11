@@ -1325,7 +1325,7 @@ class PlayState extends MusicBeatState
 
 				noCount = true;
 
-				if (PlayState.SONG.song == 'Golden Land Old')
+				if (PlayState.SONG.song == 'Desolate World Old')
 				{
 					GameOverSubstate.loopSoundName = 'gameOver';
 					GameOverSubstate.endSoundName = 'gameOverEnd';
@@ -1847,20 +1847,20 @@ class PlayState extends MusicBeatState
 					GameOverSubstate.endSoundName = 'Wario/APPconfirm';
 					specialGameOver = true;
 
-					bftors = new BGSprite('characters/Decapitationbf/BFRUNNING_backlegs', 490, 780, ['back0'], true);
+					bftors = new BGSprite('characters/apparitionbf/BFRUNNING_backlegs', 490, 780, ['back0'], true);
 					bftors.animation.addByPrefix('idle', 'back0', 48, true);
 					bftors.antialiasing = ClientPrefs.globalAntialiasing;
 
-					bfext = new BGSprite('characters/Decapitationbf/BFRUNNING_frontlegs', 440, 730, ['frontlegs'], true);
+					bfext = new BGSprite('characters/apparitionbf/BFRUNNING_frontlegs', 440, 730, ['frontlegs'], true);
 					bfext.animation.addByPrefix('idle', 'front0', 48, true);
 					bfext.antialiasing = ClientPrefs.globalAntialiasing;
 
-					bftorsmiss = new BGSprite('characters/Decapitationbf/BFRUNNING_backlegs', 490, 780, ['back fail'], true);
+					bftorsmiss = new BGSprite('characters/apparitionbf/BFRUNNING_backlegs', 490, 780, ['back fail'], true);
 					bftorsmiss.animation.addByPrefix('idle', 'back fail', 48, true);
 					bftorsmiss.antialiasing = ClientPrefs.globalAntialiasing;
 					bftorsmiss.visible = false;
 
-					bfextmiss = new BGSprite('characters/Decapitationbf/BFRUNNING_frontlegs', 440, 730, ['front fail'], true);
+					bfextmiss = new BGSprite('characters/apparitionbf/BFRUNNING_frontlegs', 440, 730, ['front fail'], true);
 					bfextmiss.animation.addByPrefix('idle', 'front fail', 48, true);
 					bfextmiss.antialiasing = ClientPrefs.globalAntialiasing;
 					bfextmiss.visible = false;
@@ -1868,7 +1868,7 @@ class PlayState extends MusicBeatState
 					bftorsmiss.animation.play('idle');
 					bfextmiss.animation.play('idle');
 
-					bfFall = new BGSprite('mario/Wario/Decapitation_Game_Over', boyfriendGroup.x - 70, boyfriendGroup.y + 150, ['bf fall anim'], false);
+					bfFall = new BGSprite('mario/Wario/Apparition_Game_Over', boyfriendGroup.x - 70, boyfriendGroup.y + 150, ['bf fall anim'], false);
 					bfFall.animation.addByPrefix('fall', "bf fall anim", 24, true);
 					bfFall.scale.set(0.9, 0.9);
 					bfFall.alpha = 0.00001;
@@ -5484,7 +5484,7 @@ class PlayState extends MusicBeatState
 				autor = 'KINGF0X';
 			case 'Its a me Old':
 				autor = 'KINGF0X';
-			case 'Golden Land Old':
+			case 'Desolate World Old':
 				autor = 'Kenny L';
 			case 'Fuck You Old':
 				autor = 'Kenny L';
@@ -5639,7 +5639,7 @@ class PlayState extends MusicBeatState
 		if (curStage == 'warioworld')
 		{
 			fogbad = new FlxSprite();
-			fogbad.frames = Paths.getSparrowAtlas('modstuff/Wario_Decapitation_Overlay_v1');
+			fogbad.frames = Paths.getSparrowAtlas('modstuff/Wario_Apparition_Overlay_v1');
 			fogbad.animation.addByPrefix('idle', "WarioOverlay", 24);
 			fogbad.antialiasing = ClientPrefs.globalAntialiasing;
 			fogbad.cameras = [camEst];
@@ -5902,7 +5902,7 @@ class PlayState extends MusicBeatState
 				case 'genocidal-goat' | 'genocidal goat':
 					startVideo('ss_cutscene');
 
-				case 'golden-land':
+				case 'desolate-world':
 					startVideo('cutscene2');
 
 				default:
@@ -6598,7 +6598,7 @@ class PlayState extends MusicBeatState
 					antialias = false;
 				}
 
-				if (curStage == 'landstage' && PlayState.SONG.song != 'Golden Land Old')
+				if (curStage == 'landstage' && PlayState.SONG.song != 'Desolate World Old')
 				{
 					// bgfeo.dance(true);
 					minustime = -97.073;
@@ -9115,7 +9115,7 @@ class PlayState extends MusicBeatState
 							eventTweens.push(FlxTween.tween(camHUD, {alpha: 0}, 0.5, {ease: FlxEase.quadInOut}));
 							eventTweens.push(FlxTween.tween(FlxG.sound.music, {volume: 0}, 0.5, {ease: FlxEase.quadInOut}));
 
-							var warioOpen:BGSprite = new BGSprite('mario/Wario/Decapitation_Game_Over', -65, 65, ['wario open mouth'], false);
+							var warioOpen:BGSprite = new BGSprite('mario/Wario/Apparition_Game_Over', -65, 65, ['wario open mouth'], false);
 							warioOpen.animation.addByPrefix('open', "wario open mouth", 20, false);
 							warioOpen.animation.addByPrefix('close', "wario bite", 24, false);
 							
@@ -10870,7 +10870,7 @@ class PlayState extends MusicBeatState
 				switch (triggerGL)
 				{
 					case 0:
-						if (PlayState.SONG.song != 'Golden Land Old')
+						if (PlayState.SONG.song != 'Desolate World Old')
 						{
 							landbg.visible = false;
 							estaland.visible = true;
@@ -10901,7 +10901,7 @@ class PlayState extends MusicBeatState
 						}
 
 					case 1:
-						if (PlayState.SONG.song != 'Golden Land Old')
+						if (PlayState.SONG.song != 'Desolate World Old')
 						{
 							triggerEventNote('Screen Shake', '0.15, 0.05', '');
 							eventTweens.push(FlxTween.tween(gfGroup, {y: gfGroup.y - 450}, 1, {ease: FlxEase.quadOut}));

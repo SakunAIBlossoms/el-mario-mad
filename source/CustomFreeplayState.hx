@@ -265,7 +265,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 
 			case 'Cosmos':
 				canciones = [
-					['Awdul Noon', 		'awful-noon', 		'12'],
+					['Awful Noon', 		'awful-noon', 		'12'],
 					['Gang In', 		'gang-in', 		'10'],
 					['Troller', 		'troller', 	'11'],
 					['Ratio Battle', 	'ratio-battle', '20'],
@@ -292,7 +292,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 				canciones = [
 					['CAN YOU BEAT US?', 'atrocity-remix', '14'], // atrocity cover
 					['A stupid video', 'A-stupid-video', '0'], // Hazel Petscop 2 cover
-					['Starry Night', 'Headache-remix', '0'], 
+					['Starry Night', 'starry-night', '0'], 
 					['name pending', 'disassembler-remix', '0'],
 					['The Titans Contract', 'devils-gambit-remix', '0'],
 					['Alcourt Case', 'turnabout-remix', '0'],

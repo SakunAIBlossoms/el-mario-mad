@@ -512,7 +512,7 @@ class PartyState extends MusicBeatState
 									{
 										//whatever needs to be done here to make the song start dewott help pls
 										// :dave:
-										var thesong:String = "no-party";
+										var thesong:String = "no-focus";
 										PlayState.isWarp = true;
 										PlayState.SONG = Song.loadFromJson(thesong, thesong);
 										PlayState.campaignScore = 0;
