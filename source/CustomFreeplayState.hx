@@ -265,7 +265,7 @@ class CustomFreeplayState extends MusicBeatSubstate
 
 			case 'Cosmos':
 				canciones = [
-					['Awdul Noon', 		'awful-noon', 		'12'],
+					['Awful Noon', 		'awful-noon', 		'12'],
 					['Gang In', 		'gang-in', 		'10'],
 					['Troller', 		'troller', 	'11'],
 					['Ratio Battle', 	'ratio-battle', '20'],

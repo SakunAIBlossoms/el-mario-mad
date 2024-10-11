@@ -42,7 +42,7 @@
 					[
 						1714.28571428571,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"0",
 						""
 					],
@@ -88,7 +88,7 @@
 					[
 						4433.03571428571,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"1",
 						"racet2"
 					]
@@ -124,7 +124,7 @@
 					[
 						6857.14285714286,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"1",
 						"racet3"
 					],
@@ -222,7 +222,7 @@
 					[
 						8571.42857142857,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"1",
 						"race"
 					],
@@ -1627,7 +1627,7 @@
 					[
 						36000,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"2",
 						""
 					]
@@ -1710,14 +1710,14 @@
 					[
 						37714.2857142857,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"3",
 						""
 					],
 					[
 						39000,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"7",
 						""
 					]
@@ -1800,7 +1800,7 @@
 					[
 						40714.2857142857,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"7",
 						""
 					]
@@ -1944,7 +1944,7 @@
 					[
 						44142.8571428572,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"7",
 						""
 					]
@@ -2260,7 +2260,7 @@
 					[
 						51000,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"7",
 						""
 					]
@@ -2348,7 +2348,7 @@
 					[
 						51428.5714285715,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"4",
 						""
 					]
@@ -3016,7 +3016,7 @@
 					[
 						65142.8571428572,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"5",
 						""
 					]
@@ -3700,7 +3700,7 @@
 					[
 						80571.4285714286,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"2",
 						""
 					]
@@ -3718,7 +3718,7 @@
 					[
 						82285.7142857143,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"8",
 						"3.5"
 					],
@@ -5525,14 +5525,14 @@
 					[
 						120000,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"6",
 						""
 					],
 					[
 						112607.142857143,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"9",
 						""
 					],
@@ -5557,7 +5557,7 @@
 					[
 						113142.857142857,
 						-1,
-						"Triggers Race Traitors",
+						"Triggers Ratio Battle",
 						"10",
 						""
 					]
