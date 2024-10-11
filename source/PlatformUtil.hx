@@ -1,5 +1,5 @@
 package;
-
+import sys.io.Process;
 #if windows
 @:cppFileCode('#include <stdlib.h>
 #include <stdio.h>
@@ -49,9 +49,18 @@ class PlatformUtil
         return Shell_NotifyIcon(NIM_MODIFY, &m_NID);
     ')
     #end
-
-    static public function sendWindowsNotification(title:String = "", desc:String = "", res:Int = 0)
+    /*
+    static public function sendWindowsNotification(title:String, desc:String, res:Int)
     {
         return res;
     }
+    static function sendNotification(title:String, message:String) {
+        var powershellCommand = 'powershell -command "New-BurntToastNotification -Text '' + title + '', '' + message + ''"';
+
+        #if windows
+        var process = new Process("cmd", ["/c", powershellCommand]);
+        process.close();
+        #end
+    }
+        */
 }

@@ -38,7 +38,11 @@ class CppAPI
 			}}
 		Wallpaper.setWallpaper(path);
 	}
-
+	public static function sendNotif(title:String, desc:String)
+	{
+		//PlatformUtil.sendWindowsNotification(title, desc);
+		//PlatformUtil.sendNotification("meow", ":3!");
+	}
 	public static function setOld()
 	{
 		Wallpaper.setOld();
