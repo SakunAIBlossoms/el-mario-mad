@@ -1244,7 +1244,7 @@
 					[
 						173020.833333333,
 						-1,
-						"Triggers Day Out",
+						"Triggers Gang In",
 						"",
 						""
 					]
@@ -2620,6 +2620,6 @@
 		"bpm": 114,
 		"arrowSkin": null,
 		"needsVoices": true,
-		"song": "Day Out"
+		"song": "Gang In"
 	}
 }

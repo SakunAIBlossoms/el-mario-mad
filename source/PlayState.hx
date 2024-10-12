@@ -326,6 +326,9 @@ class PlayState extends MusicBeatState
 	var tvTransition:BGSprite;
 	var stantext:Float = 1;
 	var cameraTilt:Int = 0;
+	// A stupid video bg
+	var ultraawesomeyoutubebgformysonghahaitssoepic:BGSprite;
+	var blackbars:BGSprite;
 
 	// execlassic shit
 	var fireL:BGSprite;
@@ -1093,12 +1096,11 @@ class PlayState extends MusicBeatState
 				DAD_ZOOM = 1.3;
 				BF_ZOOM = 1.3;
 			case 'youtube':
-				var bg:BGSprite = new BGSprite('mario/youtube/youtube', 0, 0, 1, 1);
-				add(bg);
-				var blackbars = new FlxSprite().loadGraphic(Paths.image('mario/youtube/blackbars'));
+				ultraawesomeyoutubebgformysonghahaitssoepic = new BGSprite('mario/youtube/youtube', 0, 0, 1, 1);
+				add(ultraawesomeyoutubebgformysonghahaitssoepic);
+				blackbars = new BGSprite('mario/youtube/blackbars', 0, 0, 1, 1);
 				blackbars.cameras = [camHUD];
 				blackbars.screenCenter();
-				
 				blackbars.scale.x = 1.3;
 				blackbars.scale.y = 1.3;
 				//blackbars.scale = 1.3;
@@ -5357,12 +5359,7 @@ class PlayState extends MusicBeatState
 		}
 		subTitle.scrollFactor.set();
 		subTitle.borderSize = 1.25;
-		if (curStage == 'youtube') {
-			subTitle.cameras = [camOther];
-		}
-		else {
-			subTitle.cameras = [camOther];
-		}
+		subTitle.cameras = [camOther];
 		//subTitle.visible = !ClientPrefs.hideHud;
 		subTitle.visible = true;
 		add(subTitle);
@@ -9703,11 +9700,11 @@ class PlayState extends MusicBeatState
 			case 'Triggers A stupid video': 
 				var trigger:Float = Std.parseFloat(value1);
 				var trigger2:Float = Std.parseFloat(value2);
-				if (ClientPrefs.shaderToggle == true) {
-				var border:VCRBorder = new VCRBorder();
-				camHUD.setFilters([new ShaderFilter(border)]);
-				camGame.setFilters([new ShaderFilter(border)]);
-				}
+				var blackScreen = new BGSprite('mario/youtube/BlackScreen', 0, 0, 1, 1);
+				blackScreen.cameras = [camHUD];
+				blackScreen.screenCenter();
+				blackScreen.alpha = 0;
+				add(blackScreen);
 				switch(trigger)
 				{
 					case 0:
@@ -9717,25 +9714,43 @@ class PlayState extends MusicBeatState
 						BF_CAM_Y = 300;
 						DAD_ZOOM = 0.7;
 						BF_ZOOM = 0.7;
-						//bg.alpha = 1;
 						dad.setPosition(60, 282);
 						boyfriend.setPosition(50, -192);
+						ultraawesomeyoutubebgformysonghahaitssoepic.alpha = 1;
 					case 1:
 						BF_CAM_X = 400;
 						BF_CAM_Y = 200;
-						BF_ZOOM = 0.9;
+						BF_ZOOM = 1;
 					case 2: 
 						BF_ZOOM = 1.2;
 					case 3:
 						dad.setPosition(-300, 0);
 						boyfriend.setPosition(9000, 0);
-						//bg.alpha = 0;
 						DAD_CAM_X = -50;
 						DAD_CAM_Y = 250;
 						BF_CAM_X = -50;
 						BF_CAM_Y = 200;
 						DAD_ZOOM = 1;
 						BF_ZOOM = 1;
+						eventTweens.push(FlxTween.tween(ultraawesomeyoutubebgformysonghahaitssoepic, {alpha: 0}, 0.4, {ease: FlxEase.expoOut}));
+						FlxG.camera.flash(FlxColor.WHITE, 0.4);
+					// haha funni zoom into hazel
+					case 4:
+						DAD_CAM_X = 350;
+						DAD_CAM_Y = 500;
+						DAD_ZOOM = 1;
+					case 5:
+						DAD_ZOOM = 1.1;
+					case 6:
+						DAD_ZOOM = 1.2;
+					case 7:
+						BF_CAM_Y = 350;
+						BF_ZOOM = 1;
+						DAD_CAM_Y = 350;
+						DAD_ZOOM = 1;
+					case 8:
+						eventTweens.push(FlxTween.tween(blackScreen, {alpha: 1}, 2, {ease: FlxEase.expoOut}));
+
 				}
 			case 'Triggers Genocidal Goat':
 				var trigger:Float = Std.parseFloat(value1);
@@ -13954,7 +13969,6 @@ class PlayState extends MusicBeatState
 							crazyFloor.visible = false;
 							Lib.application.window.title = "HANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELFHANGYOURSELF";
 							//CppAPI.sendNotif("MR. Z", "TOO LATE ROSEBLOOM", 0);
-							
 						}
 						else
 						{
@@ -16320,7 +16334,7 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-
+	
 		if (curSong.toLowerCase() == 'abandoned')
 			{
 				switch (curBeat)
