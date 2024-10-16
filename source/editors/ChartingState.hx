@@ -93,6 +93,7 @@ class ChartingState extends MusicBeatState
 		['Change Character', "Value 1: Character to change (BF: 0, Dad: 1, GF: 2)\nValue 2: New character's name"],
 		['Set Cam Zoom', "Value 1: "],
 		['Set Cam Pos', ""],
+		['Change Window Title', 'Value 1 is the new title\n\nValue 2 is the reset.\nSet it to 0 to change the name,\nset it to 1 to reset the name to default'],
 		['Ocultar HUD', "oculta el HUD del juego (duh).\nValue 1: Alternar entre ocultar y mostrar\n(pon 0 para ocultar el HUD y pon 1 para mostrarlo)"],
 		['Char Attack', "Only Works on Powerdown and Last Course"],
 		['Write DS', "value1: 0 para mostrar 1 para sacar\nvalue2: texto si vas a mostrar"],
